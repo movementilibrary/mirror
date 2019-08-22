@@ -1,0 +1,106 @@
+pipeline {
+    agent { node { label 'linux && jdk8' } }
+
+    environment {
+        DEPLOY_PASS = credentials('deploy_pass')
+        DEPLOY_USER = credentials('deploy_user')
+        AZURE_SUBSCRIPTION_ID = credentials('azureSubscriptionId')
+        AZURE_TENANT_ID = credentials('azureTenantId')
+        AZURE_APP_ID = credentials('azureAppId')
+        AZURE_APP_PASS = credentials('azureAppPass')
+        SONAR_TOKEN = credentials('sonar_token')
+        SONAR_URL = credentials('sonar_url')
+        NEXUS_BASE_URL = credentials('nexus_base_url')
+        NEXUS_USER = credentials('nexus_user')
+        NEXUS_PASS = credentials('nexus_pass')
+        DOCKER_REPOSITORY = credentials('DOCKER_REPOSITORY ')
+        DOCKER_USER_LOGIN = credentials('DOCKER_USER_LOGIN ')
+        DOCKER_USER_PASS = credentials('DOCKER_USER_PASS ')
+        KUBECONFIG_DEV = credentials('kubeconfig_dev')
+        KUBECONFIG_HML = credentials('kubeconfig_hml')
+        KUBECONFIG_PRD01 = credentials('kubeconfig_prd01')
+        KUBECONFIG_PRD02 = credentials('kubeconfig_prd02')
+    }
+
+    stages {
+
+        stage('DevOps-Tools') {
+            steps {
+                sh 'rm -rf check.status'
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'devops-tools']], submoduleCfg: [], userRemoteConfigs: [[url: 'git@bitbucket.org:dasa_desenv_middleware/devops-tools.git']]])
+            }
+        }
+
+
+        stage('Tagging') {
+            steps {
+                sh 'bash -x devops-tools/pipeline-shared-librares/tagging.sh'
+            }
+        }
+
+
+        stage('Build App') {
+            steps {
+                sh 'mvn package'
+                sh 'devops-tools/pipeline-shared-librares/build-package.sh'
+            }
+        }
+
+        stage('Quality Analyzing') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh 'bash -x devops-tools/pipeline-shared-librares/quality.sh -a analize'
+                }
+            }
+        }
+
+        stage('Quality Gates') {
+             steps {
+                 script {
+                     timeout(time: 30, unit: 'MINUTES') {
+                         def qg = waitForQualityGate()
+                             if (qg.status != 'OK') {
+                                 error "Pipeline aborted due to quality gates failure: ${qg.status}"
+                             } else {
+                                 echo "Quality gates returned ok, with result: ${qg.status}"
+                             }
+                     }
+                 }
+             }
+        }
+
+        stage('Upload Artifact') {
+            steps {
+                sh 'bash -x devops-tools/pipeline-shared-librares/nexus-upload.sh'
+            }
+        }
+
+
+        // stage('Deploy Monitoring') {
+        //   steps {
+        //     sh 'bash -x devops-tools/pipeline-shared-librares/deploy.sh -e monitor -i deploy -d cloud'
+        //}
+        // }
+
+        stage('Deploy Dev') {
+            steps {
+                sh 'bash -x devops-tools/pipeline-shared-librares/deploy.sh -a mirrorapi -r RSG_K8S -e dev -i deploy -d cloud'
+                sh 'bash -x devops-tools/pipeline-shared-librares/check_upstart_app.sh -u $URL_APP/actuator/health -s 200 -t 60 -c 5 -e dev'
+                sh 'bash -x devops-tools/pipeline-shared-librares/sync_subdomains.sh -e dev'
+            }
+        }
+
+
+        //stage('Accept Test Dev') {
+          //  steps {
+            //    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'devops/test/regressive_cucumber']], submoduleCfg: [], userRemoteConfigs: [[url: 'git@bitbucket.org:dasa_desenv_atendimento/regressivo-api-coleta.git']]])
+              //  sh 'devops-tools/pipeline-shared-librares/regression_tests.sh -e dev -p docker -s "-t @smoke_api_fila_coleta"'
+
+                //cucumber fileIncludePattern: '**/*filaapi.json',
+                  //  trendsLimit: 0,
+                    //sortingMethod: 'NATURAL'
+            //}
+        //}
+
+    }
+}
