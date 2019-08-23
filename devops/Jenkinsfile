@@ -46,28 +46,7 @@ pipeline {
             }
         }
 
-//        stage('Quality Analyzing') {
-//            steps {
-//                withSonarQubeEnv('SonarQube') {
-//                    sh 'bash -x devops-tools/pipeline-shared-librares/quality.sh -a analize'
-//                }
-//            }
-//        }
 
-        stage('Quality Gates') {
-             steps {
-                 script {
-                     timeout(time: 30, unit: 'MINUTES') {
-                         def qg = waitForQualityGate()
-                             if (qg.status != 'OK') {
-                                 error "Pipeline aborted due to quality gates failure: ${qg.status}"
-                             } else {
-                                 echo "Quality gates returned ok, with result: ${qg.status}"
-                             }
-                     }
-                 }
-             }
-        }
 
         stage('Upload Artifact') {
             steps {
@@ -75,12 +54,6 @@ pipeline {
             }
         }
 
-
-        // stage('Deploy Monitoring') {
-        //   steps {
-        //     sh 'bash -x devops-tools/pipeline-shared-librares/deploy.sh -e monitor -i deploy -d cloud'
-        //}
-        // }
 
         stage('Deploy Dev') {
             steps {
@@ -90,17 +63,6 @@ pipeline {
             }
         }
 
-
-        //stage('Accept Test Dev') {
-          //  steps {
-            //    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'devops/test/regressive_cucumber']], submoduleCfg: [], userRemoteConfigs: [[url: 'git@bitbucket.org:dasa_desenv_atendimento/regressivo-api-coleta.git']]])
-              //  sh 'devops-tools/pipeline-shared-librares/regression_tests.sh -e dev -p docker -s "-t @smoke_api_fila_coleta"'
-
-                //cucumber fileIncludePattern: '**/*filaapi.json',
-                  //  trendsLimit: 0,
-                    //sortingMethod: 'NATURAL'
-            //}
-        //}
 
     }
 }
