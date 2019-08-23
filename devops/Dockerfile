@@ -26,8 +26,6 @@ ENV PROJECT_NAME $PROJECT_NAME
 ENV VERSION $VERSION
 ENV REVISION $REVISION
 ENV APPNAME $PROJECT_NAME-$VERSION-$REVISION.jar
-# App envs config
-ENV SPRING_PROFILES_ACTIVE=deploy
 
 ENTRYPOINT java -javaagent:/app/newrelic/newrelic.jar -Dnewrelic.environment="$env" -jar /app/"$APPNAME"
 
