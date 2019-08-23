@@ -11,7 +11,7 @@
 	<groupId>br.com.dasa</groupId>
 	<artifactId>mirror.api</artifactId>
 	<version>VERSION-REVISION</version>
-	<name>mirror.api</name>
+	<name>mirrorapi</name>
 	<description>Projeto Mirror</description>
 
 	<properties>
