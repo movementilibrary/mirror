@@ -31,10 +31,10 @@ ENV APPNAME $PROJECT_NAME-$VERSION-$REVISION.jar
 #Configuracao profile
 #ENV SPRING_PROFILES_ACTIVE=deploy
 
-#ENTRYPOINT java -javaagent:/app/newrelic/newrelic.jar -Dnewrelic.environment="$env" -jar /app/"$APPNAME"
+ENTRYPOINT java -javaagent:/app/newrelic/newrelic.jar -Dnewrelic.environment="$env" -jar /app/"$APPNAME"
 
 #Cópia de artefato localizado na máquina real para dentro da imagem
-COPY target/"$PROJECT_NAME.jar" /app/
+COPY target/"$PROJECT_NAME-$VERSION-$REVISION.jar" /app/
 
 # Configuração de permissões
 RUN chown 1001:app /app -R
