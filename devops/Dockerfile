@@ -34,7 +34,7 @@ ENV APPNAME $PROJECT_NAME-$VERSION-$REVISION.jar
 ENTRYPOINT java -javaagent:/app/newrelic/newrelic.jar -Dnewrelic.environment="$env" -jar /app/"$APPNAME"
 
 #Cópia de artefato localizado na máquina real para dentro da imagem
-COPY target/"$PROJECT_NAME-$VERSION-$REVISION.jar" /app/
+COPY target/"$PROJECT_NAME.jar" /app/
 
 # Configuração de permissões
 RUN chown 1001:app /app -R
