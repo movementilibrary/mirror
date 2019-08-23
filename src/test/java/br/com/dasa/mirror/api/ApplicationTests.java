@@ -1,4 +1,4 @@
-package com.dasa.mirror.api;
+package br.com.dasa.mirror.api;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

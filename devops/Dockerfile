@@ -33,7 +33,7 @@ ENTRYPOINT java -javaagent:/app/newrelic/newrelic.jar -Dnewrelic.environment="$e
 
 #Copia de artefato localizado na maquina real para dentro da imagem
 #Configuracao de permissoes
-COPY --chown=1001:app build/libs/"$APPNAME" /app/
+COPY --chown=1001:app target/"$APPNAME" /app/
 
 #Configuracao de diretorio de trabalho. /app ser? a pasta inicial da imagem
 WORKDIR /app
