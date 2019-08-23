@@ -31,9 +31,11 @@ ENV SPRING_PROFILES_ACTIVE=deploy
 
 ENTRYPOINT java -javaagent:/app/newrelic/newrelic.jar -Dnewrelic.environment="$env" -jar /app/"$APPNAME"
 
-#Copia de artefato localizado na maquina real para dentro da imagem
-#Configuracao de permissoes
-COPY --chown=1001:app target/"$APPNAME" /app/
+#Cópia de artefato localizado na máquina real para dentro da imagem
+COPY target/"$PROJECT_NAME-$VERSION-$REVISION.jar" /app/
+
+# Configuração de permissões
+RUN chown 1001:app /app -R
 
 #Configuracao de diretorio de trabalho. /app ser? a pasta inicial da imagem
 WORKDIR /app
