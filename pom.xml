@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.dasa</groupId>
 	<artifactId>mirror.api</artifactId>
-	<version>$VERSION-$REVISION</version>
+	<version>VERSION-REVISION</version>
 	<name>mirror.api</name>
 	<description>Projeto Mirror</description>
 
