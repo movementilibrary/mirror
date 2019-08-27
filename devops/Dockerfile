@@ -26,7 +26,6 @@ RUN mkdir -p app/newrelic/logs
 RUN chmod 777 app/newrelic/logs
 
 COPY target/newrelic/newrelic.jar /app/newrelic
-
 COPY newrelic.yml /app/newrelic
 
 RUN chown 1001:app /app -R
