@@ -47,4 +47,4 @@ WORKDIR /app
 CMD java -jar -Xms678m -Xmx950m $APPNAME
 
 #Exp?e a porta 8080 quando o container ? montado.
-EXPOSE 9000
+EXPOSE 9090
