@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.dasa</groupId>
-	<artifactId>mirror-api</artifactId>
+	<artifactId>mirrorapi</artifactId>
 	<version>VERSION-REVISION</version>
-	<name>mirror-api</name>
+	<name>mirrorapi</name>
 	<description>Projeto Mirror</description>
 
 	<properties>
