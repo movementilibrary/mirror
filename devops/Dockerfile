@@ -4,13 +4,13 @@ FROM imagesdasa.azurecr.io/prd/base-image:latest
 ARG PROJECT_NAME
 ARG VERSION
 ARG REVISION
-ARG env
+#ARG env
 
 ENV PROJECT_NAME $PROJECT_NAME
 ENV VERSION $VERSION
 ENV REVISION $REVISION
 ENV APPNAME $PROJECT_NAME-$VERSION-$REVISION.jar
-ENV env $env
+#ENV env $env
 
 RUN add-apt-repository ppa:openjdk-r/ppa && \
     apt-get update && \
