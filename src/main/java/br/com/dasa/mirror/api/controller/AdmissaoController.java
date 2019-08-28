@@ -18,8 +18,8 @@ public class AdmissaoController {
 	@Autowired
 	AdmissaoService admissaoService;
 
-	@RequestMapping(value = "/sendMessageAdmissoes", method = RequestMethod.POST)
-	public @ResponseBody Response sendMessageAdmissoes(@RequestBody String json) {
+	@RequestMapping(value = "/consumidorAdmissoes", method = RequestMethod.POST)
+	public @ResponseBody Response consumidorAdmissoes(@RequestBody String json) {
 		Response response = new Response();
 		try {
 			response = admissaoService.admissaoValues(json);
