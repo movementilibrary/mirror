@@ -36,5 +36,5 @@ CMD java -jar /app/"$APPNAME"
 
 #ENTRYPOINT java -javaagent:/app/newrelic/newrelic.jar -Dnewrelic.environment="$env" -jar /app/"$APPNAME"
 
-EXPOSE 9000
+EXPOSE 8090
 
