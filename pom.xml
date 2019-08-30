@@ -14,6 +14,7 @@
 	<version>VERSION-REVISION</version>
 	<name>mirror-api</name>
 	<description>Projeto Mirror</description>
+	<packaging>jar</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -109,5 +110,5 @@
 		</plugins>
 	</build>
 
-	<packaging>war</packaging>
+
 </project>

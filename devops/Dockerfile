@@ -22,11 +22,11 @@ RUN add-apt-repository ppa:openjdk-r/ppa && \
 
 COPY target/"$APPNAME" /app/
 
-#RUN mkdir -p app/newrelic/logs
-#RUN chmod 777 app/newrelic/logs
+RUN mkdir -p app/newrelic/logs
+RUN chmod 777 app/newrelic/logs
 
-#COPY target/newrelic/newrelic.jar /app/newrelic
-#COPY newrelic.yml /app/newrelic
+COPY target/newrelic/newrelic.jar /app/newrelic
+COPY newrelic.yml /app/newrelic
 
 RUN chown 1001:app /app -R
 
@@ -34,7 +34,7 @@ WORKDIR /app
 
 CMD java -jar /app/"$APPNAME"
 
-#ENTRYPOINT java -javaagent:/app/newrelic/newrelic.jar -Dnewrelic.environment="$env" -jar /app/"$APPNAME"
+ENTRYPOINT java -javaagent:/app/newrelic/newrelic.jar -Dnewrelic.environment="$env" -jar /app/"$APPNAME"
 
-EXPOSE 9000
+EXPOSE 8090
 
