@@ -1,5 +1,10 @@
-package br.com.dasa.mirror.api.model;
+package br.com.dasa.mirror.api.model.from.to.admission;
 
+/**
+ * 
+ * @author Thiago.Tavares
+ *
+ */
 public class Admission {
 	
 	private String originId;

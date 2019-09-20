@@ -1,4 +1,4 @@
-package br.com.dasa.mirror.api.model;
+package br.com.dasa.mirror.api.model.from.to.admission;
 
 public class Response {
 

@@ -1,10 +1,12 @@
 package br.com.dasa.mirror.api.service.impl;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.dasa.mirror.api.model.Admission;
-import br.com.dasa.mirror.api.model.Response;
+import br.com.dasa.mirror.api.model.from.to.admission.Admission;
+import br.com.dasa.mirror.api.model.from.to.admission.FromToAdmission;
 import br.com.dasa.mirror.api.repository.AdmissaoRepository;
 import br.com.dasa.mirror.api.service.AdmissaoService;
 
@@ -15,7 +17,7 @@ public class AdmissaoServiceImpl implements AdmissaoService {
 	AdmissaoRepository admissaoRepository;
 
 	@Override
-	public Response admissaoValues(Admission admission) throws Exception {
+	public Optional<FromToAdmission> admissaoValues(Admission admission) {
 		return admissaoRepository.admissaoRepository(admission);
 	}
 }

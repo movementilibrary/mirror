@@ -1,10 +1,11 @@
 package br.com.dasa.mirror.api.repository;
 
+import java.util.Optional;
 
-import br.com.dasa.mirror.api.model.Admission;
-import br.com.dasa.mirror.api.model.Response;
+import br.com.dasa.mirror.api.model.from.to.admission.Admission;
+import br.com.dasa.mirror.api.model.from.to.admission.FromToAdmission;
 
 public interface AdmissaoRepository {
 
-	Response admissaoRepository(Admission admission);
+	Optional<FromToAdmission> admissaoRepository(Admission admission);
 }
