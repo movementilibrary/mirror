@@ -1,8 +1,11 @@
 package br.com.dasa.mirror.api.service;
 
-import br.com.dasa.mirror.api.model.Response;
+import java.util.Optional;
+
+import br.com.dasa.mirror.api.model.from.to.admission.Admission;
+import br.com.dasa.mirror.api.model.from.to.admission.FromToAdmission;
 
 public interface AdmissaoService {
 
-	Response admissaoValues(String body) throws Exception;
+	Optional<FromToAdmission> admissaoValues(Admission admission);
 }
