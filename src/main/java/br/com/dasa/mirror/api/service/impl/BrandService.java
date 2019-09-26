@@ -1,7 +1,7 @@
-package br.com.dasa.mirror.api.service;
+package br.com.dasa.mirror.api.service.impl;
 
-import br.com.dasa.mirror.api.model.Marca;
-import br.com.dasa.mirror.api.model.Unidade;
+import br.com.dasa.mirror.api.model.Brand;
+import br.com.dasa.mirror.api.model.Unit;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.slf4j.Logger;
@@ -15,25 +15,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class MarcaService {
+public class BrandService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Marca.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Brand.class);
 
 
-    public Integer buscaMarca(String idGliese) {
+    public Integer convertBrandGlieseToBrandDataProvider(String idGliese) {
         Integer idDataProvider = null;
         try {
             Gson gson = new Gson();
-            BufferedReader json = new BufferedReader(new FileReader("src/main/java/br/com/dasa/mirror/api/dataprovider/marca"));
+            BufferedReader json = new BufferedReader(new FileReader("src/main/resources/dataprovider/marca"));
 
-            Type listaMarcaDeserializa = new TypeToken<ArrayList<Unidade>>() {
+            Type listaMarcaDeserializa = new TypeToken<ArrayList<Unit>>() {
             }.getType();
 
-            List<Unidade> listaUnidade = gson.fromJson(json, listaMarcaDeserializa);
+            List<Unit> listaUnit = gson.fromJson(json, listaMarcaDeserializa);
 
-            idDataProvider = listaUnidade.stream()
+            idDataProvider = listaUnit.stream()
                     .filter(g -> idGliese.equals(g.getIdGliese()))
-                    .map(Unidade::getIdDataProvider)
+                    .map(Unit::getIdDataProvider)
                     .findAny()
                     .orElse(null);
 

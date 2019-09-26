@@ -1,16 +1,16 @@
 package br.com.dasa.mirror.api.model;
 
-public class Unidade {
+public class Unit {
 
     private String nome;
     private Integer idDataProvider;
     private String idGliese;
 
 
-    public Unidade() {
+    public Unit() {
     }
 
-    public Unidade(String nome, Integer idDataProvider, String idGliese) {
+    public Unit(String nome, Integer idDataProvider, String idGliese) {
         this.nome = nome;
         this.idDataProvider = idDataProvider;
         this.idGliese = idGliese;

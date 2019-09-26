@@ -1,5 +1,7 @@
 package br.com.dasa.mirror.api.model.from.to.admission;
 
+import java.util.Arrays;
+
 /**
  * 
  * @author Thiago.Tavares
@@ -8,6 +10,8 @@ package br.com.dasa.mirror.api.model.from.to.admission;
 public class Admission {
 	
 	private String originId;
+
+	private String brandId;
 
 	private Patient patient;
 
@@ -27,6 +31,14 @@ public class Admission {
 
 	public void setOriginId(String originId) {
 		this.originId = originId;
+	}
+
+	public String getBrandId() {
+		return brandId;
+	}
+
+	public void setBrandId(String brandId) {
+		this.brandId = brandId;
 	}
 
 	public Patient getPatient() {
@@ -79,8 +91,15 @@ public class Admission {
 
 	@Override
 	public String toString() {
-		return "Admission [originId = " + originId + ", patient = " + patient + ", payments = " + payments
-				+ ", questions = " + questions + ", unitId = " + unitId + ", orders = " + orders + ", scheduling = "
-				+ scheduling + "]";
+		return "Admission{" +
+				"originId='" + originId + '\'' +
+				", brandId='" + brandId + '\'' +
+				", patient=" + patient +
+				", payments=" + Arrays.toString(payments) +
+				", questions=" + Arrays.toString(questions) +
+				", unitId='" + unitId + '\'' +
+				", orders=" + Arrays.toString(orders) +
+				", scheduling=" + scheduling +
+				'}';
 	}
 }

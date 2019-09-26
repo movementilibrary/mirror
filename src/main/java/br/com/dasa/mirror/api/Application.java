@@ -1,7 +1,5 @@
 package br.com.dasa.mirror.api;
 
-import br.com.dasa.mirror.api.service.UnidadeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

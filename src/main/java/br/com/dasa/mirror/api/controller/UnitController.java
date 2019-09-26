@@ -1,7 +1,6 @@
 package br.com.dasa.mirror.api.controller;
 
-import br.com.dasa.mirror.api.service.MarcaService;
-import br.com.dasa.mirror.api.service.UnidadeService;
+import br.com.dasa.mirror.api.service.impl.UnitService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -12,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("marca")
-public class MarcaController {
+@RequestMapping("unidade")
+public class UnitController {
 
     @Autowired
-    private MarcaService marcaService;
+    private UnitService unitService;
 
     @GetMapping("/{id_gliese}")
     @ApiOperation(httpMethod = "GET", value = "Responsável por deletar fila '")
@@ -26,6 +25,6 @@ public class MarcaController {
             @ApiResponse(code = 500, message = "Um erro interno foi detectado")
     })
     public Integer verificaunidade(@RequestParam String idGliese) {
-       return marcaService.buscaMarca(idGliese);
+       return unitService.convertUnityGlieseToUnityDataProvider(idGliese);
     }
 }

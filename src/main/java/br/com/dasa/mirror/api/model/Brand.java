@@ -1,16 +1,16 @@
 package br.com.dasa.mirror.api.model;
 
-public class Marca {
+public class Brand {
 
     private String nome;
     private Integer idDataProvider;
     private Integer idGliese;
 
 
-    public Marca() {
+    public Brand() {
     }
 
-    public Marca(String nome, Integer idDataProvider, Integer idGliese) {
+    public Brand(String nome, Integer idDataProvider, Integer idGliese) {
         this.nome = nome;
         this.idDataProvider = idDataProvider;
         this.idGliese = idGliese;
