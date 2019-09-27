@@ -1,22 +1,19 @@
 package br.com.dasa.mirror.api.repository.camel.integrations;
 
 
-import org.springframework.stereotype.Component;
+import static br.com.dasa.mirror.api.enumeration.CamelRoutesEnum.ROUTE_LOAD_PRODUTO_TRADUCAO;
+import static org.springframework.http.HttpMethod.GET;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import static br.com.dasa.mirror.api.enumeration.CamelRoutesEnum.ROUTE_LOAD_PRODUTO_TRADUCAO;
-import static org.springframework.hateoas.MediaTypes.HAL_JSON_VALUE;
-import static org.springframework.http.HttpMethod.*;
+import org.springframework.stereotype.Component;
 
 @Component
 public class CamelHttpRequestFactory {
     private static final String APPLICATION_JSON = "application/json";
-    private static final String TEXT_PLAIN = "text/plain";
-    private static final String APPLICATION_XML = "application/xml";
-    private static final String APPLICATION_FORM_ENCODED = "application/x-www-form-urlencoded";
 
-    private static final String PRODUTOS_TRADUCAO = "/api/v1/produtos/traducao?";
+    private static final String PRODUTOS_TRADUCAO = "/api/exams/getTranslate?";
 
     private static Map<String, CamelHttpRequest> camelHttpRequestMap;
 

@@ -1,10 +1,9 @@
 package br.com.dasa.mirror.api.repository.translator;
 
-import br.com.dasa.mirror.api.model.from.to.admission.Admission;
-import br.com.dasa.mirror.api.model.from.to.admission.Exams;
-import br.com.dasa.mirror.api.model.from.to.admission.Orders;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import br.com.dasa.mirror.api.model.from.to.admission.Exams;
 
 @Component
 public class QueryTranslate {
