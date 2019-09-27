@@ -52,8 +52,9 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 
 	@Override
 	public Optional<FromToAdmission> admissaoRepository(Admission admission) {
-		LOGGER.log(Level.INFO, "Mensagem recebida com sucesso: " + admission.toString());
+		LOGGER.log(Level.INFO, "INICIO do admissaoRepository: " + admission.toString());
 		Optional<FromToAdmission> result = fromToGlieseToV2(admission);
+		LOGGER.log(Level.INFO, "FIM do admissaoRepository: " + result);
 		return result;
 	}
 
@@ -64,7 +65,7 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 	}
 
 
-    private Optional<FromToAdmission> convertExamsToIdProduct(Admission admission) {
+    private Admission convertExamsToIdProduct(Admission admission) {
 		for (Orders orders : admission.getOrders()) {
 			for (Exams exams : orders.getExams()) {
 				ProductTraslate[] productTraslates = findProdutoTraducao(exams);
@@ -74,7 +75,7 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 				}
 			}
 		}
-		return null;
+		return admission;
 	}
     
     private void findPriceToGlieseData(Admission admission, Exams exams) {
@@ -82,17 +83,25 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
     	System.out.println(exams.getExameCode());
     }
 
+    /**
+     * Metodo para buscar o idProduto do gliese-data e data provider.
+     * @param exams
+     * @return ProductTraslate[]
+     */
 	private ProductTraslate[] findProdutoTraducao(Exams exams) {
-		DefaultExchange defaultExchange = new DefaultExchange(camelContext);
-		defaultExchange.setProperty("queryParam", queryBuilder.getQuery(exams));
-		Exchange resultExchange = producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_PRODUTO_TRADUCAO.getRoute(), defaultExchange);
-		ObjectMapper mapper = new ObjectMapper();
+		LOGGER.log(Level.INFO, "INICIO do findProdutoTraducao");
 		ProductTraslate[] productTraslates = {};
 		try {
+			DefaultExchange defaultExchange = new DefaultExchange(camelContext);
+			defaultExchange.setProperty("queryParam", queryBuilder.getQuery(exams));
+			Exchange resultExchange = producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_PRODUTO_TRADUCAO.getRoute(), defaultExchange);
+			ObjectMapper mapper = new ObjectMapper();
 			productTraslates = mapper.readValue(resultExchange.getIn().getBody().toString(), ProductTraslate[].class);
 		} catch (Exception e) {
 			e.printStackTrace();
+			LOGGER.log(Level.INFO, "[ERRO] metodo findProdutoTraducao: "+e.getStackTrace());
 		}
+		LOGGER.log(Level.INFO, "FIM do findProdutoTraducao");
 		return productTraslates;
 	}
 
