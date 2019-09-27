@@ -24,7 +24,7 @@ public class UnitService {
         Optional<Integer> idDataProvider = null;
         try {
             Gson gson = new Gson();
-            BufferedReader json = new BufferedReader(new FileReader("src/main/resources/dataprovider/unidade"));
+            BufferedReader json = new BufferedReader(new FileReader("src/main/resources/dataprovider/unidade.txt"));
 
             Type listaUnidadeDeserializa = new TypeToken<ArrayList<Unit>>() {
             }.getType();
