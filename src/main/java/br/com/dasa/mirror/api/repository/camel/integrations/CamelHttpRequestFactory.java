@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
+import static br.com.dasa.mirror.api.enumeration.CamelRoutesEnum.ROUTE_LOAD_PRODUTO_PRECO;
 import static br.com.dasa.mirror.api.enumeration.CamelRoutesEnum.ROUTE_LOAD_PRODUTO_TRADUCAO;
-import static org.springframework.hateoas.MediaTypes.HAL_JSON_VALUE;
 import static org.springframework.http.HttpMethod.*;
 
 @Component
@@ -17,6 +17,7 @@ public class CamelHttpRequestFactory {
     private static final String APPLICATION_FORM_ENCODED = "application/x-www-form-urlencoded";
 
     private static final String PRODUTOS_TRADUCAO = "/api/v1/produtos/traducao?";
+    private static final String PRODUTO_PRECO = "/api/exams/unitDisponibility";
 
     private static Map<String, CamelHttpRequest> camelHttpRequestMap;
 
@@ -24,6 +25,7 @@ public class CamelHttpRequestFactory {
         camelHttpRequestMap = new HashMap<>();
 
         putRequest(ROUTE_LOAD_PRODUTO_TRADUCAO.name(), PRODUTOS_TRADUCAO, GET.name(), APPLICATION_JSON, APPLICATION_JSON);
+        putRequest(ROUTE_LOAD_PRODUTO_PRECO.name(), PRODUTO_PRECO, GET.name(), APPLICATION_JSON, APPLICATION_JSON);
     }
 
     public CamelHttpRequest getRequest(String requestKey) {

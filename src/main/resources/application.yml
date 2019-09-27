@@ -1,0 +1,14 @@
+spring:
+  profiles: dev
+
+server:
+  port: 8090
+
+sqs:
+  url: https://sqs.us-east-1.amazonaws.com/002658803700/admissoes-dev
+  port: 8090
+
+access:
+  key: AKIAQBHT2D72K3K5BYR3
+secret:
+  key: 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
