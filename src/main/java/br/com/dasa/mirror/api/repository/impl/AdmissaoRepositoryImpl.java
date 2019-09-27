@@ -58,17 +58,18 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 	}
 
 	public Optional<FromToAdmission> fromToGlieseToV2(Admission admission) {
-		fromToExams( convertIdGlieseToIdDataProvider(admission));
+		convertIdGlieseToIdDataProvider(admission);
+		convertExamsToIdProduct(admission);
 		return  Optional.ofNullable(translator.translateAdmission(admission));
 	}
 
 
-    private Optional<FromToAdmission> fromToExams(Admission admission) {
+    private Optional<FromToAdmission> convertExamsToIdProduct(Admission admission) {
 		for (Orders orders : admission.getOrders()) {
 			for (Exams exams : orders.getExams()) {
 				ProductTraslate[] productTraslates = findProdutoTraducao(exams);
 				for (ProductTraslate productTraslate : productTraslates) {
-					long ipProduto = productTraslate.getIdProduto();
+					exams.setExameCode(String.valueOf(productTraslate.getIdProduto()));
 				}
 			}
 		}

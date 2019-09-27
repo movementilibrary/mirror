@@ -26,7 +26,7 @@ public class FromToAdmissionEndpoint {
 	AdmissaoService admissaoService;
 
 	@PostMapping(value = "/admission/consumer", produces = MediaType.APPLICATION_JSON_VALUE)
-	@ApiOperation(httpMethod = "POST", value = "Responsável por consumir Admissão")
+	@ApiOperation(httpMethod = "POST", value = "Responsável por consumir Admissão e de para com data provider")
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "Sucesso"),
 			@ApiResponse(code = 404, message = "O resource requisitado não foi encontrado"),

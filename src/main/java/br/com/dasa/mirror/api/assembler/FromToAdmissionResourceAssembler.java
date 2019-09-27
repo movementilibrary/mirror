@@ -24,9 +24,9 @@ public class FromToAdmissionResourceAssembler
 	public FromToAdmissionResource toResource(FromToAdmission fromToAdmission) {
 		final FromToAdmissionResource fromToAdmissionResource = new FromToAdmissionResource();
 		fromToAdmissionResource.setStatus(fromToAdmission.getStatus());
-
-		if (fromToAdmission.getJsonFromTo() != null) {
-			fromToAdmissionResource.add(new Link(format(CONSUMER_SELF, fromToAdmission.getJsonFromTo())));
+		fromToAdmissionResource.setJson(fromToAdmission.getJson());
+		if (fromToAdmission.getJson() != null) {
+			fromToAdmissionResource.add(new Link(format(CONSUMER_SELF, fromToAdmission.getJson())));
 			fromToAdmissionResource.add(new Link(format(OF_ADMISSION), "owner"));
 		}
 
