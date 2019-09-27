@@ -70,11 +70,17 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 				ProductTraslate[] productTraslates = findProdutoTraducao(exams);
 				for (ProductTraslate productTraslate : productTraslates) {
 					exams.setExameCode(String.valueOf(productTraslate.getIdProduto()));
+					findPriceToGlieseData(admission, exams);
 				}
 			}
 		}
 		return null;
 	}
+    
+    private void findPriceToGlieseData(Admission admission, Exams exams) {
+    	System.out.println(admission.getBrandId());
+    	System.out.println(exams.getExameCode());
+    }
 
 	private ProductTraslate[] findProdutoTraducao(Exams exams) {
 		DefaultExchange defaultExchange = new DefaultExchange(camelContext);
