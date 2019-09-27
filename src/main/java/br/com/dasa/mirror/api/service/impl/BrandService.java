@@ -45,7 +45,7 @@ public class BrandService {
             LOGGER.error("Não foi possivel encontrar arquivo ");
         }
 
-        return idDataProvider.orElseThrow(() -> new NullPointerException("Não foi possivel encontrar arquivo"));
+        return idDataProvider.orElseThrow(() -> new RuntimeException("Não foi possivel encontrar arquivo"));
     }
 
 }
