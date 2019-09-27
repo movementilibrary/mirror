@@ -40,7 +40,7 @@ public class UnitService {
         } catch (FileNotFoundException exception) {
             LOGGER.error("Não foi possivel encontrar arquivo ");
         }
-      return idDataProvider.orElseThrow(() -> new RuntimeException("Não foi possivel encontrar arquivo"));
+      return idDataProvider.orElseThrow(() -> new RuntimeException("Arquivo não encontrado"));
     }
 
 }
