@@ -58,9 +58,7 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 	}
 
 	public Optional<FromToAdmission> fromToGlieseToV2(Admission admission) {
-        convertIdGlieseToIdDataProvider(admission);
-
-		fromToExams(admission);
+		fromToExams( convertIdGlieseToIdDataProvider(admission));
 		return  Optional.ofNullable(translator.translateAdmission(admission));
 	}
 
