@@ -1,7 +1,9 @@
 package br.com.dasa.mirror.api.service.impl;
 
+import br.com.dasa.mirror.api.commons.NotFoundException;
 import br.com.dasa.mirror.api.model.Brand;
 import br.com.dasa.mirror.api.model.Unit;
+import com.amazonaws.services.logs.model.ResourceNotFoundException;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.slf4j.Logger;
@@ -9,10 +11,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BrandService {
@@ -21,7 +25,7 @@ public class BrandService {
 
 
     public Integer convertBrandGlieseToBrandDataProvider(String idGliese) {
-        Integer idDataProvider = null;
+        Optional<Integer> idDataProvider = null;
         try {
             Gson gson = new Gson();
             BufferedReader json = new BufferedReader(new FileReader("src/main/resources/dataprovider/marca"));
@@ -31,16 +35,17 @@ public class BrandService {
 
             List<Unit> listaUnit = gson.fromJson(json, listaMarcaDeserializa);
 
-            idDataProvider = listaUnit.stream()
+            idDataProvider = Optional.of(listaUnit.stream()
                     .filter(g -> idGliese.equals(g.getIdGliese()))
                     .map(Unit::getIdDataProvider)
                     .findAny()
-                    .orElse(null);
+                    .orElseThrow(() -> new ResourceNotFoundException("Não foi possivel encontrar marca desejada")));
 
-        } catch (Exception e) {
-            LOGGER.error("Não foi possivel encontar unidade desejada ");
+        } catch (FileNotFoundException exception) {
+            LOGGER.error("Não foi possivel encontrar arquivo ");
         }
-      return idDataProvider;
+
+        return idDataProvider.orElseThrow(() -> new NullPointerException("Não foi possivel encontrar arquivo"));
     }
 
 }
