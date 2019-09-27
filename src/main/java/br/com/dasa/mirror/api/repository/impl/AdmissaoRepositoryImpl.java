@@ -113,6 +113,7 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
      * @return
      */
     public Admission convertIdGlieseToIdDataProvider(Admission admission){
+
         admission.setBrandId(brandService.convertBrandGlieseToBrandDataProvider(admission.getBrandId()).toString());
         admission.setUnitId(unitService.convertUnityGlieseToUnityDataProvider(admission.getUnitId()).toString());
         return admission;

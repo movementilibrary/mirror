@@ -29,7 +29,7 @@ public class BrandService {
         Optional<Integer> idDataProvider = null;
         try {
             Gson gson = new Gson();
-            BufferedReader json = new BufferedReader(new FileReader("src/main/resources/dataprovider/marca"));
+            BufferedReader json = new BufferedReader(new FileReader("src/main/resources/dataprovider/marca.txt"));
 
             Type listaMarcaDeserializa = new TypeToken<ArrayList<Unit>>() {
             }.getType();
@@ -46,7 +46,7 @@ public class BrandService {
             LOGGER.error("Não foi possivel encontrar arquivo ");
         }
 
-        return idDataProvider.orElseThrow(() -> new RuntimeException("Não foi possivel encontrar arquivo"));
+        return idDataProvider.orElseThrow(() -> new RuntimeException("Arquivo não encontrado"));
     }
 
 }
