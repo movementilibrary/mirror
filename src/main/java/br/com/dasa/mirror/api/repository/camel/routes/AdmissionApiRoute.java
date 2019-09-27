@@ -30,7 +30,6 @@ public class AdmissionApiRoute extends SpringRouteBuilder {
                 .toD(urlGlieseDataTraducao + findRequest.getUri()+"${exchangeProperty.queryParam}")
                  .process(exchange -> {
                      String body = exchange.getIn().getBody(String.class);
-                     //Optional<Traducao> traducao = JsonHelper.fromJson(body, Traducao.class);
                      exchange.getIn().setBody(body);
                  })
             .endDoTry()

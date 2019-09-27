@@ -58,22 +58,29 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 	}
 
 	public Optional<FromToAdmission> fromToGlieseToV2(Admission admission) {
-		fromToExams( convertIdGlieseToIdDataProvider(admission));
+		convertIdGlieseToIdDataProvider(admission);
+		convertExamsToIdProduct(admission);
 		return  Optional.ofNullable(translator.translateAdmission(admission));
 	}
 
 
-    private Optional<FromToAdmission> fromToExams(Admission admission) {
+    private Optional<FromToAdmission> convertExamsToIdProduct(Admission admission) {
 		for (Orders orders : admission.getOrders()) {
 			for (Exams exams : orders.getExams()) {
 				ProductTraslate[] productTraslates = findProdutoTraducao(exams);
 				for (ProductTraslate productTraslate : productTraslates) {
-					long ipProduto = productTraslate.getIdProduto();
+					exams.setExameCode(String.valueOf(productTraslate.getIdProduto()));
+					findPriceToGlieseData(admission, exams);
 				}
 			}
 		}
 		return null;
 	}
+    
+    private void findPriceToGlieseData(Admission admission, Exams exams) {
+    	System.out.println(admission.getBrandId());
+    	System.out.println(exams.getExameCode());
+    }
 
 	private ProductTraslate[] findProdutoTraducao(Exams exams) {
 		DefaultExchange defaultExchange = new DefaultExchange(camelContext);

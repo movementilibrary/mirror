@@ -7,29 +7,41 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import br.com.dasa.mirror.api.model.from.to.admission.FromToAdmission;
 
-@JsonPropertyOrder({
-        "status",
-        "request"
-})
+/**
+ * 
+ * @author Thiago.Tavares
+ *
+ */
+@JsonPropertyOrder({ "status", "json", "request" })
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FromToAdmissionResource extends ResourceSupport {
 
-    private FromToAdmission.Status status;
-    private RequestResource request;
+	private String json;
+	private FromToAdmission.Status status;
+	private RequestResource request;
 
-    public FromToAdmission.Status getStatus() {
-        return status;
-    }
+	public FromToAdmission.Status getStatus() {
+		return status;
+	}
 
-    public void setStatus(FromToAdmission.Status status) {
-        this.status = status;
-    }
+	public void setStatus(FromToAdmission.Status status) {
+		this.status = status;
+	}
 
-    public RequestResource getRequest() {
-        return request;
-    }
+	public RequestResource getRequest() {
+		return request;
+	}
 
-    public void setRequest(RequestResource request) {
-        this.request = request;
-    }
+	public void setRequest(RequestResource request) {
+		this.request = request;
+	}
+
+	public String getJson() {
+		return json;
+	}
+
+	public void setJson(String json) {
+		this.json = json;
+	}
+
 }
