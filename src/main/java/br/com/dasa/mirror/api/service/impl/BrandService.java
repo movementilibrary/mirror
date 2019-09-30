@@ -31,7 +31,7 @@ public class BrandService {
         String path = new File("").getAbsolutePath();
         try {
             Gson gson = new Gson();
-            BufferedReader json = new BufferedReader(new FileReader("src/main/resources/dataprovider/marca.txt"));
+            BufferedReader json = new BufferedReader(new FileReader("src/main/resources/marca.txt"));
 
             Type listaMarcaDeserializa = new TypeToken<ArrayList<Unit>>() {
             }.getType();
