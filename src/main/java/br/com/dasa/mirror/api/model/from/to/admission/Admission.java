@@ -88,18 +88,10 @@ public class Admission {
 		this.scheduling = scheduling;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Admission{" +
-				"brandId='" + brandId + '\'' +
-				", originId='" + originId + '\'' +
-				", patient=" + patient +
-				", payments=" + Arrays.toString(payments) +
-				", questions=" + Arrays.toString(questions) +
-				", unitId='" + unitId + '\'' +
-				", orders=" + Arrays.toString(orders) +
-				", scheduling=" + scheduling +
-				'}';
+		return "Admission{" + "brandId='" + brandId + '\'' + ", originId='" + originId + '\'' + ", patient=" + patient
+				+ ", payments=" + Arrays.toString(payments) + ", questions=" + Arrays.toString(questions) + ", unitId='"
+				+ unitId + '\'' + ", orders=" + Arrays.toString(orders) + ", scheduling=" + scheduling + '}';
 	}
 }

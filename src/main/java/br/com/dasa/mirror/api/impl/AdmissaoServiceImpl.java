@@ -1,9 +1,9 @@
-package br.com.dasa.mirror.api.service.impl;
+package br.com.dasa.mirror.api.impl;
 
+import br.com.dasa.mirror.api.AdmissaoService;
 import br.com.dasa.mirror.api.model.from.to.admission.Admission;
 import br.com.dasa.mirror.api.model.from.to.admission.FromToAdmission;
 import br.com.dasa.mirror.api.repository.AdmissaoRepository;
-import br.com.dasa.mirror.api.service.AdmissaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

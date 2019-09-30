@@ -1,4 +1,4 @@
-package br.com.dasa.mirror.api.service;
+package br.com.dasa.mirror.api;
 
 import java.util.Optional;
 

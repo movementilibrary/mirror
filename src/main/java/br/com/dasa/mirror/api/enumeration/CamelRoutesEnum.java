@@ -3,9 +3,9 @@ package br.com.dasa.mirror.api.enumeration;
 
 public enum CamelRoutesEnum {
 
-    ROUTE_LOAD_PRODUTO_TRADUCAO("direct:data-provider-prod-traducao"),
-    ROUTE_LOAD_PRODUTO_PRECO("direct:gliese-data-prod-preco");
-
+    ROUTE_LOAD_PRODUTO_TRADUCAO("direct:gliese-data-prod-traducao"),
+	ROUTE_LOAD_PRODUTO_PRECO("direct:gliese-data-prod-preco");
+	
     private String routeName;
 
     CamelRoutesEnum(String routeName) {

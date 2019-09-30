@@ -1,12 +1,9 @@
 package br.com.dasa.mirror.api.repository.translator;
 
-import br.com.dasa.mirror.api.model.from.to.admission.Admission;
-import br.com.dasa.mirror.api.model.from.to.admission.Exams;
-import br.com.dasa.mirror.api.model.from.to.admission.Orders;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
+import br.com.dasa.mirror.api.model.from.to.admission.Exams;
 
 @Component
 public class QueryTranslate {
@@ -18,7 +15,6 @@ public class QueryTranslate {
     private String sistema;
 
     private String TEMPLATE = "idSistema=#sistema&idMarca=#marca&idsOrigem=#exams";
-
     private final String PRODUCT_PRICE_TEMPLATE = "idBrand=#brand&idExams=#exams";
 
     private final String QUERY;
@@ -26,8 +22,9 @@ public class QueryTranslate {
 
     public QueryTranslate() {
         String jsonString = String.format(TEMPLATE);
+        String jsonPreco = String.format(PRODUCT_PRICE_TEMPLATE);
         QUERY = jsonString;
-        QUERY_PRODUTO = jsonString;
+        QUERY_PRODUTO = jsonPreco;
     }
 
 
@@ -35,8 +32,7 @@ public class QueryTranslate {
         return QUERY.replaceAll("#exams", exams.getExameCode()).replaceAll("#marca", marca).replaceAll("#sistema", sistema);
     }
 
-    public String getQueryProduto(int idBrand, int idExame) {
-
-        return QUERY_PRODUTO.replace("#idBrand", String.valueOf(idBrand)).replace("#exams", String.valueOf(idExame));
+    public String getQueryProduto(String idBrand, String idExame) {
+        return QUERY_PRODUTO.replaceAll("#brand", idBrand).replaceAll("#exams", idExame);
     }
 }

@@ -11,11 +11,11 @@ public class FromToAdmission {
 		SEND_SUCCESS, SEND_ERROR
 	}
 
-	private String jsonFromTo;
+	private String json;
 	private Status status;
 
-	public FromToAdmission(Status status, String jsonFromTo) {
-		this.jsonFromTo = jsonFromTo;
+	public FromToAdmission(Status status, String json) {
+		this.json = json;
 		this.status = status;
 	}
 
@@ -23,12 +23,12 @@ public class FromToAdmission {
 
 	}
 
-	public String getJsonFromTo() {
-		return jsonFromTo;
+	public String getJson() {
+		return json;
 	}
 
-	public void setJsonFromTo(String jsonFromTo) {
-		this.jsonFromTo = jsonFromTo;
+	public void setJson(String json) {
+		this.json = json;
 	}
 
 	public Status getStatus() {

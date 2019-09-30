@@ -17,21 +17,19 @@ public class AdmissionApiRoute extends SpringRouteBuilder {
     @Autowired
     private CamelHttpRequestFactory camelHttpRequestFactory;
 
-    @Value("${url.api.dasa.dataprovider}")
-    private String urlDataProvider;
+    @Value("${url.api.dasa.gliese.data}")
+    private String urlGlieseDataTraducao;
 
     @Override
     public void configure() {
         CamelHttpRequestFactory.CamelHttpRequest findRequest = camelHttpRequestFactory.getRequest(ROUTE_LOAD_PRODUTO_TRADUCAO.name());
 
         from(ROUTE_LOAD_PRODUTO_TRADUCAO.getRoute()).routeId(ROUTE_LOAD_PRODUTO_TRADUCAO.getRoute())
-            .setHeader("Authorization", simple("Basic ZHAtYXBpLWNvbnN1bWVyOkFJa2NvdkxWMU1aY1huaFJ4aUoyaVhiYTUyMXU1NWdk"))
-            .setHeader("Postman-Token", simple("fc7d4d55-0c4b-4026-968f-acff9d407054"))
+        	.setHeader("Authorization", simple("Basic ZGFzYWRldjpkYXNhZGV2"))
             .doTry()
-                .toD(urlDataProvider + findRequest.getUri()+"${exchangeProperty.queryParam}")
+                .toD(urlGlieseDataTraducao + findRequest.getUri()+"${exchangeProperty.queryParam}")
                  .process(exchange -> {
                      String body = exchange.getIn().getBody(String.class);
-                     //Optional<Traducao> traducao = JsonHelper.fromJson(body, Traducao.class);
                      exchange.getIn().setBody(body);
                  })
             .endDoTry()
