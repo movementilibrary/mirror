@@ -8,6 +8,7 @@ import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.amazonaws.services.logs.model.ResourceNotFoundException;
@@ -20,6 +21,8 @@ import br.com.dasa.mirror.api.model.Unit;
 @Service
 public class BrandService {
 
+    @Value("${url-arquivo.marca}")
+    private String urlArquivoDePara;
     private static final Logger LOGGER = LoggerFactory.getLogger(Brand.class);
 
 
@@ -28,7 +31,7 @@ public class BrandService {
 
         try {
             Gson gson = new Gson();
-            BufferedReader json = new BufferedReader(new InputStreamReader(new FileInputStream("classes/static/marca")));
+            BufferedReader json = new BufferedReader(new InputStreamReader(new FileInputStream(urlArquivoDePara)));
 
             Type listaMarcaDeserializa = new TypeToken<ArrayList<Unit>>() {
             }.getType();
@@ -41,8 +44,8 @@ public class BrandService {
                     .findAny()
                     .orElseThrow(() -> new ResourceNotFoundException("Não foi possivel encontrar marca desejada")));
 
-        } catch (FileNotFoundException exception) {
-            LOGGER.error("Não foi possivel encontrar arquivo ");
+        } catch (FileNotFoundException e) {
+            LOGGER.error("Não foi possivel encontrar arquivo "+ e.getMessage());
         }
 
         return idDataProvider.orElseThrow(() -> new RuntimeException("Arquivo não encontrado"));

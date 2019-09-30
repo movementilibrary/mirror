@@ -12,3 +12,8 @@ access:
   key: AKIAQBHT2D72K3K5BYR3
 secret:
   key: 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
+
+url-arquivo:
+  marca: src/main/resources/static/marca
+  unidade: src/main/resources/static/unidade
+#  classes/static/marca

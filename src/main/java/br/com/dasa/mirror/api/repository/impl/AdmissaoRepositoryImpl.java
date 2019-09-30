@@ -129,7 +129,7 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			LOGGER.log(Level.INFO, "[ERRO] metodo findProdutoPreco: " + e.getStackTrace());
+			LOGGER.log(Level.INFO, "[ERRO] metodo findProdutoPreco: " + e.getMessage());
 		}
 		LOGGER.log(Level.INFO, "FIM do findProdutoPreco - Preco: "+preco);
 		return preco;
