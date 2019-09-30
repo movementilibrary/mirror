@@ -12,6 +12,7 @@
     <groupId>br.com.dasa</groupId>
     <artifactId>mirror-api</artifactId>
     <name>mirror-api</name>
+	<version>VERSION-REVISION</version>
     <description>Projeto Mirror</description>
     <packaging>jar</packaging>
 

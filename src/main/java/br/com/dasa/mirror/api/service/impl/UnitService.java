@@ -22,9 +22,7 @@ public class UnitService {
 
     public Integer convertUnityGlieseToUnityDataProvider(String idGliese) {
         Optional<Integer> idDataProvider = null;
-        String path = new File("").getAbsolutePath();
-        LOGGER.info("meu diretorio atual" + path);
-        try {
+         try {
             Gson gson = new Gson();
             BufferedReader json = new BufferedReader(new InputStreamReader(new FileInputStream("classes/static/unidade")));
 
