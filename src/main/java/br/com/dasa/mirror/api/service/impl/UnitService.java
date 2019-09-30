@@ -26,7 +26,7 @@ public class UnitService {
         LOGGER.info("meu diretorio atual" + path);
         try {
             Gson gson = new Gson();
-            BufferedReader json = new BufferedReader(new FileReader("src/main/resources/unidade.txt"));
+            BufferedReader json = new BufferedReader(new InputStreamReader(new FileInputStream("classes/static/unidade")));
 
             Type listaUnidadeDeserializa = new TypeToken<ArrayList<Unit>>() {
             }.getType();

@@ -1,9 +1,6 @@
 package br.com.dasa.mirror.api.service.impl;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,10 +25,10 @@ public class BrandService {
 
     public Integer convertBrandGlieseToBrandDataProvider(String idGliese) {
         Optional<Integer> idDataProvider = null;
-        String path = new File("").getAbsolutePath();
+
         try {
             Gson gson = new Gson();
-            BufferedReader json = new BufferedReader(new FileReader("src/main/resources/marca.txt"));
+            BufferedReader json = new BufferedReader(new InputStreamReader(new FileInputStream("classes/static/marca")));
 
             Type listaMarcaDeserializa = new TypeToken<ArrayList<Unit>>() {
             }.getType();
