@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import br.com.dasa.mirror.api.exceptions.ApiExceptions;
+import br.com.dasa.mirror.api.exceptions.Enuns.ApiEnunsExceptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,6 +25,8 @@ public class BrandService {
 
     @Value("${url-arquivo.marca}")
     private String urlArquivoDePara;
+    private ApiExceptions apiExceptions;
+    private ApiEnunsExceptions apiEnunsExceptions;
     private static final Logger LOGGER = LoggerFactory.getLogger(Brand.class);
 
 
@@ -42,7 +46,7 @@ public class BrandService {
                     .filter(g -> idGliese.equals(g.getIdGliese()))
                     .map(Unit::getIdDataProvider)
                     .findAny()
-                    .orElseThrow(() -> new ResourceNotFoundException("Não foi possivel encontrar marca desejada")));
+                    .orElseThrow(() -> new ApiExceptions("Não foi possivel encontrar marca desejada")));
 
         } catch (FileNotFoundException e) {
             LOGGER.error("Não foi possivel encontrar arquivo "+ e.getMessage());

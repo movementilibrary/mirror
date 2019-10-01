@@ -1,9 +1,11 @@
 package br.com.dasa.mirror.api.repository.impl;
 
+import java.io.IOException;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import br.com.dasa.mirror.api.exceptions.ApiExceptions;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
@@ -20,7 +22,7 @@ import br.com.dasa.mirror.api.model.from.to.admission.Exame;
 import br.com.dasa.mirror.api.model.from.to.admission.Exams;
 import br.com.dasa.mirror.api.model.from.to.admission.FromToAdmission;
 import br.com.dasa.mirror.api.model.from.to.admission.Orders;
-import br.com.dasa.mirror.api.model.from.to.admission.ProductPrice;
+import br.com.dasa.mirror.api.model.from.to.admission.ExameJson;
 import br.com.dasa.mirror.api.repository.AdmissaoRepository;
 import br.com.dasa.mirror.api.repository.translator.FromToAdmissionTranslator;
 import br.com.dasa.mirror.api.repository.translator.QueryTranslate;
@@ -104,30 +106,34 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 		return productTraslates;
 	}
 	
-	/**
-	 * Metodo para buscar o preco do gliese-data e data provider.
-	 * 
-	 * @param exams
-	 * @return ProductTraslate[]
-	 */
+
 	private String findProdutoPreco(String idBrand, String idExam) {
 		LOGGER.log(Level.INFO, "INICIO do findProdutoPreco idBrand:"+idBrand+" idExam:"+idExam);
-		ProductPrice[] productPrices = {};
+
+		ExameJson[] exameJsons = {};
+
 		String preco = "";
+        String descricaoExame;
+
 		try {
 			DefaultExchange defaultExchange = new DefaultExchange(camelContext);
 			defaultExchange.setProperty("queryParam", queryBuilder.getQueryProduto(idBrand, idExam));
 			Exchange resultExchange = producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_PRODUTO_PRECO.getRoute(),
 					defaultExchange);
+
 			ObjectMapper mapper = new ObjectMapper();
-			productPrices = mapper.readValue(resultExchange.getIn().getBody().toString(), ProductPrice[].class);
-			for (ProductPrice productPrice : productPrices) {
-				for (Exame exame : productPrice.getExames()) {
+			exameJsons = mapper.readValue(resultExchange.getIn().getBody().toString(), ExameJson[].class);
+
+
+
+			for (ExameJson exameJson : exameJsons) {
+				for (Exame exame : exameJson.getExames()) {
 					 preco = String.valueOf(exame.getPreco());
+					 descricaoExame = exame.getNome();
 				}
 			}
 			
-		} catch (Exception e) {
+		} catch (ApiExceptions | IOException e) {
 			e.printStackTrace();
 			LOGGER.log(Level.INFO, "[ERRO] metodo findProdutoPreco: " + e.getMessage());
 		}
