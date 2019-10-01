@@ -68,16 +68,11 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 				ProductTraslate[] productTraslates = findProdutoTraducao(exams);
 				for (ProductTraslate productTraslate : productTraslates) {
 					exams.setExameCode(String.valueOf(productTraslate.getIdProduto()));
-					exams.setPrice(findPriceToGlieseData(admission, exams));
+					exams.setPrice(findProdutoPreco(admission.getBrandId(), exams.getExameCode()));
 				}
 			}
 		}
 		return admission;
-	}
-
-	private String findPriceToGlieseData(Admission admission, Exams exams) {
-		String preco = findProdutoPreco(admission.getBrandId(), exams.getExameCode());
-		return preco;
 	}
 
 	/**

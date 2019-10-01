@@ -28,7 +28,8 @@ public class BrandService {
 
         try {
             Gson gson = new Gson();
-            BufferedReader json = new BufferedReader(new InputStreamReader(new FileInputStream("classes/static/marca")));
+            BufferedReader json = new BufferedReader(new FileReader("src/main/resources/static/marca.txt"));
+            
 
             Type listaMarcaDeserializa = new TypeToken<ArrayList<Unit>>() {
             }.getType();
@@ -41,8 +42,28 @@ public class BrandService {
                     .findAny()
                     .orElseThrow(() -> new ResourceNotFoundException("Não foi possivel encontrar marca desejada")));
 
-        } catch (FileNotFoundException exception) {
-            LOGGER.error("Não foi possivel encontrar arquivo ");
+        } catch (FileNotFoundException e) {
+            LOGGER.error("Não foi possivel encontrar arquivo "+e);
+            
+            try {
+				BufferedReader json = new BufferedReader(new FileReader("../../../../marca.txt"));
+				 LOGGER.error("############# FOI "+json);
+			} catch (FileNotFoundException e1) {
+				 LOGGER.error("Não foi possivel encontrar arquivo X2 "+e1);
+				 try {
+						BufferedReader json = new BufferedReader(new FileReader("../../../../../marca.txt"));
+						 LOGGER.error("############# FOI 2 "+json);
+					} catch (FileNotFoundException e2) {
+						 LOGGER.error("Não foi possivel encontrar arquivo X3 "+e2);
+						 try {
+								BufferedReader json = new BufferedReader(new FileReader("..\\..\\..\\..\\..\\marca.txt"));
+								 LOGGER.error("############# FOI 2 "+json);
+							} catch (FileNotFoundException e3) {
+								 LOGGER.error("Não foi possivel encontrar arquivo X4 "+e3);
+								e1.printStackTrace();
+							}
+					}
+			}
         }
 
         return idDataProvider.orElseThrow(() -> new RuntimeException("Arquivo não encontrado"));
