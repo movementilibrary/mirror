@@ -50,6 +50,8 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 	private static final Logger LOGGER = Logger.getLogger(AdmissaoRepositoryImpl.class.getName());
 	@Autowired
 	private BrandService brandService;
+	@Autowired
+    private FindPriceExams findPriceExams;
 
 	@Override
 	public Optional<FromToAdmission> admissaoRepository(Admission admission) {
@@ -70,17 +72,14 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 				ProductTraslate[] productTraslates = findProdutoTraducao(exams);
 				for (ProductTraslate productTraslate : productTraslates) {
 					exams.setExameCode(String.valueOf(productTraslate.getIdProduto()));
-					exams.setPrice(findPriceToGlieseData(admission, exams));
+					exams.setPrice(findPriceExams.findPriceToGlieseData(admission, exams));
 				}
 			}
 		}
 		return admission;
 	}
 
-	private String findPriceToGlieseData(Admission admission, Exams exams) {
-		String preco = findProdutoPreco(admission.getBrandId(), exams.getExameCode());
-		return preco;
-	}
+
 
 	/**
 	 * Metodo para buscar o idProduto do gliese-data e data provider.
@@ -107,39 +106,7 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 	}
 	
 
-	private String findProdutoPreco(String idBrand, String idExam) {
-		LOGGER.log(Level.INFO, "INICIO do findProdutoPreco idBrand:"+idBrand+" idExam:"+idExam);
 
-		ExameJson[] exameJsons = {};
-
-		String preco = "";
-        String descricaoExame;
-
-		try {
-			DefaultExchange defaultExchange = new DefaultExchange(camelContext);
-			defaultExchange.setProperty("queryParam", queryBuilder.getQueryProduto(idBrand, idExam));
-			Exchange resultExchange = producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_PRODUTO_PRECO.getRoute(),
-					defaultExchange);
-
-			ObjectMapper mapper = new ObjectMapper();
-			exameJsons = mapper.readValue(resultExchange.getIn().getBody().toString(), ExameJson[].class);
-
-
-
-			for (ExameJson exameJson : exameJsons) {
-				for (Exame exame : exameJson.getExames()) {
-					 preco = String.valueOf(exame.getPreco());
-					 descricaoExame = exame.getNome();
-				}
-			}
-			
-		} catch (ApiExceptions | IOException e) {
-			e.printStackTrace();
-			LOGGER.log(Level.INFO, "[ERRO] metodo findProdutoPreco: " + e.getMessage());
-		}
-		LOGGER.log(Level.INFO, "FIM do findProdutoPreco - Preco: "+preco);
-		return preco;
-	}
 
 	/**
 	 * Metodo resposável por receber Id Unit do Gliese e converter para Id Unit Data
