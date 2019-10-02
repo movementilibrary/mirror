@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "exames", "idUnidade", "idUnidadeOrigem", "nomeUnidade" })
-public class ProductPrice {
+public class ExameJson {
 
 	@JsonProperty("exames")
 	private List<Exame> exames = null;
