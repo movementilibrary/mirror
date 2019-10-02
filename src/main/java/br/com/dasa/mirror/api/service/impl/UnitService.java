@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -17,6 +18,9 @@ import java.util.Optional;
 @Service
 public class UnitService {
 
+    @Value("${url-arquivo.unidade}")
+    private String urlArquivoDePara;
+
     private static final Logger LOGGER = LoggerFactory.getLogger(Unit.class);
 
 
@@ -24,7 +28,7 @@ public class UnitService {
         Optional<Integer> idDataProvider = null;
          try {
             Gson gson = new Gson();
-            BufferedReader json = new BufferedReader(new InputStreamReader(new FileInputStream("classes/static/unidade")));
+            BufferedReader json = new BufferedReader(new InputStreamReader(new FileInputStream(urlArquivoDePara)));
 
             Type listaUnidadeDeserializa = new TypeToken<ArrayList<Unit>>() {
             }.getType();
