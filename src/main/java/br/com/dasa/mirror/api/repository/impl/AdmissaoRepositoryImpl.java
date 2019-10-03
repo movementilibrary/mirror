@@ -75,8 +75,6 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 		return admission;
 	}
 
-
-
 	/**
 	 * Metodo para buscar o idProduto do gliese-data e data provider.
 	 * 
@@ -100,9 +98,6 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 		LOGGER.log(Level.INFO, "FIM do findProdutoTraducao");
 		return productTraslates;
 	}
-	
-
-
 
 	/**
 	 * Metodo resposável por receber Id Unit do Gliese e converter para Id Unit Data
