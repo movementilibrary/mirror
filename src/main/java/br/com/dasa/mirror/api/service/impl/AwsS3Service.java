@@ -47,6 +47,13 @@ public class AwsS3Service {
 		return retorno;
 	}
 
+	/**
+	 * Metodo para recuperar dados de marca e unidade do S3
+	 * @param s3
+	 * @param file
+	 * @return StringBuilder
+	 * @throws IOException
+	 */
 	private StringBuilder getObjectS3(AmazonS3 s3, String file) throws IOException {
 		S3Object object = s3.getObject(new GetObjectRequest(bucketName, file));
 		StringBuilder retorno = displayTextInputStream(object.getObjectContent());
@@ -54,10 +61,8 @@ public class AwsS3Service {
 	}
 
 	/**
-	 * Displays the contents of the specified input stream as text.
-	 *
+	 * Metodo para converter InputSteam em StringBuilder
 	 * @param input The input stream to display as text.
-	 *
 	 * @throws IOException
 	 */
 	public StringBuilder displayTextInputStream(InputStream input) throws IOException {
