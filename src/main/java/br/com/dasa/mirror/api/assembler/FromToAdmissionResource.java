@@ -18,7 +18,6 @@ public class FromToAdmissionResource extends ResourceSupport {
 
 	private String json;
 	private FromToAdmission.Status status;
-	private RequestResource request;
 
 	public FromToAdmission.Status getStatus() {
 		return status;
@@ -26,14 +25,6 @@ public class FromToAdmissionResource extends ResourceSupport {
 
 	public void setStatus(FromToAdmission.Status status) {
 		this.status = status;
-	}
-
-	public RequestResource getRequest() {
-		return request;
-	}
-
-	public void setRequest(RequestResource request) {
-		this.request = request;
 	}
 
 	public String getJson() {

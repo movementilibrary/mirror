@@ -14,7 +14,7 @@ import br.com.dasa.mirror.api.assembler.FromToAdmissionResource;
 import br.com.dasa.mirror.api.assembler.FromToAdmissionResourceAssembler;
 import br.com.dasa.mirror.api.commons.NotFoundException;
 import br.com.dasa.mirror.api.model.from.to.admission.Admission;
-import br.com.dasa.mirror.api.AdmissaoService;
+import br.com.dasa.mirror.api.service.AdmissaoService;
 
 @RestController
 public class FromToAdmissionEndpoint {
