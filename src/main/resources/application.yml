@@ -1,6 +1,3 @@
-spring:
-  profiles: dev
-
 server:
   port: 8090
 
@@ -8,6 +5,8 @@ sqs:
   url: https://sqs.us-east-1.amazonaws.com/002658803700/admissoes-dev
   port: 8090
 
+bucket:
+  name: auditoria-dasa
 access:
   key: AKIAQBHT2D72K3K5BYR3
 secret:
@@ -17,3 +16,11 @@ url-arquivo:
   marca: src/main/resources/static/marca
   unidade: src/main/resources/static/unidade
 #  classes/static/marca
+
+url:
+  api:
+    dasa:
+      gliese:
+        data: http://gliese-data.azr-dev.dasaexp.io
+      marca: 1
+      sistema: 14
