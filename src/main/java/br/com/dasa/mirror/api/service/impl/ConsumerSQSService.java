@@ -1,116 +1,71 @@
 package br.com.dasa.mirror.api.service.impl;
 
+import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageConsumer;
-import javax.jms.Queue;
+import javax.jms.MessageListener;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.aws.messaging.config.QueueMessageHandlerFactory;
-import org.springframework.cloud.aws.messaging.listener.QueueMessageHandler;
-import org.springframework.cloud.aws.messaging.listener.SimpleMessageListenerContainer;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import org.springframework.stereotype.Service;
 
 import com.amazon.sqs.javamessaging.SQSConnection;
 import com.amazon.sqs.javamessaging.SQSConnectionFactory;
-import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.client.builder.AwsClientBuilder;
-import com.amazonaws.regions.RegionUtils;
+import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
-import com.amazonaws.services.sqs.AmazonSQSAsync;
-import com.amazonaws.services.sqs.AmazonSQSAsyncClientBuilder;
+import com.google.gson.Gson;
 
-@Configuration
+import br.com.dasa.mirror.api.model.from.to.admission.Admission;
+import br.com.dasa.mirror.api.service.AdmissaoService;
+
+@Service
 public class ConsumerSQSService {
 
+	@Autowired
+	AdmissaoService admissaoService;
+	
 	@Value("${access.key}")
 	private String accessKey;
 
 	@Value("${secret.key}")
 	private String secretKey;
 
-	@Value("${bucket.name}")
-	private String bucketName;
+	@Value("${queue.name}")
+	private String queueName;
 
-	@Value("${app.aws.sqs.mock.endpoint}")
-    private String awsSqsMockEndpoint;
-
-    @Bean
-    @Primary
-    public AmazonSQSAsync awsSqsClientMock(){
-        return AmazonSQSAsyncClientBuilder.standard()
-                .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(accessKey, secretKey)))
-                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(awsSqsMockEndpoint, "elasticmq"))
-                .build();
-    }
-
-    @Bean
-    public SimpleMessageListenerContainer simpleMessageListenerContainer(AmazonSQSAsync amazonSQSAsync, QueueMessageHandler queueMessageHandler) {
-        SimpleMessageListenerContainer simpleMessageListenerContainer = new SimpleMessageListenerContainer();
-        simpleMessageListenerContainer.setAmazonSqs(amazonSQSAsync);
-        simpleMessageListenerContainer.setMessageHandler(queueMessageHandler);
-        simpleMessageListenerContainer.setMaxNumberOfMessages(10);
-        simpleMessageListenerContainer.setTaskExecutor(threadPoolTaskExecutor());
-        return simpleMessageListenerContainer;
-    }
-
-    @Bean
-    public QueueMessageHandler queueMessageHandler(AmazonSQSAsync amazonSQSAsync) {
-        QueueMessageHandlerFactory queueMessageHandlerFactory = new QueueMessageHandlerFactory();
-        queueMessageHandlerFactory.setAmazonSqs(amazonSQSAsync);
-        QueueMessageHandler queueMessageHandler = queueMessageHandlerFactory.createQueueMessageHandler();
-        return queueMessageHandler;
-    }
-
-
-    public ThreadPoolTaskExecutor threadPoolTaskExecutor() {
-        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(10);
-        executor.setMaxPoolSize(10);
-        executor.initialize();
-        return executor;
-    }
-    
-	public void onMessage() {
+	public void consumerSQS() {
+		SQSConnection connection = null;
 		BasicAWSCredentials creds = new BasicAWSCredentials(accessKey, secretKey);
-		AWSStaticCredentialsProvider provider = new AWSStaticCredentialsProvider(creds);
-
-		SQSConnectionFactory connectionFactory = SQSConnectionFactory.builder().withAWSCredentialsProvider(provider)
-				.withRegion(RegionUtils.getRegion(Regions.US_EAST_1.getName())).build();
-		SQSConnection connection;
 		try {
-			connection = connectionFactory.createConnection();
+			connection = new SQSConnectionFactory.Builder(Region.getRegion(Regions.US_EAST_1)).build()
+					.createConnection(creds);
 
-			Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
+			Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
+			MessageConsumer consumer = session.createConsumer(session.createQueue(queueName));
 
-			Queue queue = session.createQueue("admissoes-dev");
-			// Create a consumer for the 'MyQueue'.
-			MessageConsumer consumer = session.createConsumer(queue);
-
-			// Instantiate and set the message listener for the consumer.
-			//consumer.setMessageListener(new ConsumerSQSService());
-
-			// Start receiving incoming messages.
+			consumer.setMessageListener(new MessageListenerSQS());
 			connection.start();
-
-			// Wait for 1 second. The listener onMessage() method is invoked when a message
-			// is received.
-			Thread.sleep(1000);
-			
-			Message receivedMessage = consumer.receive(1000);
-			// Cast the received message as TextMessage and display the text
-			if (receivedMessage != null) {
-				System.out.println("Received: " + ((TextMessage) receivedMessage).getText());
-			}
-			connection.close();
-		} catch (Exception e) {
+		} catch (JMSException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+	}
+	
+	class MessageListenerSQS implements MessageListener {
+		@Override
+		public void onMessage(Message message) {
+			try {
+				System.out.println("Received ::" + ((TextMessage) message).getText());
+				String json = ((TextMessage) message).getText();
+				Gson gson = new Gson();
+				Admission admission = gson.fromJson(json, Admission.class);
+				admissaoService.admissaoValues(admission);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }

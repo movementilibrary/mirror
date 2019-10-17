@@ -128,22 +128,14 @@
 			<artifactId>camel-metrics</artifactId>
 			<version>2.24.2</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-aws</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-aws-messaging</artifactId>
-		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-aws</artifactId>
-				<version>2.0.0.RELEASE</version>
+				<groupId>com.amazonaws</groupId>
+				<artifactId>aws-java-sdk-bom</artifactId>
+				<version>1.11.549</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

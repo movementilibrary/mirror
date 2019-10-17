@@ -7,7 +7,9 @@ server:
 sqs:
   url: https://sqs.us-east-1.amazonaws.com/002658803700/admissoes-dev
   port: 8090
-
+  
+queue:
+  name: admissoes-dev
 access:
   key: AKIAQBHT2D72K3K5BYR3
 secret:
