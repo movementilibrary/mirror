@@ -82,6 +82,14 @@ pipeline {
         //}
         // }
 
+        stage('Deploy Hml') {
+            steps {
+                sh 'bash -x devops-tools/pipeline-shared-librares/deploy.sh -a mirror-api-hml -r RSG_GLIESE_PRE_ANALYTICS_HML -e hml -i deploy -d cloud'
+                sh 'bash -x devops-tools/pipeline-shared-librares/check_upstart_app.sh -u $URL_APP/actuator/health -s 200 -t 200 -c 5 -e hml'
+                sh 'bash -x devops-tools/pipeline-shared-librares/sync_subdomains.sh -e hml'
+            }
+        }
+
         stage('Deploy Dev') {
             steps {
                 sh 'bash -x devops-tools/pipeline-shared-librares/deploy.sh -a mirror-api-dev -r RSG_GLIESE_PRE_ANALYTICS_DEV -e dev -i deploy -d cloud'
@@ -89,6 +97,7 @@ pipeline {
                 sh 'bash -x devops-tools/pipeline-shared-librares/sync_subdomains.sh -e dev'
             }
         }
+
 
 
         //stage('Accept Test Dev') {
