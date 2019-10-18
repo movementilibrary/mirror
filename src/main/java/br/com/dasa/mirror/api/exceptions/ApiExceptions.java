@@ -2,7 +2,8 @@ package br.com.dasa.mirror.api.exceptions;
 
 public class ApiExceptions extends RuntimeException {
 
-    private String descricaoErro;
+	private static final long serialVersionUID = -4720855666987004409L;
+	private String descricaoErro;
 
     public ApiExceptions(String descricaoErro) {
         this.descricaoErro = descricaoErro;

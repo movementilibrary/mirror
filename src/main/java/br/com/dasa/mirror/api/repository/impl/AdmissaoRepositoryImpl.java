@@ -90,7 +90,11 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 			Exchange resultExchange = producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_PRODUTO_TRADUCAO.getRoute(),
 					defaultExchange);
 			ObjectMapper mapper = new ObjectMapper();
-			productTraslates = mapper.readValue(resultExchange.getIn().getBody().toString(), ProductTraslate[].class);
+			if(resultExchange.getIn().getBody() != null) {
+				productTraslates = mapper.readValue(resultExchange.getIn().getBody().toString(), ProductTraslate[].class);
+			} else {
+				LOGGER.log(Level.INFO, "[INFO] metodo findProdutoTraducao: Não existe produto para esse exame:"+exams.getExameCode());
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			LOGGER.log(Level.INFO, "[ERRO] metodo findProdutoTraducao: " + e.getStackTrace());

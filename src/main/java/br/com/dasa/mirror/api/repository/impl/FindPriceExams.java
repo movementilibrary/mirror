@@ -52,12 +52,15 @@ public class FindPriceExams {
 					defaultExchange);
 
 			ObjectMapper mapper = new ObjectMapper();
-			productPrices = mapper.readValue(resultExchange.getIn().getBody().toString(), ProductPrice[].class);
-
-			for (ProductPrice productPrice : productPrices) {
-				for (Exame exame : productPrice.getExames()) {
-					preco = String.valueOf(exame.getPreco());
+			if(resultExchange.getIn().getBody() != null) {
+				productPrices = mapper.readValue(resultExchange.getIn().getBody().toString(), ProductPrice[].class);
+				for (ProductPrice productPrice : productPrices) {
+					for (Exame exame : productPrice.getExames()) {
+						preco = String.valueOf(exame.getPreco());
+					}
 				}
+			} else {
+				LOGGER.info("[INFO] metodo findProdutoPreco: O preço do exame não foi encontrado.");
 			}
 		} catch (ApiExceptions | IOException e) {
 			LOGGER.error("[ERRO] metodo findProdutoPreco: " + e.getMessage());
