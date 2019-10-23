@@ -1,5 +1,8 @@
 package br.com.dasa.mirror.api.service.impl;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageConsumer;
@@ -35,8 +38,11 @@ public class ConsumerSQSService {
 
 	@Value("${queue.name}")
 	private String queueName;
+	
+	private static final Logger LOGGER = Logger.getLogger(ConsumerSQSService.class.getName());
 
 	public void consumerSQS() {
+		LOGGER.log(Level.INFO, "[LOG] consumerSQS");
 		SQSConnection connection = null;
 		BasicAWSCredentials creds = new BasicAWSCredentials(accessKey, secretKey);
 		try {
@@ -58,7 +64,7 @@ public class ConsumerSQSService {
 		@Override
 		public void onMessage(Message message) {
 			try {
-				System.out.println("Received ::" + ((TextMessage) message).getText());
+				LOGGER.log(Level.INFO, "[LOG] onMessage- Recebendo mensagem"+ ((TextMessage) message).getText());
 				String json = ((TextMessage) message).getText();
 				Gson gson = new Gson();
 				Admission admission = gson.fromJson(json, Admission.class);
