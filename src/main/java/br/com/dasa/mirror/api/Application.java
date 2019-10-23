@@ -28,7 +28,6 @@ public class Application {
 @Component
 @Order(2)
 class Application2 implements ApplicationRunner {
-	
 	private static final Logger LOGGER = Logger.getLogger(Application2.class.getName());
 
 	@Autowired
