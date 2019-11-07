@@ -9,7 +9,7 @@ pipeline {
         AZURE_APP_ID = credentials('azureAppId')
         AZURE_APP_PASS = credentials('azureAppPass')
         SONAR_TOKEN = credentials('sonar_token')
-        SONAR_URL = credentials('sonar_url'),
+        SONAR_URL = credentials('sonar_url')
         NEXUS_BASE_URL = credentials('nexus_base_url')
         NEXUS_USER = credentials('nexus_user')
         NEXUS_PASS = credentials('nexus_pass')
