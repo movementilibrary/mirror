@@ -1,6 +1,6 @@
 package br.com.dasa.mirror.api.controller;
 
-import br.com.dasa.mirror.api.service.impl.BrandService;
+import br.com.dasa.mirror.api.service.BrandService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -24,7 +24,7 @@ public class BrandController {
             @ApiResponse(code = 404, message = "O resource requisitado não foi encontrado"),
             @ApiResponse(code = 500, message = "Um erro interno foi detectado")
     })
-    public Integer verificaunidade(@RequestParam String idGliese) {
+    public Integer realizaDeparaMarca(@RequestParam String idGliese) {
        return brandService.convertBrandGlieseToBrandDataProvider(idGliese);
     }
 }

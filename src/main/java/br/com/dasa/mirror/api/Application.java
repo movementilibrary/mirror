@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.com.dasa.mirror.api.service.impl.ConsumerSQSService;
+import br.com.dasa.mirror.api.service.ConsumerSQSService;
 
 @SpringBootApplication
 @Component

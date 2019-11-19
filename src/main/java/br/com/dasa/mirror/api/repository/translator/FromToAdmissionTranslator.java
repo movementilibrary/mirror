@@ -6,9 +6,9 @@ import org.springframework.stereotype.Component;
 
 import com.google.gson.Gson;
 
-import br.com.dasa.mirror.api.model.from.to.admission.Admission;
-import br.com.dasa.mirror.api.model.from.to.admission.FromToAdmission;
-import br.com.dasa.mirror.api.model.from.to.admission.FromToAdmission.Status;
+import br.com.dasa.mirror.api.model.Admission;
+import br.com.dasa.mirror.api.model.FromToAdmission;
+import br.com.dasa.mirror.api.model.FromToAdmission.Status;
 
 @Component
 public class FromToAdmissionTranslator {

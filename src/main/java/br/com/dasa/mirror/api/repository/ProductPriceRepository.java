@@ -1,7 +1,7 @@
 package br.com.dasa.mirror.api.repository;
 
-import br.com.dasa.mirror.api.model.from.to.admission.Exams;
-import br.com.dasa.mirror.api.model.from.to.admission.FromToAdmission;
+import br.com.dasa.mirror.api.model.Exams;
+import br.com.dasa.mirror.api.model.FromToAdmission;
 
 import java.util.Optional;
 

@@ -1,0 +1,2892 @@
+[
+  {
+    "nome": "ALPHAVILLE",
+    "idDataProvider": 696,
+    "idGliese": "DAP"
+  },
+  {
+    "nome": "ALTO DE PINHEIROS",
+    "idDataProvider": 697,
+    "idGliese": "DPI"
+  },
+  {
+    "nome": "ALTO DE SANTANA",
+    "idDataProvider": 698,
+    "idGliese": "DSN"
+  },
+  {
+    "nome": "AUGUSTA",
+    "idDataProvider": 699,
+    "idGliese": "DAU"
+  },
+  {
+    "nome": "BRAZ LEME",
+    "idDataProvider": 700,
+    "idGliese": "DBZ"
+  },
+  {
+    "nome": "BROOKLIN",
+    "idDataProvider": 701,
+    "idGliese": "DBR"
+  },
+  {
+    "nome": "CHÁCARA FLORA",
+    "idDataProvider": 717,
+    "idGliese": "DCF"
+  },
+  {
+    "nome": "GRANJA VIANA",
+    "idDataProvider": 718,
+    "idGliese": "DGV"
+  },
+  {
+    "nome": "GUARULHOS",
+    "idDataProvider": 720,
+    "idGliese": "DGR"
+  },
+  {
+    "nome": "HOSPITAL SANTA PAULA",
+    "idDataProvider": 721,
+    "idGliese": "DUP"
+  },
+  {
+    "nome": "ITAIM BIBI",
+    "idDataProvider": 722,
+    "idGliese": "DIB"
+  },
+  {
+    "nome": "LAPA",
+    "idDataProvider": 711,
+    "idGliese": "DLP"
+  },
+  {
+    "nome": "MEGAUNIDADE JARDIM SUL",
+    "idDataProvider": 712,
+    "idGliese": "DJS"
+  },
+  {
+    "nome": "MEGAUNIDADE LUIZ DUMONT VILLARES",
+    "idDataProvider": 713,
+    "idGliese": "DLV"
+  },
+  {
+    "nome": "MEGAUNIDADE RICARDO JAFET",
+    "idDataProvider": 714,
+    "idGliese": "DRJ"
+  },
+  {
+    "nome": "MEGAUNIDADE SUMARÉ",
+    "idDataProvider": 715,
+    "idGliese": "DSU"
+  },
+  {
+    "nome": "MEGAUNIDADE TATUAPÉ",
+    "idDataProvider": 716,
+    "idGliese": "DTT"
+  },
+  {
+    "nome": "MOOCA",
+    "idDataProvider": 705,
+    "idGliese": "DMO"
+  },
+  {
+    "nome": "OSASCO",
+    "idDataProvider": 709,
+    "idGliese": "DOS"
+  },
+  {
+    "nome": "POMPÉIA",
+    "idDataProvider": 1065,
+    "idGliese": "DPP"
+  },
+  {
+    "nome": "SANTO ANDRÉ",
+    "idDataProvider": 706,
+    "idGliese": "DS1"
+  },
+  {
+    "nome": "SANTO ANDRÉ II",
+    "idDataProvider": 707,
+    "idGliese": "DS2"
+  },
+  {
+    "nome": "SANTOS",
+    "idDataProvider": 708,
+    "idGliese": "DSS"
+  },
+  {
+    "nome": "SÃO BERNARDO DO CAMPO",
+    "idDataProvider": 710,
+    "idGliese": "DSB"
+  },
+  {
+    "nome": "SHOPPING ELDORADO",
+    "idDataProvider": 702,
+    "idGliese": "DSE"
+  },
+  {
+    "nome": "VIADUTO DO CHÁ",
+    "idDataProvider": 703,
+    "idGliese": "DVC"
+  },
+  {
+    "nome": "VILA CLEMENTINO/23 DE MAIO",
+    "idDataProvider": 704,
+    "idGliese": "DMA"
+  },
+  {
+    "nome": "ÁGUIA DE HAIA",
+    "idDataProvider": 842,
+    "idGliese": "LAH"
+  },
+  {
+    "nome": "ALPHAVILLE - RIO NEGRO",
+    "idDataProvider": 843,
+    "idGliese": "LRN"
+  },
+  {
+    "nome": "AMADOR BUENO",
+    "idDataProvider": 844,
+    "idGliese": "LAD"
+  },
+  {
+    "nome": "ANGÉLICA (MEGAUNIDADE)",
+    "idDataProvider": 845,
+    "idGliese": "LAG"
+  },
+  {
+    "nome": "ANGÉLICA II",
+    "idDataProvider": 846,
+    "idGliese": "LAC"
+  },
+  {
+    "nome": "ARICANDUVA",
+    "idDataProvider": 921,
+    "idGliese": "LAA"
+  },
+  {
+    "nome": "BARTIRA",
+    "idDataProvider": 847,
+    "idGliese": "LBA"
+  },
+  {
+    "nome": "BOM RETIRO",
+    "idDataProvider": 848,
+    "idGliese": "LBR"
+  },
+  {
+    "nome": "CAIEIRAS",
+    "idDataProvider": 849,
+    "idGliese": "LCE"
+  },
+  {
+    "nome": "CAMBUCI",
+    "idDataProvider": 850,
+    "idGliese": "LCU"
+  },
+  {
+    "nome": "CAPÃO REDONDO",
+    "idDataProvider": 851,
+    "idGliese": "LCR"
+  },
+  {
+    "nome": "CARANDIRU",
+    "idDataProvider": 942,
+    "idGliese": "LS1"
+  },
+  {
+    "nome": "CARAPICUIBA",
+    "idDataProvider": 852,
+    "idGliese": "LCC"
+  },
+  {
+    "nome": "CARAPICUÍBA- INOCÊNCIO SERÁFICO",
+    "idDataProvider": 853,
+    "idGliese": "LCI"
+  },
+  {
+    "nome": "CARRÃO",
+    "idDataProvider": 854,
+    "idGliese": "LAO"
+  },
+  {
+    "nome": "CARREFOUR ANCHIETA",
+    "idDataProvider": 855,
+    "idGliese": "LCF"
+  },
+  {
+    "nome": "CASA VERDE",
+    "idDataProvider": 856,
+    "idGliese": "LCV"
+  },
+  {
+    "nome": "CELSO GARCIA",
+    "idDataProvider": 857,
+    "idGliese": "LCG"
+  },
+  {
+    "nome": "CIDADE DUTRA",
+    "idDataProvider": 858,
+    "idGliese": "LDT"
+  },
+  {
+    "nome": "CIDADE FRANCISCO MORATO",
+    "idDataProvider": 1059,
+    "idGliese": "LCM"
+  },
+  {
+    "nome": "COTIA",
+    "idDataProvider": 859,
+    "idGliese": "LCT"
+  },
+  {
+    "nome": "CURSINO",
+    "idDataProvider": 860,
+    "idGliese": "LCS"
+  },
+  {
+    "nome": "DARZAN (MEGAUNIDADE)",
+    "idDataProvider": 861,
+    "idGliese": "LDA"
+  },
+  {
+    "nome": "DIADEMA",
+    "idDataProvider": 862,
+    "idGliese": "LDD"
+  },
+  {
+    "nome": "ESTRADA DE ITAPECERICA",
+    "idDataProvider": 864,
+    "idGliese": "LEI"
+  },
+  {
+    "nome": "FARIA LIMA",
+    "idDataProvider": 865,
+    "idGliese": "LFL"
+  },
+  {
+    "nome": "FRANCISCO MORATO",
+    "idDataProvider": 866,
+    "idGliese": "LFM"
+  },
+  {
+    "nome": "FREGUESIA DO Ó",
+    "idDataProvider": 867,
+    "idGliese": "LFO"
+  },
+  {
+    "nome": "GRAJAÚ",
+    "idDataProvider": 868,
+    "idGliese": "LGJ"
+  },
+  {
+    "nome": "GRUPO ATENDE - ATENDIMENTO EMPRESARIAL",
+    "idDataProvider": 869,
+    "idGliese": "LGA"
+  },
+  {
+    "nome": "GUAIANASES",
+    "idDataProvider": 870,
+    "idGliese": "LGN"
+  },
+  {
+    "nome": "GUAIANASES",
+    "idDataProvider": 1190,
+    "idGliese": null
+  },
+  {
+    "nome": "GUARULHOS - BONSUCESSO",
+    "idDataProvider": 871,
+    "idGliese": "LGB"
+  },
+  {
+    "nome": "GUARULHOS - VILA GALVÃO",
+    "idDataProvider": 872,
+    "idGliese": "LVG"
+  },
+  {
+    "nome": "GUARULHOS II",
+    "idDataProvider": 874,
+    "idGliese": "LG2"
+  },
+  {
+    "nome": "GUARULHOS VILA PROGRESSO",
+    "idDataProvider": 1058,
+    "idGliese": "LVP"
+  },
+  {
+    "nome": "HOSPITAL SEPACO",
+    "idDataProvider": 876,
+    "idGliese": null
+  },
+  {
+    "nome": "HOSPITAL VILLA LOBOS - MOOCA",
+    "idDataProvider": 877,
+    "idGliese": null
+  },
+  {
+    "nome": "IBIRAPUERA",
+    "idDataProvider": 878,
+    "idGliese": "LIU"
+  },
+  {
+    "nome": "INTERLAGOS",
+    "idDataProvider": 920,
+    "idGliese": "LI1"
+  },
+  {
+    "nome": "INTERLAGOS II",
+    "idDataProvider": 919,
+    "idGliese": "L2I"
+  },
+  {
+    "nome": "IPIRANGA (MEGAUNIDADE)",
+    "idDataProvider": 879,
+    "idGliese": "LIR"
+  },
+  {
+    "nome": "ITAIM BIBI",
+    "idDataProvider": 880,
+    "idGliese": "LIB"
+  },
+  {
+    "nome": "ITAIM PAULISTA II",
+    "idDataProvider": 881,
+    "idGliese": "LI2"
+  },
+  {
+    "nome": "ITAPEVI",
+    "idDataProvider": 882,
+    "idGliese": "LTP"
+  },
+  {
+    "nome": "ITAQUERA",
+    "idDataProvider": 883,
+    "idGliese": "LIQ"
+  },
+  {
+    "nome": "JABAQUARA",
+    "idDataProvider": 884,
+    "idGliese": "LJB"
+  },
+  {
+    "nome": "JAÇANÃ",
+    "idDataProvider": 885,
+    "idGliese": "LJN"
+  },
+  {
+    "nome": "JOÃO DIAS",
+    "idDataProvider": 886,
+    "idGliese": "LJD"
+  },
+  {
+    "nome": "LAPA - CATÃO",
+    "idDataProvider": 887,
+    "idGliese": "LLA"
+  },
+  {
+    "nome": "LAPA I",
+    "idDataProvider": 888,
+    "idGliese": "LL1"
+  },
+  {
+    "nome": "LAPA II",
+    "idDataProvider": 889,
+    "idGliese": "LL2"
+  },
+  {
+    "nome": "LARGO 13",
+    "idDataProvider": 890,
+    "idGliese": "LLG"
+  },
+  {
+    "nome": "LIMÃO CELESTINO BOURROUL",
+    "idDataProvider": 1060,
+    "idGliese": "LCB"
+  },
+  {
+    "nome": "LV-PORTOMED - GUARULHOS",
+    "idDataProvider": 1049,
+    "idGliese": null
+  },
+  {
+    "nome": "M BOI MIRIM",
+    "idDataProvider": 892,
+    "idGliese": "LMM"
+  },
+  {
+    "nome": "METRÔ ANA ROSA",
+    "idDataProvider": 893,
+    "idGliese": "LAN"
+  },
+  {
+    "nome": "METRÔ BUTANTÃ",
+    "idDataProvider": 1062,
+    "idGliese": "LBU"
+  },
+  {
+    "nome": "METRÔ CONCEIÇÃO",
+    "idDataProvider": 895,
+    "idGliese": "LEO"
+  },
+  {
+    "nome": "MOOCA",
+    "idDataProvider": 896,
+    "idGliese": "LMC"
+  },
+  {
+    "nome": "OSASCO - CÔNEGO AFONSO",
+    "idDataProvider": 899,
+    "idGliese": "LOC"
+  },
+  {
+    "nome": "PARAÍSO",
+    "idDataProvider": 900,
+    "idGliese": "LPS"
+  },
+  {
+    "nome": "PARQUE SÃO LUCAS",
+    "idDataProvider": 1048,
+    "idGliese": "LQS"
+  },
+  {
+    "nome": "PENHA",
+    "idDataProvider": 901,
+    "idGliese": "LPN"
+  },
+  {
+    "nome": "PERUS",
+    "idDataProvider": 902,
+    "idGliese": "LPU"
+  },
+  {
+    "nome": "PIRITUBA",
+    "idDataProvider": 903,
+    "idGliese": "LPB"
+  },
+  {
+    "nome": "PONTE RASA",
+    "idDataProvider": 904,
+    "idGliese": "LPR"
+  },
+  {
+    "nome": "REPÚBLICA",
+    "idDataProvider": 906,
+    "idGliese": "LR1"
+  },
+  {
+    "nome": "RIO PEQUENO",
+    "idDataProvider": 908,
+    "idGliese": "LRI"
+  },
+  {
+    "nome": "SABARÁ",
+    "idDataProvider": 909,
+    "idGliese": "LSB"
+  },
+  {
+    "nome": "SANTO AMARO",
+    "idDataProvider": 910,
+    "idGliese": "LSO"
+  },
+  {
+    "nome": "SANTO AMARO BORBA GATO",
+    "idDataProvider": 911,
+    "idGliese": "LBG"
+  },
+  {
+    "nome": "SÃO BERNARDO PLAZA SHOPPING",
+    "idDataProvider": 912,
+    "idGliese": "LBP"
+  },
+  {
+    "nome": "SÃO CAETANO DO SUL",
+    "idDataProvider": 913,
+    "idGliese": "LCN"
+  },
+  {
+    "nome": "SÃO MATEUS",
+    "idDataProvider": 914,
+    "idGliese": "LMU"
+  },
+  {
+    "nome": "SÃO MIGUEL",
+    "idDataProvider": 915,
+    "idGliese": "LMI"
+  },
+  {
+    "nome": "SAPOPEMBA",
+    "idDataProvider": 916,
+    "idGliese": "LSP"
+  },
+  {
+    "nome": "SHOPPING ABC - SANTO ANDRÉ",
+    "idDataProvider": 917,
+    "idGliese": "LSH"
+  },
+  {
+    "nome": "SHOPPING FREI CANECA",
+    "idDataProvider": 918,
+    "idGliese": "LFR"
+  },
+  {
+    "nome": "SHOPPING MAUÁ",
+    "idDataProvider": 922,
+    "idGliese": "LSM"
+  },
+  {
+    "nome": "SHOPPING METRÔ SANTA CRUZ",
+    "idDataProvider": 923,
+    "idGliese": "LSS"
+  },
+  {
+    "nome": "SHOPPING METRÔ TATUAPÉ",
+    "idDataProvider": 924,
+    "idGliese": "LMT"
+  },
+  {
+    "nome": "SHOPPING PARQUE BARUERI",
+    "idDataProvider": 925,
+    "idGliese": "LPE"
+  },
+  {
+    "nome": "SHOPPING RAPOSO",
+    "idDataProvider": 926,
+    "idGliese": "LRS"
+  },
+  {
+    "nome": "SHOPPING TABOÃO",
+    "idDataProvider": 927,
+    "idGliese": "LST"
+  },
+  {
+    "nome": "SHOPPING UNIÃO OSASCO",
+    "idDataProvider": 928,
+    "idGliese": "LUO"
+  },
+  {
+    "nome": "SOCORRO",
+    "idDataProvider": 930,
+    "idGliese": "LSR"
+  },
+  {
+    "nome": "TATUAPÉ EUCLIDES PACHECO",
+    "idDataProvider": 935,
+    "idGliese": "LT2"
+  },
+  {
+    "nome": "TEODORO SAMPAIO",
+    "idDataProvider": 931,
+    "idGliese": "LTD"
+  },
+  {
+    "nome": "TUCURUVI",
+    "idDataProvider": 932,
+    "idGliese": "LTR"
+  },
+  {
+    "nome": "VILA FORMOSA",
+    "idDataProvider": 933,
+    "idGliese": "LVF"
+  },
+  {
+    "nome": "VILA LEOPOLDINA",
+    "idDataProvider": 934,
+    "idGliese": "LVL"
+  },
+  {
+    "nome": "VILA MARIA",
+    "idDataProvider": 936,
+    "idGliese": "LVM"
+  },
+  {
+    "nome": "VILA MATILDE",
+    "idDataProvider": 937,
+    "idGliese": "LVI"
+  },
+  {
+    "nome": "VILA NOVA CACHOEIRINHA",
+    "idDataProvider": 938,
+    "idGliese": "LVC"
+  },
+  {
+    "nome": "VILA PRUDENTE",
+    "idDataProvider": 939,
+    "idGliese": "LVA"
+  },
+  {
+    "nome": "VILA SABRINA",
+    "idDataProvider": 940,
+    "idGliese": "LVS"
+  },
+  {
+    "nome": "VILA SANTA CATARINA",
+    "idDataProvider": 941,
+    "idGliese": "LSN"
+  },
+  {
+    "nome": "Bangu",
+    "idDataProvider": 389,
+    "idGliese": "035"
+  },
+  {
+    "nome": "Barra - Downtown",
+    "idDataProvider": 390,
+    "idGliese": "008"
+  },
+  {
+    "nome": "Barra - Plaza",
+    "idDataProvider": 391,
+    "idGliese": "068"
+  },
+  {
+    "nome": "Bonsucesso",
+    "idDataProvider": 392,
+    "idGliese": "022"
+  },
+  {
+    "nome": "Botafogo II",
+    "idDataProvider": 393,
+    "idGliese": "180"
+  },
+  {
+    "nome": "Cachambi",
+    "idDataProvider": 394,
+    "idGliese": "098"
+  },
+  {
+    "nome": "Campo Grande I - Shopping Seridó",
+    "idDataProvider": 395,
+    "idGliese": "091"
+  },
+  {
+    "nome": "Campo Grande II - MegaUnidade",
+    "idDataProvider": 396,
+    "idGliese": "187"
+  },
+  {
+    "nome": "Campo Grande III – West Shopping",
+    "idDataProvider": 397,
+    "idGliese": "198"
+  },
+  {
+    "nome": "Cascadura",
+    "idDataProvider": 398,
+    "idGliese": "199"
+  },
+  {
+    "nome": "Catete - Edifício Flex Center",
+    "idDataProvider": 399,
+    "idGliese": "062"
+  },
+  {
+    "nome": "Caxias I",
+    "idDataProvider": 380,
+    "idGliese": "025"
+  },
+  {
+    "nome": "CAXIAS II",
+    "idDataProvider": 381,
+    "idGliese": "208"
+  },
+  {
+    "nome": "Centro I - Cinelândia",
+    "idDataProvider": 400,
+    "idGliese": "010"
+  },
+  {
+    "nome": "Centro II - Ouvidor",
+    "idDataProvider": 401,
+    "idGliese": "085"
+  },
+  {
+    "nome": "Copacabana I - MegaUnidade",
+    "idDataProvider": 402,
+    "idGliese": "107"
+  },
+  {
+    "nome": "Copacabana II",
+    "idDataProvider": 403,
+    "idGliese": "017"
+  },
+  {
+    "nome": "Del Castilho",
+    "idDataProvider": 404,
+    "idGliese": "137"
+  },
+  {
+    "nome": "Freguesia II",
+    "idDataProvider": 1067,
+    "idGliese": "122"
+  },
+  {
+    "nome": "Grajaú",
+    "idDataProvider": 405,
+    "idGliese": "203"
+  },
+  {
+    "nome": "Guadalupe",
+    "idDataProvider": 406,
+    "idGliese": "192"
+  },
+  {
+    "nome": "Ilha do Governador",
+    "idDataProvider": 407,
+    "idGliese": "090"
+  },
+  {
+    "nome": "Ilha do Governador II (Imagem)",
+    "idDataProvider": 408,
+    "idGliese": "207"
+  },
+  {
+    "nome": "Ipanema",
+    "idDataProvider": 409,
+    "idGliese": "003"
+  },
+  {
+    "nome": "Irajá",
+    "idDataProvider": 410,
+    "idGliese": "158"
+  },
+  {
+    "nome": "Itaguaí",
+    "idDataProvider": 382,
+    "idGliese": "057"
+  },
+  {
+    "nome": "Jacarepaguá I - Taquara",
+    "idDataProvider": 411,
+    "idGliese": "092"
+  },
+  {
+    "nome": "Jacarepaguá II - Taquara (Bandeirantes)",
+    "idDataProvider": 412,
+    "idGliese": "206"
+  },
+  {
+    "nome": "Jacarepaguá III - Freguesia",
+    "idDataProvider": 413,
+    "idGliese": "116"
+  },
+  {
+    "nome": "Jacarepaguá Iv - Praça Seca",
+    "idDataProvider": 414,
+    "idGliese": "201"
+  },
+  {
+    "nome": "Jacarepaguá V – Prezunic Cidade de Deus",
+    "idDataProvider": 415,
+    "idGliese": "202"
+  },
+  {
+    "nome": "Jacarepaguá VI - Curicica",
+    "idDataProvider": 508,
+    "idGliese": "123"
+  },
+  {
+    "nome": "Jardim América",
+    "idDataProvider": 416,
+    "idGliese": "049"
+  },
+  {
+    "nome": "Largo do Bicão",
+    "idDataProvider": 417,
+    "idGliese": "204"
+  },
+  {
+    "nome": "Leblon",
+    "idDataProvider": 418,
+    "idGliese": "071"
+  },
+  {
+    "nome": "Macaé",
+    "idDataProvider": 383,
+    "idGliese": "178"
+  },
+  {
+    "nome": "MADUREIRA - MERCADÃO",
+    "idDataProvider": 1151,
+    "idGliese": "221"
+  },
+  {
+    "nome": "Madureira I - MegaUnidade",
+    "idDataProvider": 419,
+    "idGliese": "074"
+  },
+  {
+    "nome": "Madureira II - Shopping Polo I",
+    "idDataProvider": 420,
+    "idGliese": "184"
+  },
+  {
+    "nome": "MEGA TIJUCA II",
+    "idDataProvider": 1064,
+    "idGliese": "056"
+  },
+  {
+    "nome": "Méier I - MegaUnidade",
+    "idDataProvider": 421,
+    "idGliese": "111"
+  },
+  {
+    "nome": "Méier II - Dias da Cruz",
+    "idDataProvider": 422,
+    "idGliese": "205"
+  },
+  {
+    "nome": "Nilópolis",
+    "idDataProvider": 384,
+    "idGliese": "160"
+  },
+  {
+    "nome": "Niterói - Fonseca",
+    "idDataProvider": 385,
+    "idGliese": "211"
+  },
+  {
+    "nome": "Niterói I - Centro",
+    "idDataProvider": 386,
+    "idGliese": "028"
+  },
+  {
+    "nome": "Niterói II - Icaraí",
+    "idDataProvider": 387,
+    "idGliese": "072"
+  },
+  {
+    "nome": "Nova Iguaçu",
+    "idDataProvider": 388,
+    "idGliese": "053"
+  },
+  {
+    "nome": "Penha",
+    "idDataProvider": 423,
+    "idGliese": "089"
+  },
+  {
+    "nome": "Posto Caxias Brigadeiro",
+    "idDataProvider": 1050,
+    "idGliese": "250"
+  },
+  {
+    "nome": "Recreio",
+    "idDataProvider": 424,
+    "idGliese": "195"
+  },
+  {
+    "nome": "Rio Comprido",
+    "idDataProvider": 507,
+    "idGliese": "138"
+  },
+  {
+    "nome": "Rocinha",
+    "idDataProvider": 426,
+    "idGliese": "209"
+  },
+  {
+    "nome": "Santa Cruz",
+    "idDataProvider": 425,
+    "idGliese": "161"
+  },
+  {
+    "nome": "São Cristóvão",
+    "idDataProvider": 427,
+    "idGliese": "093"
+  },
+  {
+    "nome": "Seropédica",
+    "idDataProvider": 428,
+    "idGliese": "197"
+  },
+  {
+    "nome": "Teresópolis - Várzea Shopping",
+    "idDataProvider": 432,
+    "idGliese": "066"
+  },
+  {
+    "nome": "Tijuca - Mega Tijuca",
+    "idDataProvider": 1054,
+    "idGliese": "213"
+  },
+  {
+    "nome": "Tijuca - Shopping 45",
+    "idDataProvider": 429,
+    "idGliese": "070"
+  },
+  {
+    "nome": "Vila Isabel",
+    "idDataProvider": 430,
+    "idGliese": "031"
+  },
+  {
+    "nome": "Vila Valqueire",
+    "idDataProvider": 431,
+    "idGliese": "168"
+  },
+  {
+    "nome": "BarraShopping",
+    "idDataProvider": 439,
+    "idGliese": "LBS"
+  },
+  {
+    "nome": "Botafogo",
+    "idDataProvider": 440,
+    "idGliese": "LBT"
+  },
+  {
+    "nome": "Centro - Ouvidor",
+    "idDataProvider": 441,
+    "idGliese": "LOU"
+  },
+  {
+    "nome": "Icaraí",
+    "idDataProvider": 438,
+    "idGliese": "LIC"
+  },
+  {
+    "nome": "Ilha do Governador",
+    "idDataProvider": 443,
+    "idGliese": "GOV"
+  },
+  {
+    "nome": "Largo do Machado",
+    "idDataProvider": 444,
+    "idGliese": "LLM"
+  },
+  {
+    "nome": "Leblon",
+    "idDataProvider": 445,
+    "idGliese": "LLE"
+  },
+  {
+    "nome": "Mega Unidade Arpoador",
+    "idDataProvider": 446,
+    "idGliese": "LPO"
+  },
+  {
+    "nome": "MegaUnidade Barra da Tijuca",
+    "idDataProvider": 447,
+    "idGliese": "MBA"
+  },
+  {
+    "nome": "Tijuca II",
+    "idDataProvider": 448,
+    "idGliese": "TJC"
+  },
+  {
+    "nome": "Voluntários da Pátria",
+    "idDataProvider": 449,
+    "idGliese": "VOL"
+  },
+  {
+    "nome": "AFONSO PENA",
+    "idDataProvider": 782,
+    "idGliese": "FAF"
+  },
+  {
+    "nome": "ÁGUA VERDE",
+    "idDataProvider": 783,
+    "idGliese": "FAV"
+  },
+  {
+    "nome": "AHÚ",
+    "idDataProvider": 784,
+    "idGliese": "FAH"
+  },
+  {
+    "nome": "ALTO DA XV",
+    "idDataProvider": 785,
+    "idGliese": "FAX"
+  },
+  {
+    "nome": "ALTO MARACANÃ",
+    "idDataProvider": 786,
+    "idGliese": "FAM"
+  },
+  {
+    "nome": "ARAUCÁRIA",
+    "idDataProvider": 787,
+    "idGliese": "FAC"
+  },
+  {
+    "nome": "BACACHERI",
+    "idDataProvider": 817,
+    "idGliese": "FBC"
+  },
+  {
+    "nome": "BARÃO",
+    "idDataProvider": 818,
+    "idGliese": "FBA"
+  },
+  {
+    "nome": "BARIGÜI",
+    "idDataProvider": 819,
+    "idGliese": "FBR"
+  },
+  {
+    "nome": "BARREIRINHA",
+    "idDataProvider": 820,
+    "idGliese": "FBN"
+  },
+  {
+    "nome": "BATEL",
+    "idDataProvider": 821,
+    "idGliese": "FB1"
+  },
+  {
+    "nome": "BOA VISTA",
+    "idDataProvider": 822,
+    "idGliese": "FBV"
+  },
+  {
+    "nome": "Campina Grande do Sul",
+    "idDataProvider": 1052,
+    "idGliese": "FCG"
+  },
+  {
+    "nome": "CAMPO LARGO",
+    "idDataProvider": 811,
+    "idGliese": "FCL"
+  },
+  {
+    "nome": "CARMO",
+    "idDataProvider": 812,
+    "idGliese": "FCR"
+  },
+  {
+    "nome": "FAZENDA RIO GRANDE",
+    "idDataProvider": 813,
+    "idGliese": "FRG"
+  },
+  {
+    "nome": "FAZENDINHA",
+    "idDataProvider": 814,
+    "idGliese": "FFD"
+  },
+  {
+    "nome": "FONTANA",
+    "idDataProvider": 815,
+    "idGliese": "FFT"
+  },
+  {
+    "nome": "GUARATUBA",
+    "idDataProvider": 1056,
+    "idGliese": "FGT"
+  },
+  {
+    "nome": "HOSPITAL COSTANTINI",
+    "idDataProvider": 805,
+    "idGliese": "FCO"
+  },
+  {
+    "nome": "HOSPITAL VITÓRIA",
+    "idDataProvider": 806,
+    "idGliese": "FVR"
+  },
+  {
+    "nome": "JARDIM DAS AMÉRICAS",
+    "idDataProvider": 807,
+    "idGliese": "FJA"
+  },
+  {
+    "nome": "MATEUS LEME",
+    "idDataProvider": 809,
+    "idGliese": "FML"
+  },
+  {
+    "nome": "MATINHOS",
+    "idDataProvider": 810,
+    "idGliese": "FMF"
+  },
+  {
+    "nome": "MERCÊS",
+    "idDataProvider": 799,
+    "idGliese": "FMR"
+  },
+  {
+    "nome": "PALLADIUM",
+    "idDataProvider": 800,
+    "idGliese": "FPL"
+  },
+  {
+    "nome": "PARANAGUÁ",
+    "idDataProvider": 801,
+    "idGliese": "FPG"
+  },
+  {
+    "nome": "PILARZINHO",
+    "idDataProvider": 802,
+    "idGliese": "FPZ"
+  },
+  {
+    "nome": "PINHAIS",
+    "idDataProvider": 803,
+    "idGliese": "FPH"
+  },
+  {
+    "nome": "PINHEIRINHO",
+    "idDataProvider": 804,
+    "idGliese": "FPI"
+  },
+  {
+    "nome": "PLÍNIO DE MATTOS PESSOA",
+    "idDataProvider": 793,
+    "idGliese": "FPN"
+  },
+  {
+    "nome": "PORTÃO",
+    "idDataProvider": 795,
+    "idGliese": "FPT"
+  },
+  {
+    "nome": "SANTA FELICIDADE",
+    "idDataProvider": 796,
+    "idGliese": "FSF"
+  },
+  {
+    "nome": "SÃO JOSÉ DOS PINHAIS",
+    "idDataProvider": 797,
+    "idGliese": "FJP"
+  },
+  {
+    "nome": "SÃO MATEUS DO SUL",
+    "idDataProvider": 798,
+    "idGliese": "FMS"
+  },
+  {
+    "nome": "SETE DE SETEMBRO",
+    "idDataProvider": 788,
+    "idGliese": "FSS"
+  },
+  {
+    "nome": "SITIO CERCADO",
+    "idDataProvider": 789,
+    "idGliese": "FSC"
+  },
+  {
+    "nome": "TARUMÃ",
+    "idDataProvider": 790,
+    "idGliese": "FTU"
+  },
+  {
+    "nome": "TATUQUARA",
+    "idDataProvider": 1191,
+    "idGliese": "FTQ"
+  },
+  {
+    "nome": "UBERABA",
+    "idDataProvider": 791,
+    "idGliese": "FUB"
+  },
+  {
+    "nome": "Volvo",
+    "idDataProvider": 1053,
+    "idGliese": "FVL"
+  },
+  {
+    "nome": "XAXIM",
+    "idDataProvider": 792,
+    "idGliese": "FXX"
+  },
+  {
+    "nome": "BARÃO DO CERRO AZUL",
+    "idDataProvider": 1148,
+    "idGliese": "AAZ"
+  },
+  {
+    "nome": "CARLOS DE CARVALHO",
+    "idDataProvider": 120,
+    "idGliese": "ACC"
+  },
+  {
+    "nome": "ERECHIM",
+    "idDataProvider": 121,
+    "idGliese": "AUE"
+  },
+  {
+    "nome": "GREEN",
+    "idDataProvider": 122,
+    "idGliese": "AUG"
+  },
+  {
+    "nome": "HIPER MUFFATO",
+    "idDataProvider": 123,
+    "idGliese": "AHM"
+  },
+  {
+    "nome": "IRANI",
+    "idDataProvider": 124,
+    "idGliese": "AIR"
+  },
+  {
+    "nome": "JARDIM LANCASTER",
+    "idDataProvider": 604,
+    "idGliese": "AVA"
+  },
+  {
+    "nome": "MATERNO INFANTIL",
+    "idDataProvider": 125,
+    "idGliese": "AUI"
+  },
+  {
+    "nome": "MATRIZ - ANTONIO RAPOSO ",
+    "idDataProvider": 603,
+    "idGliese": "AAR"
+  },
+  {
+    "nome": "MATRIZ - GENERAL OSÓRIO",
+    "idDataProvider": 606,
+    "idGliese": "AUM"
+  },
+  {
+    "nome": "MINAS GERAIS",
+    "idDataProvider": 127,
+    "idGliese": "AMG"
+  },
+  {
+    "nome": "MUFFATÃO NEVA",
+    "idDataProvider": 128,
+    "idGliese": "AMU"
+  },
+  {
+    "nome": "VILA MILITAR",
+    "idDataProvider": 605,
+    "idGliese": "ARG"
+  },
+  {
+    "nome": "ALDEOTA",
+    "idDataProvider": 827,
+    "idGliese": null
+  },
+  {
+    "nome": "BARRA DO CEARÁ",
+    "idDataProvider": 828,
+    "idGliese": null
+  },
+  {
+    "nome": "BEZERRA DE MENEZES",
+    "idDataProvider": 829,
+    "idGliese": null
+  },
+  {
+    "nome": "CENTRO",
+    "idDataProvider": 830,
+    "idGliese": null
+  },
+  {
+    "nome": "FÁTIMA",
+    "idDataProvider": 831,
+    "idGliese": null
+  },
+  {
+    "nome": "GÊNESIS",
+    "idDataProvider": 832,
+    "idGliese": null
+  },
+  {
+    "nome": "HARMONY CENTER",
+    "idDataProvider": 836,
+    "idGliese": null
+  },
+  {
+    "nome": "MEIRELES",
+    "idDataProvider": 837,
+    "idGliese": null
+  },
+  {
+    "nome": "MESSEJANA",
+    "idDataProvider": 838,
+    "idGliese": null
+  },
+  {
+    "nome": "MONTESE",
+    "idDataProvider": 839,
+    "idGliese": null
+  },
+  {
+    "nome": "OLIVEIRA PAIVA",
+    "idDataProvider": 840,
+    "idGliese": null
+  },
+  {
+    "nome": "PARANGABA",
+    "idDataProvider": 841,
+    "idGliese": null
+  },
+  {
+    "nome": "PRESIDENTE KENNEDY",
+    "idDataProvider": 833,
+    "idGliese": null
+  },
+  {
+    "nome": "SÃO CARLOS",
+    "idDataProvider": 834,
+    "idGliese": null
+  },
+  {
+    "nome": "SÃO MATEUS",
+    "idDataProvider": 835,
+    "idGliese": null
+  },
+  {
+    "nome": "CAMPO GRANDE",
+    "idDataProvider": 823,
+    "idGliese": "ICG"
+  },
+  {
+    "nome": "ITAIGARA",
+    "idDataProvider": 824,
+    "idGliese": "IIA"
+  },
+  {
+    "nome": "ONDINA",
+    "idDataProvider": 825,
+    "idGliese": "IOA"
+  },
+  {
+    "nome": "VILAS DO ATLÂNTICO",
+    "idDataProvider": 826,
+    "idGliese": "IVA"
+  },
+  {
+    "nome": "BOCAIÚVA",
+    "idDataProvider": 29,
+    "idGliese": null
+  },
+  {
+    "nome": "CAMPINAS",
+    "idDataProvider": 30,
+    "idGliese": null
+  },
+  {
+    "nome": "AEROPORTO",
+    "idDataProvider": 607,
+    "idGliese": "AAT"
+  },
+  {
+    "nome": "AEROPORTO 2",
+    "idDataProvider": 608,
+    "idGliese": "AE2"
+  },
+  {
+    "nome": "ALTO DA GLÓRIA",
+    "idDataProvider": 609,
+    "idGliese": "AAG"
+  },
+  {
+    "nome": "APARECIDA CENTRO",
+    "idDataProvider": 610,
+    "idGliese": "AAC"
+  },
+  {
+    "nome": "BELA VISTA",
+    "idDataProvider": 611,
+    "idGliese": "ABV"
+  },
+  {
+    "nome": "BUENO T4",
+    "idDataProvider": 612,
+    "idGliese": "ABN"
+  },
+  {
+    "nome": "CATEDRAL",
+    "idDataProvider": 620,
+    "idGliese": "ADL"
+  },
+  {
+    "nome": "CELINA PARK",
+    "idDataProvider": 623,
+    "idGliese": "AEO"
+  },
+  {
+    "nome": "CIDADE JARDIM",
+    "idDataProvider": 621,
+    "idGliese": "ACJ"
+  },
+  {
+    "nome": "COIMBRA",
+    "idDataProvider": 622,
+    "idGliese": "ACB"
+  },
+  {
+    "nome": "JARDIM AMÉRICA",
+    "idDataProvider": 624,
+    "idGliese": "AJA"
+  },
+  {
+    "nome": "MARISTA",
+    "idDataProvider": 625,
+    "idGliese": "AMS"
+  },
+  {
+    "nome": "NOVA SUÍÇA",
+    "idDataProvider": 614,
+    "idGliese": "ANS"
+  },
+  {
+    "nome": "PLAZA D'ORO",
+    "idDataProvider": 615,
+    "idGliese": "APD"
+  },
+  {
+    "nome": "SUL",
+    "idDataProvider": 616,
+    "idGliese": "ASL"
+  },
+  {
+    "nome": "T-1",
+    "idDataProvider": 617,
+    "idGliese": "AT1"
+  },
+  {
+    "nome": "TRINDADE (CLÍNICA MULHER)",
+    "idDataProvider": 618,
+    "idGliese": "ATD"
+  },
+  {
+    "nome": "VIENA",
+    "idDataProvider": 619,
+    "idGliese": "AJV"
+  },
+  {
+    "nome": "VILA BRASÍLIA",
+    "idDataProvider": 613,
+    "idGliese": "AVB"
+  },
+  {
+    "nome": "AGUAS CLARAS - ALBANY",
+    "idDataProvider": 948,
+    "idGliese": "EAY"
+  },
+  {
+    "nome": "AGUAS CLARAS - BIG BOX",
+    "idDataProvider": 949,
+    "idGliese": "EME"
+  },
+  {
+    "nome": "AGUAS CLARAS - FELICITTÁ SHOPPING",
+    "idDataProvider": 950,
+    "idGliese": "EFS"
+  },
+  {
+    "nome": "AGUAS CLARAS - REAL SPLENDOR",
+    "idDataProvider": 951,
+    "idGliese": "EAG"
+  },
+  {
+    "nome": "AGUAS CLARAS II - ED TURMALINA",
+    "idDataProvider": 952,
+    "idGliese": "EAT"
+  },
+  {
+    "nome": "ÁGUAS LINDAS",
+    "idDataProvider": 953,
+    "idGliese": "EAD"
+  },
+  {
+    "nome": "ASA NORTE - LACLIB",
+    "idDataProvider": 1001,
+    "idGliese": "EAB"
+  },
+  {
+    "nome": "ASA NORTE - LIBERTY MALL",
+    "idDataProvider": 1002,
+    "idGliese": "ELM"
+  },
+  {
+    "nome": "ASA NORTE II",
+    "idDataProvider": 1003,
+    "idGliese": "EAN"
+  },
+  {
+    "nome": "ASA NORTE III - CLÉO OTAVIO",
+    "idDataProvider": 1004,
+    "idGliese": "EEO"
+  },
+  {
+    "nome": "ASA SUL - 712 MATRIZ",
+    "idDataProvider": 1005,
+    "idGliese": "EMZ"
+  },
+  {
+    "nome": "ASA SUL - 716 MEDICAL CENTER",
+    "idDataProvider": 1006,
+    "idGliese": "EMC"
+  },
+  {
+    "nome": "ASA SUL - JULIO ADNET  ",
+    "idDataProvider": 996,
+    "idGliese": "EJA"
+  },
+  {
+    "nome": "ASA SUL - LINEA VITTÁ",
+    "idDataProvider": 997,
+    "idGliese": "ELV"
+  },
+  {
+    "nome": "ASA SUL - SETOR COMERCIAL SUL",
+    "idDataProvider": 998,
+    "idGliese": "EAL"
+  },
+  {
+    "nome": "ASA SUL - TORRE",
+    "idDataProvider": 1174,
+    "idGliese": null
+  },
+  {
+    "nome": "CEILANDIA CENTRO",
+    "idDataProvider": 1047,
+    "idGliese": "ECO"
+  },
+  {
+    "nome": "CEILANDIA I",
+    "idDataProvider": 999,
+    "idGliese": "ECI"
+  },
+  {
+    "nome": "CEILANDIA II",
+    "idDataProvider": 1000,
+    "idGliese": "ECA"
+  },
+  {
+    "nome": "CIDADE OCIDENTAL",
+    "idDataProvider": 989,
+    "idGliese": "EOL"
+  },
+  {
+    "nome": "FORMOSA",
+    "idDataProvider": 991,
+    "idGliese": "EFA"
+  },
+  {
+    "nome": "FORMOSA II",
+    "idDataProvider": 992,
+    "idGliese": "EFR"
+  },
+  {
+    "nome": "GAMA",
+    "idDataProvider": 993,
+    "idGliese": "EGA"
+  },
+  {
+    "nome": "GAMA II",
+    "idDataProvider": 994,
+    "idGliese": "EGM"
+  },
+  {
+    "nome": "GUARÁ I - OFFICE",
+    "idDataProvider": 983,
+    "idGliese": "EEF"
+  },
+  {
+    "nome": "GUARA I - QI 06",
+    "idDataProvider": 984,
+    "idGliese": "EQ6"
+  },
+  {
+    "nome": "GUARÁ II",
+    "idDataProvider": 985,
+    "idGliese": "EGR"
+  },
+  {
+    "nome": "GUARÁ II - ED. REAL MIX",
+    "idDataProvider": 986,
+    "idGliese": "EDR"
+  },
+  {
+    "nome": "JARDIM BOTANICO",
+    "idDataProvider": 987,
+    "idGliese": "EJB"
+  },
+  {
+    "nome": "LAGO NORTE",
+    "idDataProvider": 988,
+    "idGliese": "EOR"
+  },
+  {
+    "nome": "LAGO SUL - HOSPITAL BRASILIA",
+    "idDataProvider": 977,
+    "idGliese": null
+  },
+  {
+    "nome": "LAGO SUL I",
+    "idDataProvider": 978,
+    "idGliese": "ELI"
+  },
+  {
+    "nome": "LAGO SUL II",
+    "idDataProvider": 979,
+    "idGliese": "ELU"
+  },
+  {
+    "nome": "LUZIÂNIA",
+    "idDataProvider": 980,
+    "idGliese": "EIA"
+  },
+  {
+    "nome": "MEGA ASA NORTE - BIOSPHERE",
+    "idDataProvider": 981,
+    "idGliese": "EMR"
+  },
+  {
+    "nome": "MEGA ASA SUL",
+    "idDataProvider": 982,
+    "idGliese": "EAS"
+  },
+  {
+    "nome": "MEGA TAGUATINGA NORTE",
+    "idDataProvider": 971,
+    "idGliese": "EMN"
+  },
+  {
+    "nome": "NUCLEO BANDEIRANTE",
+    "idDataProvider": 972,
+    "idGliese": "ENB"
+  },
+  {
+    "nome": "PARANOÁ",
+    "idDataProvider": 973,
+    "idGliese": "EPA"
+  },
+  {
+    "nome": "PATIO CAPITAL",
+    "idDataProvider": 974,
+    "idGliese": "EFQ"
+  },
+  {
+    "nome": "PLANALTINA",
+    "idDataProvider": 975,
+    "idGliese": "ELN"
+  },
+  {
+    "nome": "PLANALTINA CENTRO",
+    "idDataProvider": 976,
+    "idGliese": "EPO"
+  },
+  {
+    "nome": "RECANTO DAS EMAS",
+    "idDataProvider": 965,
+    "idGliese": "ERA"
+  },
+  {
+    "nome": "RIACHO FUNDO",
+    "idDataProvider": 966,
+    "idGliese": "ERO"
+  },
+  {
+    "nome": "SAMAMBAIA",
+    "idDataProvider": 967,
+    "idGliese": "ESA"
+  },
+  {
+    "nome": "SAMAMBAIA IV",
+    "idDataProvider": 1175,
+    "idGliese": null
+  },
+  {
+    "nome": "SAMAMBAIA RENASCER",
+    "idDataProvider": 968,
+    "idGliese": "ESR"
+  },
+  {
+    "nome": "SAMAMBAIA SUL",
+    "idDataProvider": 969,
+    "idGliese": "EAI"
+  },
+  {
+    "nome": "SANTA MARIA",
+    "idDataProvider": 970,
+    "idGliese": "EMA"
+  },
+  {
+    "nome": "SOBRADINHO",
+    "idDataProvider": 959,
+    "idGliese": "EBO"
+  },
+  {
+    "nome": "SOBRADINHO - QD08",
+    "idDataProvider": 960,
+    "idGliese": "EQ8"
+  },
+  {
+    "nome": "SUDOESTE",
+    "idDataProvider": 961,
+    "idGliese": "EDO"
+  },
+  {
+    "nome": "SUDOESTE - CENTRO CLINICO",
+    "idDataProvider": 962,
+    "idGliese": "ECC"
+  },
+  {
+    "nome": "TAGUATINGA I",
+    "idDataProvider": 963,
+    "idGliese": "ETA"
+  },
+  {
+    "nome": "TAGUATINGA II - TRADE CENTER",
+    "idDataProvider": 964,
+    "idGliese": "ETC"
+  },
+  {
+    "nome": "TAGUATINGA SUL - CSB 4",
+    "idDataProvider": 954,
+    "idGliese": "ETM"
+  },
+  {
+    "nome": "TAGUATINGA SUL - PISTÃO SUL",
+    "idDataProvider": 955,
+    "idGliese": "EPL"
+  },
+  {
+    "nome": "VALPARAÍSO",
+    "idDataProvider": 956,
+    "idGliese": null
+  },
+  {
+    "nome": "VICENTE PIRES I",
+    "idDataProvider": 957,
+    "idGliese": "EVP"
+  },
+  {
+    "nome": "VICENTE PIRES II",
+    "idDataProvider": 958,
+    "idGliese": "EVS"
+  },
+  {
+    "nome": "ALTO DE PINHEIROS",
+    "idDataProvider": 1147,
+    "idGliese": "AAP"
+  },
+  {
+    "nome": "BARRA SHOPPING",
+    "idDataProvider": 436,
+    "idGliese": "ABA"
+  },
+  {
+    "nome": "BERRINI / MORUMBI",
+    "idDataProvider": 1146,
+    "idGliese": "AMP"
+  },
+  {
+    "nome": "BOTAFOGO",
+    "idDataProvider": 437,
+    "idGliese": "ABO"
+  },
+  {
+    "nome": "CAMPO BELO",
+    "idDataProvider": 1155,
+    "idGliese": "AEC"
+  },
+  {
+    "nome": "HIGIENÓPOLIS",
+    "idDataProvider": 601,
+    "idGliese": "AEH"
+  },
+  {
+    "nome": "JARDINS",
+    "idDataProvider": 433,
+    "idGliese": "ABI"
+  },
+  {
+    "nome": "LEBLON",
+    "idDataProvider": 600,
+    "idGliese": "ABL"
+  },
+  {
+    "nome": "MOEMA",
+    "idDataProvider": 1057,
+    "idGliese": "NHA"
+  },
+  {
+    "nome": "PANAMBY",
+    "idDataProvider": 1066,
+    "idGliese": "ASU"
+  },
+  {
+    "nome": "PARQUE IBIRAPUERA",
+    "idDataProvider": 434,
+    "idGliese": "API"
+  },
+  {
+    "nome": "PEIXOTO GOMIDE",
+    "idDataProvider": 602,
+    "idGliese": "APG"
+  },
+  {
+    "nome": "VILA OLÍMPIA",
+    "idDataProvider": 435,
+    "idGliese": "AVO"
+  },
+  {
+    "nome": "VOGUE SQUARE",
+    "idDataProvider": 1227,
+    "idGliese": null
+  },
+  {
+    "nome": "HOSPITAL SÃO MATHEUS",
+    "idDataProvider": 119,
+    "idGliese": null
+  },
+  {
+    "nome": "AMÉRICAS SHOPPING",
+    "idDataProvider": 1180,
+    "idGliese": "SAS"
+  },
+  {
+    "nome": "Bangu",
+    "idDataProvider": 243,
+    "idGliese": "BGU"
+  },
+  {
+    "nome": "Bangu Shopping",
+    "idDataProvider": 244,
+    "idGliese": "SBG"
+  },
+  {
+    "nome": "Barra - Jardim Oceânico",
+    "idDataProvider": 245,
+    "idGliese": "JOC"
+  },
+  {
+    "nome": "Barra - MDX",
+    "idDataProvider": 246,
+    "idGliese": "MDX"
+  },
+  {
+    "nome": "Barra - Rio 2",
+    "idDataProvider": 247,
+    "idGliese": "RII"
+  },
+  {
+    "nome": "Barra - Shopping Aventura Center",
+    "idDataProvider": 248,
+    "idGliese": "RCO"
+  },
+  {
+    "nome": "Barra da Tijuca",
+    "idDataProvider": 249,
+    "idGliese": "BAR"
+  },
+  {
+    "nome": "Barra Shopping",
+    "idDataProvider": 250,
+    "idGliese": "BSH"
+  },
+  {
+    "nome": "Bonsucesso - Nova York",
+    "idDataProvider": 252,
+    "idGliese": "BNY"
+  },
+  {
+    "nome": "Botafogo - Conde de Irajá",
+    "idDataProvider": 253,
+    "idGliese": "BOT"
+  },
+  {
+    "nome": "Botafogo - Sorocaba",
+    "idDataProvider": 254,
+    "idGliese": "BOS"
+  },
+  {
+    "nome": "Cachambi",
+    "idDataProvider": 255,
+    "idGliese": "NOR"
+  },
+  {
+    "nome": "Campo Grande I",
+    "idDataProvider": 256,
+    "idGliese": "CGD"
+  },
+  {
+    "nome": "Campo Grande II",
+    "idDataProvider": 257,
+    "idGliese": "CGC"
+  },
+  {
+    "nome": "Caxias - Conde de Porto Alegre",
+    "idDataProvider": 232,
+    "idGliese": "DCA"
+  },
+  {
+    "nome": "Caxias - Nilo Peçanha",
+    "idDataProvider": 233,
+    "idGliese": "DCC"
+  },
+  {
+    "nome": "Centro - Presidente Vargas",
+    "idDataProvider": 258,
+    "idGliese": "CN2"
+  },
+  {
+    "nome": "Centro - São José",
+    "idDataProvider": 259,
+    "idGliese": "SJS"
+  },
+  {
+    "nome": "CID Leblon",
+    "idDataProvider": 260,
+    "idGliese": "LEA"
+  },
+  {
+    "nome": "COMPLEXO  DAS AMÉRICAS",
+    "idDataProvider": 1051,
+    "idGliese": "COA"
+  },
+  {
+    "nome": "COPACABANA",
+    "idDataProvider": 1181,
+    "idGliese": "CON"
+  },
+  {
+    "nome": "Copacabana - N. Sra. de Copacabana",
+    "idDataProvider": 261,
+    "idGliese": "CNS"
+  },
+  {
+    "nome": "Copacabana - Siqueira Campos",
+    "idDataProvider": 262,
+    "idGliese": "COP"
+  },
+  {
+    "nome": "GUILHERME MAXWELL",
+    "idDataProvider": 1176,
+    "idGliese": "SFB"
+  },
+  {
+    "nome": "Ilha do Governador - Hortifruti",
+    "idDataProvider": 263,
+    "idGliese": "IHF"
+  },
+  {
+    "nome": "Ipanema - Galeria Ipanema 2000",
+    "idDataProvider": 264,
+    "idGliese": "IVP"
+  },
+  {
+    "nome": "IPANEMA - VISCONDE DE PIRAJÁ",
+    "idDataProvider": 1195,
+    "idGliese": null
+  },
+  {
+    "nome": "Itaguaí",
+    "idDataProvider": 235,
+    "idGliese": "ITA"
+  },
+  {
+    "nome": "Jacarepaguá - Freguesia",
+    "idDataProvider": 265,
+    "idGliese": "FGA"
+  },
+  {
+    "nome": "Jacarepaguá - Pechincha",
+    "idDataProvider": 266,
+    "idGliese": "PEC"
+  },
+  {
+    "nome": "Jacarepaguá - Taquara",
+    "idDataProvider": 267,
+    "idGliese": "JAC"
+  },
+  {
+    "nome": "Largo do Bicão",
+    "idDataProvider": 506,
+    "idGliese": "LAB"
+  },
+  {
+    "nome": "Largo do Machado",
+    "idDataProvider": 268,
+    "idGliese": "CAT"
+  },
+  {
+    "nome": "LEME",
+    "idDataProvider": 1182,
+    "idGliese": "SLM"
+  },
+  {
+    "nome": "Madureira",
+    "idDataProvider": 269,
+    "idGliese": "MAD"
+  },
+  {
+    "nome": "Maricá",
+    "idDataProvider": 236,
+    "idGliese": "MRC"
+  },
+  {
+    "nome": "Méier - Dias da Cruz",
+    "idDataProvider": 271,
+    "idGliese": "MEI"
+  },
+  {
+    "nome": "Méier - Manuela Barbosa",
+    "idDataProvider": 272,
+    "idGliese": "MER"
+  },
+  {
+    "nome": "MEIER CAROLINA MEIER",
+    "idDataProvider": 1055,
+    "idGliese": "SCM"
+  },
+  {
+    "nome": "MULHER LEBLON",
+    "idDataProvider": 1188,
+    "idGliese": null
+  },
+  {
+    "nome": "Nilópolis",
+    "idDataProvider": 273,
+    "idGliese": "NGV"
+  },
+  {
+    "nome": "Niterói - Centro",
+    "idDataProvider": 237,
+    "idGliese": "NIC"
+  },
+  {
+    "nome": "Niterói - Icaraí",
+    "idDataProvider": 238,
+    "idGliese": "ICA"
+  },
+  {
+    "nome": "Niterói - Piratininga",
+    "idDataProvider": 239,
+    "idGliese": "PIT"
+  },
+  {
+    "nome": "Nova Iguaçu - Dr Thibau",
+    "idDataProvider": 240,
+    "idGliese": "NIT"
+  },
+  {
+    "nome": "Nova Iguaçu - Dr. Barros Jr.",
+    "idDataProvider": 241,
+    "idGliese": "NDB"
+  },
+  {
+    "nome": "Penha",
+    "idDataProvider": 274,
+    "idGliese": "PEN"
+  },
+  {
+    "nome": "PENÍNSULA",
+    "idDataProvider": 1153,
+    "idGliese": "SBP"
+  },
+  {
+    "nome": "Petrópolis",
+    "idDataProvider": 242,
+    "idGliese": "PET"
+  },
+  {
+    "nome": "Realengo",
+    "idDataProvider": 275,
+    "idGliese": "REA"
+  },
+  {
+    "nome": "Recreio dos Bandeirantes",
+    "idDataProvider": 276,
+    "idGliese": "RCR"
+  },
+  {
+    "nome": "Santa Cruz",
+    "idDataProvider": 277,
+    "idGliese": "SCR"
+  },
+  {
+    "nome": "São Gonçalo - Alcântara",
+    "idDataProvider": 286,
+    "idGliese": "ALB"
+  },
+  {
+    "nome": "São Gonçalo - Centro",
+    "idDataProvider": 287,
+    "idGliese": "SGN"
+  },
+  {
+    "nome": "São Gonçalo - Moreira César",
+    "idDataProvider": 288,
+    "idGliese": "SMC"
+  },
+  {
+    "nome": "São João de Meriti",
+    "idDataProvider": 289,
+    "idGliese": "SJM"
+  },
+  {
+    "nome": "Shopping Itaboraí Plaza",
+    "idDataProvider": 234,
+    "idGliese": "SIT"
+  },
+  {
+    "nome": "Shopping Tijuca",
+    "idDataProvider": 278,
+    "idGliese": "STJ"
+  },
+  {
+    "nome": "Tijuca - Flores",
+    "idDataProvider": 279,
+    "idGliese": "TIF"
+  },
+  {
+    "nome": "Tijuca - Largo da Segunda-Feira",
+    "idDataProvider": 280,
+    "idGliese": "TIJ"
+  },
+  {
+    "nome": "Tijuca - Praça Saens Peña I",
+    "idDataProvider": 281,
+    "idGliese": "TJ1"
+  },
+  {
+    "nome": "Tijuca - Praça Saens Peña II",
+    "idDataProvider": 282,
+    "idGliese": "SPN"
+  },
+  {
+    "nome": "TIJUCA URUGUAI",
+    "idDataProvider": 1179,
+    "idGliese": "STU"
+  },
+  {
+    "nome": "Vila Isabel I",
+    "idDataProvider": 283,
+    "idGliese": "VIL"
+  },
+  {
+    "nome": "Vila Isabel II",
+    "idDataProvider": 284,
+    "idGliese": "VLA"
+  },
+  {
+    "nome": "Vila Valqueire",
+    "idDataProvider": 285,
+    "idGliese": "VAL"
+  },
+  {
+    "nome": "AMÉRICAS SHOPPING",
+    "idDataProvider": 1183,
+    "idGliese": null
+  },
+  {
+    "nome": "BANGU SHOPPING",
+    "idDataProvider": 626,
+    "idGliese": null
+  },
+  {
+    "nome": "CENTRO MÉDICO BARRA SHOPPING",
+    "idDataProvider": 627,
+    "idGliese": null
+  },
+  {
+    "nome": "COPACABANA",
+    "idDataProvider": 1186,
+    "idGliese": null
+  },
+  {
+    "nome": "LEBLON",
+    "idDataProvider": 628,
+    "idGliese": null
+  },
+  {
+    "nome": "MDX MEDICAL CENTER",
+    "idDataProvider": 629,
+    "idGliese": null
+  },
+  {
+    "nome": "MULHER LEBLON",
+    "idDataProvider": 1185,
+    "idGliese": null
+  },
+  {
+    "nome": "SHOPPING NOVA AMÉRICA",
+    "idDataProvider": 630,
+    "idGliese": null
+  },
+  {
+    "nome": "SHOPPING TIJUCA",
+    "idDataProvider": 631,
+    "idGliese": null
+  },
+  {
+    "nome": "ARUJÁ",
+    "idDataProvider": 678,
+    "idGliese": "CAJ"
+  },
+  {
+    "nome": "BRÁS CUBAS",
+    "idDataProvider": 690,
+    "idGliese": "CBC"
+  },
+  {
+    "nome": "CEZAR DE SOUZA",
+    "idDataProvider": 691,
+    "idGliese": "CCE"
+  },
+  {
+    "nome": "FERRAZ DE VASCONCELOS",
+    "idDataProvider": 679,
+    "idGliese": "CFV"
+  },
+  {
+    "nome": "GUARAREMA",
+    "idDataProvider": 680,
+    "idGliese": "CGR"
+  },
+  {
+    "nome": "ITAQUAQUECETUBA",
+    "idDataProvider": 681,
+    "idGliese": "CIQ"
+  },
+  {
+    "nome": "JARDIM SANTISTA",
+    "idDataProvider": 692,
+    "idGliese": "CJS"
+  },
+  {
+    "nome": "JARDIM UNIVERSO",
+    "idDataProvider": 693,
+    "idGliese": "CJU"
+  },
+  {
+    "nome": "JOSÉ BONIFÁCIO",
+    "idDataProvider": 694,
+    "idGliese": "CJB"
+  },
+  {
+    "nome": "JUNDIAPEBA",
+    "idDataProvider": 695,
+    "idGliese": "CJA"
+  },
+  {
+    "nome": "MOGI SHOPPING",
+    "idDataProvider": 684,
+    "idGliese": "CMH"
+  },
+  {
+    "nome": "POÁ",
+    "idDataProvider": 685,
+    "idGliese": "CPA"
+  },
+  {
+    "nome": "SANTA ISABEL",
+    "idDataProvider": 686,
+    "idGliese": "CSE"
+  },
+  {
+    "nome": "SHOPPING PATEO ITAQUÁ",
+    "idDataProvider": 682,
+    "idGliese": "CSQ"
+  },
+  {
+    "nome": "SUZANO CENTRO",
+    "idDataProvider": 688,
+    "idGliese": "CSU"
+  },
+  {
+    "nome": "SUZANO SHOPPING",
+    "idDataProvider": 689,
+    "idGliese": "CSZ"
+  },
+  {
+    "nome": "AMERICANA",
+    "idDataProvider": 1025,
+    "idGliese": "AMR"
+  },
+  {
+    "nome": "CAPIVARI",
+    "idDataProvider": 1043,
+    "idGliese": "CPV"
+  },
+  {
+    "nome": "CATERPILLAR-VILA SAUDE",
+    "idDataProvider": 1063,
+    "idGliese": "CTP"
+  },
+  {
+    "nome": "CERQUILHO",
+    "idDataProvider": 1046,
+    "idGliese": "PUC"
+  },
+  {
+    "nome": "IRACEMÁPOLIS",
+    "idDataProvider": 1026,
+    "idGliese": "IRC"
+  },
+  {
+    "nome": "LARANJAL PAULISTA",
+    "idDataProvider": 1044,
+    "idGliese": "LRP"
+  },
+  {
+    "nome": "LIMEIRA - ALAGOAS",
+    "idDataProvider": 1027,
+    "idGliese": "LM3"
+  },
+  {
+    "nome": "LIMEIRA - CENTRO",
+    "idDataProvider": 1028,
+    "idGliese": "LM2"
+  },
+  {
+    "nome": "LIMEIRA - DR. TRAJANO",
+    "idDataProvider": 1061,
+    "idGliese": "LM4"
+  },
+  {
+    "nome": "LIMEIRA - ROOSEVELT",
+    "idDataProvider": 1030,
+    "idGliese": "LM1"
+  },
+  {
+    "nome": "PIRACICABA - AV. SÃO PAULO",
+    "idDataProvider": 1037,
+    "idGliese": "PPS"
+  },
+  {
+    "nome": "PIRACICABA - CARLOS BOTELHO",
+    "idDataProvider": 1038,
+    "idGliese": "CBT"
+  },
+  {
+    "nome": "PIRACICABA - CENTRO",
+    "idDataProvider": 1039,
+    "idGliese": "PPC"
+  },
+  {
+    "nome": "PIRACICABA - INDEPENDÊNCIA",
+    "idDataProvider": 1045,
+    "idGliese": "PIR"
+  },
+  {
+    "nome": "PIRACICABA - JARDIM EUROPA",
+    "idDataProvider": 1040,
+    "idGliese": "PJE"
+  },
+  {
+    "nome": "PIRACICABA - JARDIM SANTANA",
+    "idDataProvider": 1041,
+    "idGliese": "PJS"
+  },
+  {
+    "nome": "PIRACICABA - NOIVA DA COLINA",
+    "idDataProvider": 1042,
+    "idGliese": "PNC"
+  },
+  {
+    "nome": "PIRACICABA - PAULISTA",
+    "idDataProvider": 1031,
+    "idGliese": "PPL"
+  },
+  {
+    "nome": "PIRACICABA - SANTA TEREZINHA",
+    "idDataProvider": 1032,
+    "idGliese": "PST"
+  },
+  {
+    "nome": "RIO DAS PEDRAS",
+    "idDataProvider": 1034,
+    "idGliese": "RDP"
+  },
+  {
+    "nome": "SÃO PEDRO",
+    "idDataProvider": 1035,
+    "idGliese": "SPE"
+  },
+  {
+    "nome": "TIETÊ",
+    "idDataProvider": 1036,
+    "idGliese": "TIE"
+  },
+  {
+    "nome": "ABDIAS",
+    "idDataProvider": 637,
+    "idGliese": "CAI"
+  },
+  {
+    "nome": "ABREU E LIMA",
+    "idDataProvider": 638,
+    "idGliese": "CAA"
+  },
+  {
+    "nome": "AFOGADOS",
+    "idDataProvider": 639,
+    "idGliese": "CFS"
+  },
+  {
+    "nome": "AGAMENON MAGALHÃES",
+    "idDataProvider": 640,
+    "idGliese": "CAG"
+  },
+  {
+    "nome": "AVENIDA RECIFE",
+    "idDataProvider": 641,
+    "idGliese": "CRE"
+  },
+  {
+    "nome": "BEBERIBE",
+    "idDataProvider": 642,
+    "idGliese": "CBB"
+  },
+  {
+    "nome": "BOA VIAGEM I",
+    "idDataProvider": 672,
+    "idGliese": "CB1"
+  },
+  {
+    "nome": "BOA VIAGEM II",
+    "idDataProvider": 673,
+    "idGliese": "CB2"
+  },
+  {
+    "nome": "CABO",
+    "idDataProvider": 674,
+    "idGliese": "CAB"
+  },
+  {
+    "nome": "CAMARAGIBE",
+    "idDataProvider": 675,
+    "idGliese": "CCI"
+  },
+  {
+    "nome": "CANDEIAS",
+    "idDataProvider": 676,
+    "idGliese": "CCN"
+  },
+  {
+    "nome": "CARPINA",
+    "idDataProvider": 677,
+    "idGliese": "CRP"
+  },
+  {
+    "nome": "CARUARU",
+    "idDataProvider": 666,
+    "idGliese": "CCU"
+  },
+  {
+    "nome": "CARUARU II",
+    "idDataProvider": 667,
+    "idGliese": "CAU"
+  },
+  {
+    "nome": "CASA FORTE",
+    "idDataProvider": 668,
+    "idGliese": "CFO"
+  },
+  {
+    "nome": "CAVALEIRO",
+    "idDataProvider": 669,
+    "idGliese": "CCV"
+  },
+  {
+    "nome": "CAXANGÁ",
+    "idDataProvider": 670,
+    "idGliese": "CCX"
+  },
+  {
+    "nome": "CLÍNICA SANTA JOANA",
+    "idDataProvider": 646,
+    "idGliese": "CNN"
+  },
+  {
+    "nome": "DERBY",
+    "idDataProvider": 671,
+    "idGliese": "CDY"
+  },
+  {
+    "nome": "ESPINHEIRO",
+    "idDataProvider": 660,
+    "idGliese": "CEH"
+  },
+  {
+    "nome": "GRAVATÁ",
+    "idDataProvider": 661,
+    "idGliese": "CGT"
+  },
+  {
+    "nome": "HOSPITAL JAYME DA FONTE",
+    "idDataProvider": 662,
+    "idGliese": "CJY"
+  },
+  {
+    "nome": "HOSPITAL MEMORIAL SÃO JOSÉ",
+    "idDataProvider": 663,
+    "idGliese": "HJS"
+  },
+  {
+    "nome": "HOSPITAL SANTA JOANA",
+    "idDataProvider": 647,
+    "idGliese": "HJN"
+  },
+  {
+    "nome": "IGARASSU",
+    "idDataProvider": 664,
+    "idGliese": "CIS"
+  },
+  {
+    "nome": "IMBIRIBEIRA",
+    "idDataProvider": 665,
+    "idGliese": "CIR"
+  },
+  {
+    "nome": "JABOATÃO",
+    "idDataProvider": 654,
+    "idGliese": "CJO"
+  },
+  {
+    "nome": "JANGA",
+    "idDataProvider": 655,
+    "idGliese": "CJG"
+  },
+  {
+    "nome": "JAQUEIRA",
+    "idDataProvider": 656,
+    "idGliese": "CJQ"
+  },
+  {
+    "nome": "LIMOEIRO",
+    "idDataProvider": 657,
+    "idGliese": "CLO"
+  },
+  {
+    "nome": "OLINDA I",
+    "idDataProvider": 658,
+    "idGliese": "CO1"
+  },
+  {
+    "nome": "OLINDA II",
+    "idDataProvider": 659,
+    "idGliese": "CO2"
+  },
+  {
+    "nome": "PAULISTA",
+    "idDataProvider": 648,
+    "idGliese": "CPU"
+  },
+  {
+    "nome": "PAULISTA II",
+    "idDataProvider": 649,
+    "idGliese": "CP2"
+  },
+  {
+    "nome": "PIEDADE",
+    "idDataProvider": 650,
+    "idGliese": "CPD"
+  },
+  {
+    "nome": "PRAZERES",
+    "idDataProvider": 651,
+    "idGliese": "CPR"
+  },
+  {
+    "nome": "PRIME MADALENA",
+    "idDataProvider": 1150,
+    "idGliese": "CNE"
+  },
+  {
+    "nome": "RIO DOCE",
+    "idDataProvider": 652,
+    "idGliese": "CRD"
+  },
+  {
+    "nome": "SÃO LOURENÇO",
+    "idDataProvider": 653,
+    "idGliese": "CLU"
+  },
+  {
+    "nome": "SETÚBAL",
+    "idDataProvider": 643,
+    "idGliese": "CTU"
+  },
+  {
+    "nome": "TORRE",
+    "idDataProvider": 644,
+    "idGliese": "CRT"
+  },
+  {
+    "nome": "VITÓRIA DE SANTO ANTÃO",
+    "idDataProvider": 645,
+    "idGliese": "CVS"
+  },
+  {
+    "nome": "Aldeia",
+    "idDataProvider": 1142,
+    "idGliese": "GAD"
+  },
+  {
+    "nome": "Armindo Moura",
+    "idDataProvider": 1125,
+    "idGliese": "GAM"
+  },
+  {
+    "nome": "Barra De Jangada",
+    "idDataProvider": 1122,
+    "idGliese": "GBJ"
+  },
+  {
+    "nome": "Beberibe",
+    "idDataProvider": 1129,
+    "idGliese": "GBB"
+  },
+  {
+    "nome": "Bezerros",
+    "idDataProvider": 1137,
+    "idGliese": "GBZ"
+  },
+  {
+    "nome": "Cabo I",
+    "idDataProvider": 1107,
+    "idGliese": "GC1"
+  },
+  {
+    "nome": "Cabo II",
+    "idDataProvider": 1110,
+    "idGliese": "GC2"
+  },
+  {
+    "nome": "Camaragibe",
+    "idDataProvider": 1143,
+    "idGliese": "GCR"
+  },
+  {
+    "nome": "Caruaru",
+    "idDataProvider": 1139,
+    "idGliese": "GCU"
+  },
+  {
+    "nome": "Casa Amarela",
+    "idDataProvider": 1128,
+    "idGliese": "GCA"
+  },
+  {
+    "nome": "Casa Caiada",
+    "idDataProvider": 1116,
+    "idGliese": "GCC"
+  },
+  {
+    "nome": "Cavaleiro",
+    "idDataProvider": 1135,
+    "idGliese": "GCL"
+  },
+  {
+    "nome": "Caxanga",
+    "idDataProvider": 1144,
+    "idGliese": "GCX"
+  },
+  {
+    "nome": "Central (Matriz)",
+    "idDataProvider": 1115,
+    "idGliese": "GCM"
+  },
+  {
+    "nome": "Goiana",
+    "idDataProvider": 1140,
+    "idGliese": "GGA"
+  },
+  {
+    "nome": "Gravata",
+    "idDataProvider": 1114,
+    "idGliese": "GGV"
+  },
+  {
+    "nome": "Ibura",
+    "idDataProvider": 1132,
+    "idGliese": "GIB"
+  },
+  {
+    "nome": "Igarassu",
+    "idDataProvider": 1117,
+    "idGliese": "GIG"
+  },
+  {
+    "nome": "Ipojuca",
+    "idDataProvider": 1109,
+    "idGliese": "GIP"
+  },
+  {
+    "nome": "Ipsep",
+    "idDataProvider": 1131,
+    "idGliese": "GIE"
+  },
+  {
+    "nome": "Jaboatao",
+    "idDataProvider": 1134,
+    "idGliese": "GJO"
+  },
+  {
+    "nome": "Janga",
+    "idDataProvider": 1119,
+    "idGliese": "GJN"
+  },
+  {
+    "nome": "Jardim Sao Paulo",
+    "idDataProvider": 1145,
+    "idGliese": "GJS"
+  },
+  {
+    "nome": "Joao De Barros",
+    "idDataProvider": 1136,
+    "idGliese": null
+  },
+  {
+    "nome": "JOÃO DE BARROS",
+    "idDataProvider": 1154,
+    "idGliese": "GJB"
+  },
+  {
+    "nome": "Limoeiro",
+    "idDataProvider": 1120,
+    "idGliese": "GLO"
+  },
+  {
+    "nome": "Palmares",
+    "idDataProvider": 1108,
+    "idGliese": "GPA"
+  },
+  {
+    "nome": "Paulista",
+    "idDataProvider": 1118,
+    "idGliese": null
+  },
+  {
+    "nome": "Peixinhos",
+    "idDataProvider": 1130,
+    "idGliese": "GPI"
+  },
+  {
+    "nome": "Piedade",
+    "idDataProvider": 1126,
+    "idGliese": "GPD"
+  },
+  {
+    "nome": "Prazeres",
+    "idDataProvider": 1123,
+    "idGliese": "GPZ"
+  },
+  {
+    "nome": "Ribeirao",
+    "idDataProvider": 1111,
+    "idGliese": "GRI"
+  },
+  {
+    "nome": "Santa Cruz Do Capibaribe",
+    "idDataProvider": 1138,
+    "idGliese": "GSC"
+  },
+  {
+    "nome": "Setubal",
+    "idDataProvider": 1124,
+    "idGliese": "GSU"
+  },
+  {
+    "nome": "Surubim",
+    "idDataProvider": 1121,
+    "idGliese": "GSB"
+  },
+  {
+    "nome": "Timbauba",
+    "idDataProvider": 1112,
+    "idGliese": "GTA"
+  },
+  {
+    "nome": "Top Boa Viagem",
+    "idDataProvider": 1133,
+    "idGliese": "GBV"
+  },
+  {
+    "nome": "Vitoria De Santo Antao",
+    "idDataProvider": 1113,
+    "idGliese": "GVS"
+  },
+  {
+    "nome": "ALTO DA LAPA I",
+    "idDataProvider": 1165,
+    "idGliese": "SAP"
+  },
+  {
+    "nome": "ANGELICA I",
+    "idDataProvider": 1162,
+    "idGliese": "SAN"
+  },
+  {
+    "nome": "BRASIL I",
+    "idDataProvider": 1167,
+    "idGliese": "SJD"
+  },
+  {
+    "nome": "IBIRAPUERA I",
+    "idDataProvider": 1159,
+    "idGliese": "SIB"
+  },
+  {
+    "nome": "MOEMA I",
+    "idDataProvider": 1157,
+    "idGliese": "SME"
+  },
+  {
+    "nome": "OSASCO I",
+    "idDataProvider": 1166,
+    "idGliese": "SOS"
+  },
+  {
+    "nome": "PANAMBY I",
+    "idDataProvider": 1158,
+    "idGliese": "SPY"
+  },
+  {
+    "nome": "PARAISO I",
+    "idDataProvider": 1156,
+    "idGliese": "SPR"
+  },
+  {
+    "nome": "PORTAL MORUMBI I",
+    "idDataProvider": 1160,
+    "idGliese": "SPM"
+  },
+  {
+    "nome": "SANTANA I",
+    "idDataProvider": 1164,
+    "idGliese": "SAA"
+  },
+  {
+    "nome": "TATUAPÉ I",
+    "idDataProvider": 1161,
+    "idGliese": "STE"
+  },
+  {
+    "nome": "VILA MARIANA I",
+    "idDataProvider": 1163,
+    "idGliese": "SVV"
+  },
+  {
+    "nome": "BARÃO - Exames de Analises Clinicas",
+    "idDataProvider": 634,
+    "idGliese": "MTZ"
+  },
+  {
+    "nome": "BARÃO - Exames de Imagem",
+    "idDataProvider": 632,
+    "idGliese": null
+  },
+  {
+    "nome": "CPA Brasil - Exames de Analises Clinicas",
+    "idDataProvider": 635,
+    "idGliese": "CCB"
+  },
+  {
+    "nome": "Jardim das Américas - Exames de Analises Clinicas",
+    "idDataProvider": 636,
+    "idGliese": "JAM"
+  },
+  {
+    "nome": "Jardim das Américas - Exames de Imagem",
+    "idDataProvider": 633,
+    "idGliese": null
+  },
+  {
+    "nome": "VIDA - Exames de Análises Clinicas",
+    "idDataProvider": 1189,
+    "idGliese": "CVD"
+  }
+]

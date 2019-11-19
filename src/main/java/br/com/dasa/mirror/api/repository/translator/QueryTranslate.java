@@ -3,7 +3,7 @@ package br.com.dasa.mirror.api.repository.translator;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import br.com.dasa.mirror.api.model.from.to.admission.Exams;
+import br.com.dasa.mirror.api.model.Exams;
 
 @Component
 public class QueryTranslate {

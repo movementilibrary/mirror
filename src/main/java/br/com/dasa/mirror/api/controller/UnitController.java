@@ -1,6 +1,6 @@
 package br.com.dasa.mirror.api.controller;
 
-import br.com.dasa.mirror.api.service.impl.UnitService;
+import br.com.dasa.mirror.api.service.UnitService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -24,7 +24,7 @@ public class UnitController {
             @ApiResponse(code = 404, message = "O resource requisitado não foi encontrado"),
             @ApiResponse(code = 500, message = "Um erro interno foi detectado")
     })
-    public Integer verificaunidade(@RequestParam String idGliese) {
+    public Integer realizaDeParaUnidade(@RequestParam String idGliese) {
        return unitService.convertUnityGlieseToUnityDataProvider(idGliese);
     }
 }
