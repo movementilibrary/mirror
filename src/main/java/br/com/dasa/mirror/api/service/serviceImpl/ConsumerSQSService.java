@@ -1,4 +1,4 @@
-package br.com.dasa.mirror.api.service;
+package br.com.dasa.mirror.api.service.serviceImpl;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,6 +10,7 @@ import javax.jms.MessageListener;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
+import br.com.dasa.mirror.api.service.AdmissaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

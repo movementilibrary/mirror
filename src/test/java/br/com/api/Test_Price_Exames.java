@@ -2,7 +2,7 @@ package br.com.api;
 
 import br.com.dasa.mirror.api.model.Admission;
 import br.com.dasa.mirror.api.model.Exams;
-import br.com.dasa.mirror.api.service.FindPriceExamsService;
+import br.com.dasa.mirror.api.service.serviceImpl.FindPriceExamsService;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest

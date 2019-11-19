@@ -1,6 +1,6 @@
 package br.com.dasa.mirror.api.controller;
 
-import br.com.dasa.mirror.api.service.UnitService;
+import br.com.dasa.mirror.api.service.serviceImpl.UnitService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
