@@ -1,5 +1,6 @@
 package br.com.dasa.mirror.api.controller;
 
+import br.com.dasa.mirror.api.service.AdmissaoService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -25,6 +26,6 @@ public class AdmissionController {
 			@ApiResponse(code = 500, message = "Um erro interno foi detectado")
 	})
 	public Admission fromToAdmissions(@RequestBody Admission admission) {
-		return admissaoService.
+		return admissaoService.admissaoValues(admission).get();
 	}
 }
