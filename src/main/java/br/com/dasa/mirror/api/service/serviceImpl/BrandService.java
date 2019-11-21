@@ -20,7 +20,6 @@ import com.amazonaws.services.logs.model.ResourceNotFoundException;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import br.com.dasa.mirror.api.model.Brand;
 import br.com.dasa.mirror.api.model.Unit;
 
 @Service
@@ -29,7 +28,7 @@ public class BrandService {
 	@Autowired
 	ResourceLoader resourceLoader;
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(Brand.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(BrandService.class);
 
 	public Integer convertBrandGlieseToBrandDataProvider(String idGliese) {
 		Optional<Integer> idDataProvider = null;
