@@ -14,19 +14,15 @@ import org.springframework.stereotype.Repository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.dasa.mirror.api.enumeration.CamelRoutesEnum;
-import br.com.dasa.mirror.api.model.ProductTraslate;
 import br.com.dasa.mirror.api.model.Admission;
 import br.com.dasa.mirror.api.model.Exams;
 import br.com.dasa.mirror.api.model.Orders;
+import br.com.dasa.mirror.api.model.ProductTraslate;
 import br.com.dasa.mirror.api.repository.AdmissaoRepository;
-import br.com.dasa.mirror.api.repository.translator.FromToAdmissionTranslator;
 import br.com.dasa.mirror.api.repository.translator.QueryTranslate;
 
 @Repository
 public class AdmissaoRepositoryImpl implements AdmissaoRepository {
-
-	@Autowired
-	private FromToAdmissionTranslator translator;
 
 	@Autowired
 	private ProducerTemplate producerTemplate;
@@ -44,7 +40,7 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 	@Autowired
 	private BrandService brandService;
 	@Autowired
-    private FindPriceExamsService findPriceExamsService;
+	private FindPriceExamsService findPriceExamsService;
 
 	@Override
 	public Optional<Admission> admissaoRepository(Admission admission) {
@@ -87,10 +83,12 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 			Exchange resultExchange = producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_PRODUTO_TRADUCAO.getRoute(),
 					defaultExchange);
 			ObjectMapper mapper = new ObjectMapper();
-			if(resultExchange.getIn().getBody() != null) {
-				productTraslates = mapper.readValue(resultExchange.getIn().getBody().toString(), ProductTraslate[].class);
+			if (resultExchange.getIn().getBody() != null) {
+				productTraslates = mapper.readValue(resultExchange.getIn().getBody().toString(),
+						ProductTraslate[].class);
 			} else {
-				LOGGER.log(Level.INFO, "[INFO] metodo findProdutoTraducao: Não existe produto para esse exame:"+exams.getExameCode());
+				LOGGER.log(Level.INFO, "[INFO] metodo findProdutoTraducao: Não existe produto para esse exame:"
+						+ exams.getExameCode());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -113,7 +111,5 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 		admission.setUnitId(unitService.convertUnityGlieseToUnityDataProvider(admission.getUnitId()).toString());
 		return admission;
 	}
-
-
 
 }

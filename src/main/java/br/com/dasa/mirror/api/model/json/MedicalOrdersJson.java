@@ -1,10 +1,19 @@
 package br.com.dasa.mirror.api.model.json;
 
-import br.com.dasa.mirror.api.model.MedicalOrders;
-
 import java.util.List;
+
+import br.com.dasa.mirror.api.model.MedicalOrders;
 
 public class MedicalOrdersJson {
 
-    private List<MedicalOrders> medicalOrders;
+	private List<MedicalOrders> medicalOrders;
+
+	public List<MedicalOrders> getMedicalOrders() {
+		return medicalOrders;
+	}
+
+	public void setMedicalOrders(List<MedicalOrders> medicalOrders) {
+		this.medicalOrders = medicalOrders;
+	}
+
 }
