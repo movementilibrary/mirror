@@ -28,8 +28,8 @@ public class SwaggerConfig {
 
         return new ApiInfoBuilder()
                 .termsOfServiceUrl("Terms of service")
-                .title( "API de Microserviço Geração de Menu")
-                .description("API referente a geração de menu.")
+                .title( "API de Microserviço Mirror")
+                .description("API mirror realiza integracao entre v1 e v2.")
                 .version("v1")
                 .build();
 
