@@ -44,7 +44,7 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 
 	@Override
 	public Optional<Admission> admissaoRepository(Admission admission) {
-		LOGGER.log(Level.INFO, "Mensagem recebida com sucesso: " + admission.toString());
+		LOGGER.log(Level.INFO, "Mensagem recebida com sucesso");
 		Optional<Admission> result = fromToGlieseToV2(admission);
 		return result;
 	}

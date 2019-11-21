@@ -18,7 +18,7 @@ public class Admission {
 
 	private List<Payments> payments;
 
-	private List <Questions> questions;
+	private List<Questions> questions;
 
 	private String unitId;
 
@@ -26,6 +26,20 @@ public class Admission {
 
 	private Scheduling scheduling;
 
+	public Admission() {
+	}
+
+	public Admission(String brandId, String originId, Patient patient, List<Payments> payments,
+			List<Questions> questions, String unitId, List<Orders> orders, Scheduling scheduling) {
+		this.brandId = brandId;
+		this.originId = originId;
+		this.patient = patient;
+		this.payments = payments;
+		this.questions = questions;
+		this.unitId = unitId;
+		this.orders = orders;
+		this.scheduling = scheduling;
+	}
 
 	public String getBrandId() {
 		return brandId;
@@ -91,33 +105,17 @@ public class Admission {
 		this.scheduling = scheduling;
 	}
 
-	public Admission() {
-	}
-
-	public Admission(String brandId, String originId, Patient patient, List<Payments> payments, List<Questions> questions, String unitId, List<Orders> orders, Scheduling scheduling) {
-		this.brandId = brandId;
-		this.originId = originId;
-		this.patient = patient;
-		this.payments = payments;
-		this.questions = questions;
-		this.unitId = unitId;
-		this.orders = orders;
-		this.scheduling = scheduling;
-	}
-
 	@Override
 	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (!(o instanceof Admission)) return false;
+		if (this == o)
+			return true;
+		if (!(o instanceof Admission))
+			return false;
 		Admission admission = (Admission) o;
-		return Objects.equals(brandId, admission.brandId) &&
-				Objects.equals(originId, admission.originId) &&
-				Objects.equals(patient, admission.patient) &&
-				Objects.equals(payments, admission.payments) &&
-				Objects.equals(questions, admission.questions) &&
-				Objects.equals(unitId, admission.unitId) &&
-				Objects.equals(orders, admission.orders) &&
-				Objects.equals(scheduling, admission.scheduling);
+		return Objects.equals(brandId, admission.brandId) && Objects.equals(originId, admission.originId)
+				&& Objects.equals(patient, admission.patient) && Objects.equals(payments, admission.payments)
+				&& Objects.equals(questions, admission.questions) && Objects.equals(unitId, admission.unitId)
+				&& Objects.equals(orders, admission.orders) && Objects.equals(scheduling, admission.scheduling);
 	}
 
 	@Override
@@ -127,15 +125,8 @@ public class Admission {
 
 	@Override
 	public String toString() {
-		return "Admission{" +
-				"brandId='" + brandId + '\'' +
-				", originId='" + originId + '\'' +
-				", patient=" + patient +
-				", payments=" + payments +
-				", questions=" + questions +
-				", unitId='" + unitId + '\'' +
-				", orders=" + orders +
-				", scheduling=" + scheduling +
-				'}';
+		return "Admission{" + "brandId='" + brandId + '\'' + ", originId='" + originId + '\'' + ", patient=" + patient
+				+ ", payments=" + payments + ", questions=" + questions + ", unitId='" + unitId + '\'' + ", orders="
+				+ orders + ", scheduling=" + scheduling + '}';
 	}
 }

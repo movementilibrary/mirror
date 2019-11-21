@@ -52,7 +52,7 @@ public class FindPriceExamsService {
 					defaultExchange);
 
 			ObjectMapper mapper = new ObjectMapper();
-			if(resultExchange.getIn().getBody() != null) {
+			if (resultExchange.getIn().getBody() != null) {
 				productPrices = mapper.readValue(resultExchange.getIn().getBody().toString(), ProductPrice[].class);
 				for (ProductPrice productPrice : productPrices) {
 					for (Exame exame : productPrice.getExames()) {
