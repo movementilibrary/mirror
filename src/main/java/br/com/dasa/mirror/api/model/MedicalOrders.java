@@ -4,16 +4,11 @@ import java.util.List;
 
 public class MedicalOrders {
 
-    private String doctorIdentifierKind;
-    private String doctorIdentifierValue;
-    private String doctorState;
-    private String uuid;
-    private List<Exams> exams;
-
-
-    public MedicalOrders(String doctorIdentifierKind) {
-        this.doctorIdentifierKind = doctorIdentifierKind;
-    }
+	private String doctorIdentifierKind;
+	private String doctorIdentifierValue;
+	private String doctorState;
+	private String uuid;
+	private List<Exams> exams;
 
     public MedicalOrders(String doctorIdentifierKind, String doctorIdentifierValue, String doctorState, String uuid, List<Exams> exams) {
         this.doctorIdentifierKind = doctorIdentifierKind;
