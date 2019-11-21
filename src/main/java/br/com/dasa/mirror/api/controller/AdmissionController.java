@@ -16,6 +16,8 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
+import java.util.Optional;
+
 @RestController
 public class AdmissionController {
 
@@ -31,8 +33,9 @@ public class AdmissionController {
 			@ApiResponse(code = 500, message = "Um erro interno foi detectado") })
 	public ResponseEntity<Admission> fromToAdmissions(@RequestBody Admission admission) {
 		try {
-			if (admissaoService.admissaoValues(admission).isPresent()) {
-				return new ResponseEntity<Admission>(admissaoService.admissaoValues(admission).get(), HttpStatus.OK);
+			Optional<Admission> admissao = admissaoService.admissaoValues(admission);
+			if (admissao.isPresent()) {
+				return new ResponseEntity<Admission>(admissao.get(), HttpStatus.OK);
 			}
 		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
