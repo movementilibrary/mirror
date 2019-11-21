@@ -48,10 +48,8 @@ public class UnitService {
 
 			List<Unit> listaUnit = gson.fromJson(json, listaUnidadeDeserializa);
 
-			idDataProvider = Optional.of(listaUnit.stream()
-					.filter(g -> idGliese.equals(g.getIdGliese()))
-					.map(Unit::getIdDataProvider)
-					.findAny()
+			idDataProvider = Optional.of(listaUnit.stream().filter(g -> idGliese.equals(g.getIdGliese()))
+					.map(Unit::getIdDataProvider).findAny()
 					.orElseThrow(() -> new ResourceNotFoundException("Não foi possivel encontrar unidade desejada")));
 
 		} catch (Exception exception) {

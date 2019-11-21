@@ -25,41 +25,38 @@ import br.com.dasa.mirror.api.model.Unit;
 
 @Service
 public class BrandService {
-	
-    @Autowired
-    ResourceLoader resourceLoader;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Brand.class);
+	@Autowired
+	ResourceLoader resourceLoader;
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(Brand.class);
 
-    public Integer convertBrandGlieseToBrandDataProvider(String idGliese) {
-        Optional<Integer> idDataProvider = null;
-        Gson gson = new Gson();
+	public Integer convertBrandGlieseToBrandDataProvider(String idGliese) {
+		Optional<Integer> idDataProvider = null;
+		Gson gson = new Gson();
 
-        try {
-            final Resource resource = this.resourceLoader.getResource("classpath:marca");
-            final InputStream inputStream = resource.getInputStream();
-            File file = File.createTempFile("marca", ".tmp");
-            Files.copy(inputStream, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
-            String json = new String(Files.readAllBytes(file.toPath()));
-            inputStream.close();
+		try {
+			final Resource resource = this.resourceLoader.getResource("classpath:marca");
+			final InputStream inputStream = resource.getInputStream();
+			File file = File.createTempFile("marca", ".tmp");
+			Files.copy(inputStream, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+			String json = new String(Files.readAllBytes(file.toPath()));
+			inputStream.close();
 
-            Type listaMarcaDeserializa = new TypeToken<ArrayList<Unit>>() {
-            }.getType();
+			Type listaMarcaDeserializa = new TypeToken<ArrayList<Unit>>() {
+			}.getType();
 
-            List<Unit> listaUnit = gson.fromJson(json, listaMarcaDeserializa);
+			List<Unit> listaUnit = gson.fromJson(json, listaMarcaDeserializa);
 
-            idDataProvider = Optional.of(listaUnit.stream()
-                    .filter(g -> idGliese.equals(g.getIdGliese()))
-                    .map(Unit::getIdDataProvider)
-                    .findAny()
-                    .orElseThrow(() -> new ResourceNotFoundException("Não foi possivel encontrar marca desejada")));
+			idDataProvider = Optional.of(listaUnit.stream().filter(g -> idGliese.equals(g.getIdGliese()))
+					.map(Unit::getIdDataProvider).findAny()
+					.orElseThrow(() -> new ResourceNotFoundException("Não foi possivel encontrar marca desejada")));
 
-        } catch (Exception exception) {
-            LOGGER.error("Não foi possivel encontrar arquivo ");
-        }
+		} catch (Exception exception) {
+			LOGGER.error("Não foi possivel encontrar arquivo ");
+		}
 
-        return idDataProvider.orElseThrow(() -> new RuntimeException("Arquivo não encontrado"));
-    }
+		return idDataProvider.orElseThrow(() -> new RuntimeException("Arquivo não encontrado"));
+	}
 
 }
