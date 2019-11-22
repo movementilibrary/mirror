@@ -1,4 +1,4 @@
-package br.com.dasa.mirror.api.service.serviceImpl;
+package br.com.dasa.mirror.api.service.impl;
 
 import java.util.Optional;
 import java.util.logging.Level;
@@ -45,8 +45,7 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 	@Override
 	public Optional<Admission> admissaoRepository(Admission admission) {
 		LOGGER.log(Level.INFO, "Mensagem recebida com sucesso");
-		Optional<Admission> result = fromToGlieseToV2(admission);
-		return result;
+		return fromToGlieseToV2(admission);
 	}
 
 	public Optional<Admission> fromToGlieseToV2(Admission admission) {
@@ -70,7 +69,6 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 
 	/**
 	 * Metodo para buscar o idProduto do gliese-data e data provider.
-	 * 
 	 * @param exams
 	 * @return ProductTraslate[]
 	 */
@@ -91,7 +89,6 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 						+ exams.getExameCode());
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
 			LOGGER.log(Level.INFO, "[ERRO] metodo findProdutoTraducao: " + e.getStackTrace());
 		}
 		LOGGER.log(Level.INFO, "FIM do findProdutoTraducao");
@@ -101,15 +98,13 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 	/**
 	 * Metodo resposável por receber Id Unit do Gliese e converter para Id Unit Data
 	 * Provider
-	 * 
 	 * @author michel marciano
 	 * @param admission
-	 * @return
+	 * @return Admission
 	 */
 	public Admission convertIdGlieseToIdDataProvider(Admission admission) {
 		admission.setBrandId(brandService.convertBrandGlieseToBrandDataProvider(admission.getBrandId()).toString());
 		admission.setUnitId(unitService.convertUnityGlieseToUnityDataProvider(admission.getUnitId()).toString());
 		return admission;
 	}
-
 }

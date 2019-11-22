@@ -1,5 +1,7 @@
 package br.com.dasa.mirror.api.controller;
 
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,14 +32,15 @@ public class AdmissionController {
 			@ApiResponse(code = 404, message = "O resource requisitado não foi encontrado"),
 			@ApiResponse(code = 500, message = "Um erro interno foi detectado") })
 	public ResponseEntity<Admission> fromToAdmissions(@RequestBody Admission admission) {
-		try {
-			if (admissaoService.admissaoValues(admission).isPresent()) {
-				return new ResponseEntity<Admission>(admissaoService.admissaoValues(admission).get(), HttpStatus.OK);
+		try {	
+			Optional<Admission> response = admissaoService.admissaoValues(admission);
+			if(response.isPresent()) {
+				return new ResponseEntity<>(response.get(), HttpStatus.OK);
 			}
 		} catch (Exception e) {
 			LOG.error(e.getMessage(), e);
-			return new ResponseEntity<Admission>(HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		return new ResponseEntity<Admission>(HttpStatus.INTERNAL_SERVER_ERROR);
+		return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }

@@ -8,31 +8,30 @@ import br.com.dasa.mirror.api.model.Exams;
 @Component
 public class QueryTranslate {
 
-    @Value("${url.api.dasa.marca}")
-    private String marca;
+	@Value("${url.api.dasa.marca}")
+	private String marca;
 
-    @Value("${url.api.dasa.sistema}")
-    private String sistema;
+	@Value("${url.api.dasa.sistema}")
+	private String sistema;
 
-    private String TEMPLATE = "idSistema=#sistema&idMarca=#marca&idsOrigem=#exams";
-    private final String PRODUCT_PRICE_TEMPLATE = "idBrand=#brand&idExams=#exams";
+	private static final String TEMPLATE = "idSistema=#sistema&idMarca=#marca&idsOrigem=#exams";
+	private static final String PRODUCT_PRICE_TEMPLATE = "idBrand=#brand&idExams=#exams";
 
-    private final String QUERY;
-    private final String QUERY_PRODUTO;
+	private String query = null;
+	private String queryProduto = null;
 
-    public QueryTranslate() {
-        String jsonString = String.format(TEMPLATE);
-        String jsonPreco = String.format(PRODUCT_PRICE_TEMPLATE);
-        QUERY = jsonString;
-        QUERY_PRODUTO = jsonPreco;
-    }
+	public QueryTranslate() {
+		String jsonString = String.format(TEMPLATE);
+		String jsonPreco = String.format(PRODUCT_PRICE_TEMPLATE);
+		query = jsonString;
+		queryProduto = jsonPreco;
+	}
 
+	public String getQuery(Exams exams) {
+		return query.replace("#exams", exams.getExameCode()).replace("#marca", marca).replace("#sistema", sistema);
+	}
 
-    public String getQuery(Exams exams) {
-        return QUERY.replaceAll("#exams", exams.getExameCode()).replaceAll("#marca", marca).replaceAll("#sistema", sistema);
-    }
-
-    public String getQueryProduto(String idBrand, String idExame) {
-        return QUERY_PRODUTO.replaceAll("#brand", idBrand).replaceAll("#exams", idExame);
-    }
+	public String getQueryProduto(String idBrand, String idExame) {
+		return queryProduto.replace("#brand", idBrand).replace("#exams", idExame);
+	}
 }

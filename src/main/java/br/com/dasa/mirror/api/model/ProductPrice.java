@@ -24,7 +24,7 @@ public class ProductPrice {
 	@JsonProperty("nomeUnidade")
 	private String nomeUnidade;
 	@JsonIgnore
-	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+	private Map<String, Object> additionalProperties = new HashMap<>();
 
 	@JsonProperty("exames")
 	public List<Exame> getExames() {

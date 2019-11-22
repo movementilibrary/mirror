@@ -1,4 +1,4 @@
-package br.com.dasa.mirror.api.service.serviceImpl;
+package br.com.dasa.mirror.api.service.impl;
 
 import java.io.File;
 import java.io.InputStream;
@@ -15,47 +15,52 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
-import com.amazonaws.services.logs.model.ResourceNotFoundException;
+import com.amazonaws.services.acmpca.model.ResourceNotFoundException;
+import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
+import br.com.dasa.mirror.api.model.Brand;
 import br.com.dasa.mirror.api.model.Unit;
 
 @Service
-public class UnitService {
-
-	private static final Logger LOGGER = LoggerFactory.getLogger(UnitService.class);
+public class BrandService {
 
 	@Autowired
 	ResourceLoader resourceLoader;
 
-	public Integer convertUnityGlieseToUnityDataProvider(String idGliese) {
-		Optional<Integer> idDataProvider = null;
-		try {
-			Gson gson = new Gson();
+	private static final Logger LOGGER = LoggerFactory.getLogger(BrandService.class);
 
-			final Resource resource = this.resourceLoader.getResource("classpath:unidades");
+	public Brand convertBrandGlieseToBrandDataProvider(String idGliese) {
+		Optional<Integer> idDataProvider = null;
+		Gson gson = new Gson();
+		Brand brand = new Brand();
+
+		try {
+			final Resource resource = this.resourceLoader.getResource("classpath:marca");
 			final InputStream inputStream = resource.getInputStream();
-			File file = File.createTempFile("unidades", ".tmp");
+			File file = File.createTempFile("marca", ".tmp");
 			Files.copy(inputStream, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
 			String json = new String(Files.readAllBytes(file.toPath()));
-
 			inputStream.close();
 
-			Type listaUnidadeDeserializa = new TypeToken<ArrayList<Unit>>() {
+			Type listaMarcaDeserializa = new TypeToken<ArrayList<Unit>>() {
 			}.getType();
 
-			List<Unit> listaUnit = gson.fromJson(json, listaUnidadeDeserializa);
+			List<Unit> listaUnit = gson.fromJson(json, listaMarcaDeserializa);
 
 			idDataProvider = Optional.of(listaUnit.stream().filter(g -> idGliese.equals(g.getIdGliese()))
 					.map(Unit::getIdDataProvider).findAny()
-					.orElseThrow(() -> new ResourceNotFoundException("Não foi possivel encontrar unidade desejada")));
+					.orElseThrow(() -> new ResourceNotFoundException("Não foi possivel encontrar marca desejada")));
 
+			if (!StringUtils.isEmpty(idDataProvider.get())) {
+				brand.setIdDataProvider(idDataProvider.get());
+			}
 		} catch (Exception exception) {
 			LOGGER.error("Não foi possivel encontrar arquivo ");
 		}
-		return idDataProvider.orElseThrow(() -> new RuntimeException("Arquivo não encontrado"));
+		return brand;
 	}
 
 }

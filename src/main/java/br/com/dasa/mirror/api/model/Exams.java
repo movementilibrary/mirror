@@ -4,110 +4,110 @@ import java.util.List;
 
 public class Exams {
 
-    private String realizationDate;
+	private String realizationDate;
 
-    private String sampleDescription;
+	private String sampleDescription;
 
-    private String price;
+	private String price;
 
-    private String unitRealizationId;
+	private String unitRealizationId;
 
-    private String exameCode;
+	private String exameCode;
 
-    private List<AdditionalProperties> AdditionalProperties;
+	private List<AdditionalProperties> additionalProperties;
 
-    private String sample;
+	private String sample;
 
-    private String status;
+	private String status;
 
-    private String uuid;
+	private String uuid;
 
+	public Exams() {
+	}
 
-    public Exams() {
-    }
+	public Exams(String realizationDate, String sampleDescription, String price, String unitRealizationId,
+			String exameCode, List<AdditionalProperties> additionalProperties,
+			String sample, String status, String uuid) {
+		this.realizationDate = realizationDate;
+		this.sampleDescription = sampleDescription;
+		this.price = price;
+		this.unitRealizationId = unitRealizationId;
+		this.exameCode = exameCode;
+		this.additionalProperties = additionalProperties;
+		this.sample = sample;
+		this.status = status;
+		this.uuid = uuid;
+	}
 
-    public Exams(String realizationDate, String sampleDescription, String price, String unitRealizationId, String exameCode, List<br.com.dasa.mirror.api.model.AdditionalProperties> additionalProperties, String sample, String status, String uuid) {
-        this.realizationDate = realizationDate;
-        this.sampleDescription = sampleDescription;
-        this.price = price;
-        this.unitRealizationId = unitRealizationId;
-        this.exameCode = exameCode;
-        AdditionalProperties = additionalProperties;
-        this.sample = sample;
-        this.status = status;
-        this.uuid = uuid;
-    }
+	public String getRealizationDate() {
+		return realizationDate;
+	}
 
+	public void setRealizationDate(String realizationDate) {
+		this.realizationDate = realizationDate;
+	}
 
-    public String getRealizationDate() {
-        return realizationDate;
-    }
+	public String getSampleDescription() {
+		return sampleDescription;
+	}
 
-    public void setRealizationDate(String realizationDate) {
-        this.realizationDate = realizationDate;
-    }
+	public void setSampleDescription(String sampleDescription) {
+		this.sampleDescription = sampleDescription;
+	}
 
-    public String getSampleDescription() {
-        return sampleDescription;
-    }
+	public String getPrice() {
+		return price;
+	}
 
-    public void setSampleDescription(String sampleDescription) {
-        this.sampleDescription = sampleDescription;
-    }
+	public void setPrice(String price) {
+		this.price = price;
+	}
 
-    public String getPrice() {
-        return price;
-    }
+	public String getUnitRealizationId() {
+		return unitRealizationId;
+	}
 
-    public void setPrice(String price) {
-        this.price = price;
-    }
+	public void setUnitRealizationId(String unitRealizationId) {
+		this.unitRealizationId = unitRealizationId;
+	}
 
-    public String getUnitRealizationId() {
-        return unitRealizationId;
-    }
+	public String getExameCode() {
+		return exameCode;
+	}
 
-    public void setUnitRealizationId(String unitRealizationId) {
-        this.unitRealizationId = unitRealizationId;
-    }
+	public void setExameCode(String exameCode) {
+		this.exameCode = exameCode;
+	}
 
-    public String getExameCode() {
-        return exameCode;
-    }
+	public List<AdditionalProperties> getAdditionalProperties() {
+		return additionalProperties;
+	}
 
-    public void setExameCode(String exameCode) {
-        this.exameCode = exameCode;
-    }
+	public void setAdditionalProperties(List<AdditionalProperties> additionalProperties) {
+		this.additionalProperties = additionalProperties;
+	}
 
-    public List<br.com.dasa.mirror.api.model.AdditionalProperties> getAdditionalProperties() {
-        return AdditionalProperties;
-    }
+	public String getSample() {
+		return sample;
+	}
 
-    public void setAdditionalProperties(List<br.com.dasa.mirror.api.model.AdditionalProperties> additionalProperties) {
-        AdditionalProperties = additionalProperties;
-    }
+	public void setSample(String sample) {
+		this.sample = sample;
+	}
 
-    public String getSample() {
-        return sample;
-    }
+	public String getStatus() {
+		return status;
+	}
 
-    public void setSample(String sample) {
-        this.sample = sample;
-    }
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-    public String getStatus() {
-        return status;
-    }
+	public String getUuid() {
+		return uuid;
+	}
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
 }

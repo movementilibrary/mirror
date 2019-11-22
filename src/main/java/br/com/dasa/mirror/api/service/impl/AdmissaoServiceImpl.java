@@ -1,4 +1,4 @@
-package br.com.dasa.mirror.api.service.serviceImpl;
+package br.com.dasa.mirror.api.service.impl;
 
 
 import br.com.dasa.mirror.api.model.Admission;

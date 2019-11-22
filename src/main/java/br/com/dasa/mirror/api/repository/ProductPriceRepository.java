@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface ProductPriceRepository {
 
-	Optional<FromToAdmission> ProductRepository(Exams exams);
+	Optional<FromToAdmission> productRepository(Exams exams);
 }

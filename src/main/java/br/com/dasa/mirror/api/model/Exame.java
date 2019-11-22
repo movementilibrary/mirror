@@ -30,7 +30,7 @@ public class Exame {
 	@JsonProperty("preco")
 	private long preco;
 	@JsonIgnore
-	private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+	private Map<String, Object> additionalProperties = new HashMap<>();
 
 	@JsonProperty("coberturaConvenio")
 	public boolean isCoberturaConvenio() {

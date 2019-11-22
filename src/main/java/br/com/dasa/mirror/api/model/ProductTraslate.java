@@ -23,7 +23,7 @@ public class ProductTraslate {
     @JsonProperty("idCorporativo")
     private long idCorporativo;
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private Map<String, Object> additionalProperties = new HashMap<>();
 
     @JsonProperty("idProdutoOrigem")
     public String getIdProdutoOrigem() {
