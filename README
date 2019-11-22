@@ -8,3 +8,85 @@
     $ mvn clean install
 
 ## Deploying
+
+
+#Payload
+
+{
+  "originId": "",
+  "brandId": "34",
+  "patient": {
+    "cip": "888",
+    "mdmId": ""
+  },
+  "payments": [
+    {
+      "method": "9",
+      "additionalProperties": [
+        {
+          "value": "",
+          "key": ""
+        }
+      ],
+      "type": "Balcao",
+      "value": "200.00",
+      "transactionId": ""
+    }
+  ],
+  "questions": [
+    {
+      "question": "",
+      "answer": "",
+      "additionalProperties": [
+        {
+          "value": "",
+          "key": ""
+        }
+      ]
+    }
+  ],
+  "unitId": "JAM",
+  "orders": [
+    {
+      "doctor": {
+        "identifierValue": "SP-CRM-111110",
+        "state": "SP-CRM-111110",
+        "identifierKind": "SP-CRM-111110"
+      },
+      "exams": [
+        {
+          "realizationDate": "12092019",
+          "sampleDescription": "H1 EDTA 4 ML",
+          "unitRealizationId": "DEL",
+          "exameCode": "DA-HE4SA",
+          "AdditionalProperties": [
+            {
+              "value": "",
+              "key": ""
+            }
+          ],
+          "sample": "825646627301",
+          "status": "0"
+        },
+        {
+          "realizationDate": "17092019",
+          "sampleDescription": "H1 EDTA 4 ML",
+          "unitRealizationId": "DEL",
+          "exameCode": "DA-KSA",
+          "AdditionalProperties": [
+            {
+              "value": "",
+              "key": ""
+            }
+          ],
+          "sample": "825646627301",
+          "status": "0"
+        }
+      ]
+    }
+  ],
+  "scheduling": {
+    "date": "",
+    "id": ""
+  }
+}

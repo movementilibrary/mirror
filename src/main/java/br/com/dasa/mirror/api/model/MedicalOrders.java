@@ -10,44 +10,51 @@ public class MedicalOrders {
 	private String uuid;
 	private List<Exams> exams;
 
-	public String getDoctorIdentifierKind() {
-		return doctorIdentifierKind;
-	}
+    public MedicalOrders(String doctorIdentifierKind, String doctorIdentifierValue, String doctorState, String uuid, List<Exams> exams) {
+        this.doctorIdentifierKind = doctorIdentifierKind;
+        this.doctorIdentifierValue = doctorIdentifierValue;
+        this.doctorState = doctorState;
+        this.uuid = uuid;
+        this.exams = exams;
+    }
 
-	public void setDoctorIdentifierKind(String doctorIdentifierKind) {
-		this.doctorIdentifierKind = doctorIdentifierKind;
-	}
+    public String getDoctorIdentifierKind() {
+        return doctorIdentifierKind;
+    }
 
-	public String getDoctorIdentifierValue() {
-		return doctorIdentifierValue;
-	}
+    public void setDoctorIdentifierKind(String doctorIdentifierKind) {
+        this.doctorIdentifierKind = doctorIdentifierKind;
+    }
 
-	public void setDoctorIdentifierValue(String doctorIdentifierValue) {
-		this.doctorIdentifierValue = doctorIdentifierValue;
-	}
+    public String getDoctorIdentifierValue() {
+        return doctorIdentifierValue;
+    }
 
-	public String getDoctorState() {
-		return doctorState;
-	}
+    public void setDoctorIdentifierValue(String doctorIdentifierValue) {
+        this.doctorIdentifierValue = doctorIdentifierValue;
+    }
 
-	public void setDoctorState(String doctorState) {
-		this.doctorState = doctorState;
-	}
+    public String getDoctorState() {
+        return doctorState;
+    }
 
-	public String getUuid() {
-		return uuid;
-	}
+    public void setDoctorState(String doctorState) {
+        this.doctorState = doctorState;
+    }
 
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-	}
+    public String getUuid() {
+        return uuid;
+    }
 
-	public List<Exams> getExams() {
-		return exams;
-	}
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
-	public void setExams(List<Exams> exams) {
-		this.exams = exams;
-	}
+    public List<Exams> getExams() {
+        return exams;
+    }
 
+    public void setExams(List<Exams> exams) {
+        this.exams = exams;
+    }
 }
