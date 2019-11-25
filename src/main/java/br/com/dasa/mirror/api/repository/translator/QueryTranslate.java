@@ -16,6 +16,7 @@ public class QueryTranslate {
 
 	private static final String TEMPLATE = "idSistema=#sistema&idMarca=#marca&idsOrigem=#exams";
 	private static final String PRODUCT_PRICE_TEMPLATE = "idBrand=#brand&idExams=#exams";
+	private static final String AGENDAMETO_TEMPLATE = "idBrand=#brand&idExams=#exams";
 
 	private String query = null;
 	private String queryProduto = null;

@@ -17,6 +17,7 @@ public class CamelHttpRequestFactory {
     
     private static final String PRODUTOS_TRADUCAO = "/api/exams/getTranslate?";
     private static final String PRODUTO_PRECO = "/api/exams/unitDisponibility?";
+    private static final String MEDICAL_ORDERS = "/api/admissions/?/medicalorders";
 
     private static Map<String, CamelHttpRequest> camelHttpRequestMap;
 
@@ -24,6 +25,7 @@ public class CamelHttpRequestFactory {
         camelHttpRequestMap = new HashMap<>();
 
         putRequest(ROUTE_LOAD_PRODUTO_TRADUCAO.name(), PRODUTOS_TRADUCAO, GET.name(), APPLICATION_JSON, APPLICATION_JSON);
+        putRequest(ROUTE_LOAD_PRODUTO_PRECO.name(), PRODUTO_PRECO, GET.name(), APPLICATION_JSON, APPLICATION_JSON);
         putRequest(ROUTE_LOAD_PRODUTO_PRECO.name(), PRODUTO_PRECO, GET.name(), APPLICATION_JSON, APPLICATION_JSON);
     }
 
