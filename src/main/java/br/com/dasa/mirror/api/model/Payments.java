@@ -14,6 +14,21 @@ public class Payments {
 
 	private String transactionId;
 
+	private String uuid;
+
+
+	public Payments() {
+	}
+
+	public Payments(String method, List<AdditionalProperties> additionalProperties, String type, String value, String transactionId, String uuid) {
+		this.method = method;
+		this.additionalProperties = additionalProperties;
+		this.type = type;
+		this.value = value;
+		this.transactionId = transactionId;
+		this.uuid = uuid;
+	}
+
 	public String getMethod() {
 		return method;
 	}
@@ -54,15 +69,12 @@ public class Payments {
 		this.transactionId = transactionId;
 	}
 
-	public Payments() {
+	public String getUuid() {
+		return uuid;
 	}
 
-	public Payments(String method, List<AdditionalProperties> additionalProperties, String type, String value, String transactionId) {
-		this.method = method;
-		this.additionalProperties = additionalProperties;
-		this.type = type;
-		this.value = value;
-		this.transactionId = transactionId;
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
 	}
 
 
@@ -75,14 +87,14 @@ public class Payments {
 				Objects.equals(additionalProperties, payments.additionalProperties) &&
 				Objects.equals(type, payments.type) &&
 				Objects.equals(value, payments.value) &&
-				Objects.equals(transactionId, payments.transactionId);
+				Objects.equals(transactionId, payments.transactionId) &&
+				Objects.equals(uuid, payments.uuid);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(method, additionalProperties, type, value, transactionId);
+		return Objects.hash(method, additionalProperties, type, value, transactionId, uuid);
 	}
-
 
 	@Override
 	public String toString() {
@@ -92,6 +104,7 @@ public class Payments {
 				", type='" + type + '\'' +
 				", value='" + value + '\'' +
 				", transactionId='" + transactionId + '\'' +
+				", uuid='" + uuid + '\'' +
 				'}';
 	}
 }

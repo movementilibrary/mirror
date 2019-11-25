@@ -1,20 +1,24 @@
 package br.com.dasa.mirror.api.model;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Scheduling {
 
 	private String date;
 
-	private String id;
+	private List<AdditionalProperties> additionalProperties;
+	private String schedulingId;
 
 
 	public Scheduling() {
 	}
 
-	public Scheduling(String date, String id) {
+
+	public Scheduling(String date, List<AdditionalProperties> additionalProperties, String schedulingId) {
 		this.date = date;
-		this.id = id;
+		this.additionalProperties = additionalProperties;
+		this.schedulingId = schedulingId;
 	}
 
 	public String getDate() {
@@ -25,12 +29,20 @@ public class Scheduling {
 		this.date = date;
 	}
 
-	public String getId() {
-		return id;
+	public List<AdditionalProperties> getAdditionalProperties() {
+		return additionalProperties;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setAdditionalProperties(List<AdditionalProperties> additionalProperties) {
+		this.additionalProperties = additionalProperties;
+	}
+
+	public String getSchedulingId() {
+		return schedulingId;
+	}
+
+	public void setSchedulingId(String schedulingId) {
+		this.schedulingId = schedulingId;
 	}
 
 	@Override
@@ -39,19 +51,21 @@ public class Scheduling {
 		if (!(o instanceof Scheduling)) return false;
 		Scheduling that = (Scheduling) o;
 		return Objects.equals(date, that.date) &&
-				Objects.equals(id, that.id);
+				Objects.equals(additionalProperties, that.additionalProperties) &&
+				Objects.equals(schedulingId, that.schedulingId);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(date, id);
+		return Objects.hash(date, additionalProperties, schedulingId);
 	}
 
 	@Override
 	public String toString() {
 		return "Scheduling{" +
 				"date='" + date + '\'' +
-				", id='" + id + '\'' +
+				", additionalProperties=" + additionalProperties +
+				", schedulingId='" + schedulingId + '\'' +
 				'}';
 	}
 }

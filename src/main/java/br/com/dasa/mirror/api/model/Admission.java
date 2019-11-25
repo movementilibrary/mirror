@@ -1,5 +1,7 @@
 package br.com.dasa.mirror.api.model;
 
+import br.com.dasa.mirror.api.enumeration.AdmissionStatus;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -10,43 +12,46 @@ import java.util.Objects;
  */
 public class Admission {
 
+    private String originId;
+
+    private String unitId;
+
+    private String cip;
+
+    private String mdmId;
+
+	private String uuid;
+
+    private AdmissionStatus admissionStatus;
+
 	private String brandId;
-
-	private String originId;
-
-	private Patient patient;
 
 	private List<Payments> payments;
 
+	//TODO adicionar uuid
 	private List<Questions> questions;
 
-	private String unitId;
-
-	private List<Orders> orders;
-
 	private Scheduling scheduling;
+
+	private List<MedicalOrders> medicalOrders;
+
 
 	public Admission() {
 	}
 
-	public Admission(String brandId, String originId, Patient patient, List<Payments> payments,
-			List<Questions> questions, String unitId, List<Orders> orders, Scheduling scheduling) {
-		this.brandId = brandId;
+
+	public Admission(String originId, String unitId, String cip, String mdmId, String uuid, AdmissionStatus admissionStatus, String brandId, List<Payments> payments, List<Questions> questions, Scheduling scheduling, List<MedicalOrders> medicalOrders) {
 		this.originId = originId;
-		this.patient = patient;
+		this.unitId = unitId;
+		this.cip = cip;
+		this.mdmId = mdmId;
+		this.uuid = uuid;
+		this.admissionStatus = admissionStatus;
+		this.brandId = brandId;
 		this.payments = payments;
 		this.questions = questions;
-		this.unitId = unitId;
-		this.orders = orders;
 		this.scheduling = scheduling;
-	}
-
-	public String getBrandId() {
-		return brandId;
-	}
-
-	public void setBrandId(String brandId) {
-		this.brandId = brandId;
+		this.medicalOrders = medicalOrders;
 	}
 
 	public String getOriginId() {
@@ -57,12 +62,52 @@ public class Admission {
 		this.originId = originId;
 	}
 
-	public Patient getPatient() {
-		return patient;
+	public String getUnitId() {
+		return unitId;
 	}
 
-	public void setPatient(Patient patient) {
-		this.patient = patient;
+	public void setUnitId(String unitId) {
+		this.unitId = unitId;
+	}
+
+	public String getCip() {
+		return cip;
+	}
+
+	public void setCip(String cip) {
+		this.cip = cip;
+	}
+
+	public String getMdmId() {
+		return mdmId;
+	}
+
+	public void setMdmId(String mdmId) {
+		this.mdmId = mdmId;
+	}
+
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
+
+	public AdmissionStatus getAdmissionStatus() {
+		return admissionStatus;
+	}
+
+	public void setAdmissionStatus(AdmissionStatus admissionStatus) {
+		this.admissionStatus = admissionStatus;
+	}
+
+	public String getBrandId() {
+		return brandId;
+	}
+
+	public void setBrandId(String brandId) {
+		this.brandId = brandId;
 	}
 
 	public List<Payments> getPayments() {
@@ -81,22 +126,6 @@ public class Admission {
 		this.questions = questions;
 	}
 
-	public String getUnitId() {
-		return unitId;
-	}
-
-	public void setUnitId(String unitId) {
-		this.unitId = unitId;
-	}
-
-	public List<Orders> getOrders() {
-		return orders;
-	}
-
-	public void setOrders(List<Orders> orders) {
-		this.orders = orders;
-	}
-
 	public Scheduling getScheduling() {
 		return scheduling;
 	}
@@ -105,28 +134,52 @@ public class Admission {
 		this.scheduling = scheduling;
 	}
 
+	public List<MedicalOrders> getMedicalOrders() {
+		return medicalOrders;
+	}
+
+	public void setMedicalOrders(List<MedicalOrders> medicalOrders) {
+		this.medicalOrders = medicalOrders;
+	}
+
 	@Override
 	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (!(o instanceof Admission))
-			return false;
+		if (this == o) return true;
+		if (!(o instanceof Admission)) return false;
 		Admission admission = (Admission) o;
-		return Objects.equals(brandId, admission.brandId) && Objects.equals(originId, admission.originId)
-				&& Objects.equals(patient, admission.patient) && Objects.equals(payments, admission.payments)
-				&& Objects.equals(questions, admission.questions) && Objects.equals(unitId, admission.unitId)
-				&& Objects.equals(orders, admission.orders) && Objects.equals(scheduling, admission.scheduling);
+		return Objects.equals(originId, admission.originId) &&
+				Objects.equals(unitId, admission.unitId) &&
+				Objects.equals(cip, admission.cip) &&
+				Objects.equals(mdmId, admission.mdmId) &&
+				Objects.equals(uuid, admission.uuid) &&
+				admissionStatus == admission.admissionStatus &&
+				Objects.equals(brandId, admission.brandId) &&
+				Objects.equals(payments, admission.payments) &&
+				Objects.equals(questions, admission.questions) &&
+				Objects.equals(scheduling, admission.scheduling) &&
+				Objects.equals(medicalOrders, admission.medicalOrders);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(brandId, originId, patient, payments, questions, unitId, orders, scheduling);
+		return Objects.hash(originId, unitId, cip, mdmId, uuid, admissionStatus, brandId, payments, questions, scheduling, medicalOrders);
 	}
+
 
 	@Override
 	public String toString() {
-		return "Admission{" + "brandId='" + brandId + '\'' + ", originId='" + originId + '\'' + ", patient=" + patient
-				+ ", payments=" + payments + ", questions=" + questions + ", unitId='" + unitId + '\'' + ", orders="
-				+ orders + ", scheduling=" + scheduling + '}';
+		return "Admission{" +
+				"originId='" + originId + '\'' +
+				", unitId='" + unitId + '\'' +
+				", cip='" + cip + '\'' +
+				", mdmId='" + mdmId + '\'' +
+				", uuid='" + uuid + '\'' +
+				", admissionStatus=" + admissionStatus +
+				", brandId='" + brandId +
+				", payments=" + payments +
+				", questions=" + questions +
+				", scheduling=" + scheduling +
+				", medicalOrders=" + medicalOrders +
+				'}';
 	}
 }

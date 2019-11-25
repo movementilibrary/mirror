@@ -4,6 +4,7 @@ import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import br.com.dasa.mirror.api.model.MedicalOrders;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
@@ -16,7 +17,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import br.com.dasa.mirror.api.enumeration.CamelRoutesEnum;
 import br.com.dasa.mirror.api.model.Admission;
 import br.com.dasa.mirror.api.model.Exams;
-import br.com.dasa.mirror.api.model.Orders;
 import br.com.dasa.mirror.api.model.ProductTraslate;
 import br.com.dasa.mirror.api.repository.AdmissaoRepository;
 import br.com.dasa.mirror.api.repository.translator.QueryTranslate;
@@ -36,6 +36,9 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 	@Autowired
 	private UnitService unitService;
 
+	@Autowired
+	private MedicalOrderService medicalOrderService;
+
 	private static final Logger LOGGER = Logger.getLogger(AdmissaoRepositoryImpl.class.getName());
 	@Autowired
 	private BrandService brandService;
@@ -51,15 +54,16 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 	public Optional<Admission> fromToGlieseToV2(Admission admission) {
 		convertIdGlieseToIdDataProvider(admission);
 		convertExamsToIdProduct(admission);
+		medicalOrderService.buscaMedicalOrdersPeloUuid(admission);
 		return Optional.ofNullable(admission);
 	}
 
 	private Admission convertExamsToIdProduct(Admission admission) {
-		for (Orders orders : admission.getOrders()) {
-			for (Exams exams : orders.getExams()) {
+		for (MedicalOrders medicalOrder : admission.getMedicalOrders()) {
+			for (Exams exams : medicalOrder.getExams()) {
 				ProductTraslate[] productTraslates = findProdutoTraducao(exams);
 				for (ProductTraslate productTraslate : productTraslates) {
-					exams.setExameCode(String.valueOf(productTraslate.getIdProduto()));
+					exams.setExamCode(String.valueOf(productTraslate.getIdProduto()));
 					exams.setPrice(findPriceExamsService.findPriceToGlieseData(admission, exams));
 				}
 			}
@@ -86,7 +90,7 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 						ProductTraslate[].class);
 			} else {
 				LOGGER.log(Level.INFO, "[INFO] metodo findProdutoTraducao: Não existe produto para esse exame:"
-						+ exams.getExameCode());
+						+ exams.getExamCode());
 			}
 		} catch (Exception e) {
 			LOGGER.log(Level.INFO, "[ERRO] metodo findProdutoTraducao: " + e.getStackTrace());

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
-import static br.com.dasa.mirror.api.enumeration.CamelRoutesEnum.ROUTE_LOAD_PRODUTO_PRECO;
+import static br.com.dasa.mirror.api.enumeration.CamelRoutesEnum.ROUTE_LOAD_MEDICAL_ORDER;
 
 @Component
 public class MedicalOrdersApiRoute extends SpringRouteBuilder {
@@ -18,15 +18,15 @@ public class MedicalOrdersApiRoute extends SpringRouteBuilder {
     private CamelHttpRequestFactory camelHttpRequestFactory;
 
     @Value("${url.api.dasa.admission}")
-    private String urlGlieseData;
+    private String urlGlieseAdmissao;
 
     @Override
     public void configure() {
-        CamelHttpRequestFactory.CamelHttpRequest findRequest = camelHttpRequestFactory.getRequest(ROUTE_LOAD_PRODUTO_PRECO.name());
+        CamelHttpRequestFactory.CamelHttpRequest findRequest = camelHttpRequestFactory.getRequest(ROUTE_LOAD_MEDICAL_ORDER.name());
 
-        from(ROUTE_LOAD_PRODUTO_PRECO.getRoute()).routeId(ROUTE_LOAD_PRODUTO_PRECO.getRoute())
+        from(ROUTE_LOAD_MEDICAL_ORDER.getRoute()).routeId(ROUTE_LOAD_MEDICAL_ORDER.getRoute())
             .doTry()
-                .toD(urlGlieseData + findRequest.getUri()+"${exchangeProperty.queryParam}")
+                .toD(urlGlieseAdmissao + findRequest.getUri()+"${exchangeProperty.queryParam.uuid}/medicalorders")
                  .process(exchange -> {
                      String body = exchange.getIn().getBody(String.class);
                      exchange.getIn().setBody(body);

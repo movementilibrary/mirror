@@ -36,7 +36,7 @@ public class FindPriceExamsService {
 	private static final Logger LOGGER = LoggerFactory.getLogger(FindPriceExamsService.class);
 
 	public String findPriceToGlieseData(Admission admission, Exams exams) {
-		return findProdutoPreco(admission.getBrandId(), exams.getExameCode());
+		return findProdutoPreco(admission.getBrandId(), exams.getExamCode());
 	}
 
 	public String findProdutoPreco(String idBrand, String idExam) {

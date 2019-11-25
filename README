@@ -13,80 +13,75 @@
 #Payload
 
 {
-  "originId": "",
-  "brandId": "34",
-  "patient": {
-    "cip": "888",
-    "mdmId": ""
-  },
-  "payments": [
+  "admissionStatus": "ADMISSION",
+  "brandId": "32",
+  "cip": "13",
+  "mdmId": "",
+  "medicalOrders": [
     {
-      "method": "9",
-      "additionalProperties": [
+      "doctorIdentifierKind": "CRM",
+      "doctorIdentifierValue": "123",
+      "doctorState": "string",
+      "exams": [
         {
-          "value": "",
-          "key": ""
+          "additionalProperties": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "examCode": "DB-SMI",
+          "price": 322.33,
+          "realizationDate": "2019-11-25T16:57:42.396Z",
+          "sample": "Gel",
+          "sampleDescription": "GEL 4ML AMBAR/REFRI (o tubo onde vai a amostra)",
+          "status": "PENDENTE",
+          "unitRealizationId": 312321,
+          "uuid": ""
         }
       ],
-      "type": "Balcao",
-      "value": "200.00",
-      "transactionId": ""
+      "uuid": ""
+    }
+  ],
+  "originId": "DDIG",
+  "payments": [
+    {
+      "additionalProperties": [
+        {
+          "key": "",
+          "value": ""
+        }
+      ],
+      "method": "CREDIT_CARD",
+      "transactionId": "8ead6445-ed38-4aac-b91d-35a63d9eedcb",
+      "type": "PRIVATE",
+      "uuid": "string",
+      "value": "30.2"
     }
   ],
   "questions": [
     {
-      "question": "",
-      "answer": "",
       "additionalProperties": [
         {
-          "value": "",
-          "key": ""
+          "key": "",
+          "value": ""
         }
-      ]
-    }
-  ],
-  "unitId": "JAM",
-  "orders": [
-    {
-      "doctor": {
-        "identifierValue": "SP-CRM-111110",
-        "state": "SP-CRM-111110",
-        "identifierKind": "SP-CRM-111110"
-      },
-      "exams": [
-        {
-          "realizationDate": "12092019",
-          "sampleDescription": "H1 EDTA 4 ML",
-          "unitRealizationId": "DEL",
-          "exameCode": "DA-HE4SA",
-          "AdditionalProperties": [
-            {
-              "value": "",
-              "key": ""
-            }
-          ],
-          "sample": "825646627301",
-          "status": "0"
-        },
-        {
-          "realizationDate": "17092019",
-          "sampleDescription": "H1 EDTA 4 ML",
-          "unitRealizationId": "DEL",
-          "exameCode": "DA-KSA",
-          "AdditionalProperties": [
-            {
-              "value": "",
-              "key": ""
-            }
-          ],
-          "sample": "825646627301",
-          "status": "0"
-        }
-      ]
+      ],
+      "answer": 2,
+      "question": "Qual é seu peso?",
+      "uuid": ""
     }
   ],
   "scheduling": {
-    "date": "",
-    "id": ""
-  }
+    "additionalProperties": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "date": "2019-11-25T16:57:42.396Z",
+    "schedulingId": "beae509e-e4c2-4c78-bc9b-2f5256c57093"
+  },
+  "unitId": "DPI",
+  "uuid": "8a2f05d0-104a-48a7-94d9-6d2d06516fe4"
 }
