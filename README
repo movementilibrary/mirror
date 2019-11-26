@@ -13,7 +13,7 @@
 #Payload
 
 {
-  "admissionStatus": "ADMISSION",
+  "admissionStatus": "PRE_ADMISSION",
   "brandId": "32",
   "cip": "13",
   "mdmId": "",
@@ -21,7 +21,7 @@
     {
       "doctorIdentifierKind": "CRM",
       "doctorIdentifierValue": "123",
-      "doctorState": "string",
+      "doctorState": "",
       "exams": [
         {
           "additionalProperties": [
@@ -31,12 +31,12 @@
             }
           ],
           "examCode": "DB-SMI",
-          "price": 322.33,
+          "price": "322.33",
           "realizationDate": "2019-11-25T16:57:42.396Z",
           "sample": "Gel",
           "sampleDescription": "GEL 4ML AMBAR/REFRI (o tubo onde vai a amostra)",
           "status": "PENDENTE",
-          "unitRealizationId": 312321,
+          "unitRealizationId": "312321",
           "uuid": ""
         }
       ],
@@ -67,7 +67,7 @@
           "value": ""
         }
       ],
-      "answer": 2,
+      "answer": "2",
       "question": "Qual é seu peso?",
       "uuid": ""
     }

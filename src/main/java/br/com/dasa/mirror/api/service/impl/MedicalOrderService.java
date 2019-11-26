@@ -52,11 +52,12 @@ public class MedicalOrderService {
         try {
             DefaultExchange defaultExchange = new DefaultExchange(camelContext);
             defaultExchange.setProperty("queryParam", uuid);
-            Exchange resultExchange = producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_MEDICAL_ORDER.getRoute(),
+            Exchange resultExchange = producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_MEDICAL_ORDER_FIND.getRoute(),
                     defaultExchange);
             ObjectMapper mapper = new ObjectMapper();
             if (resultExchange.getIn().getBody() != null) {
-              listaMedicalOrders = mapper.readValue(resultExchange.getIn().getBody().toString(), new TypeReference<List<MedicalOrders>>(){});
+                listaMedicalOrders = mapper.readValue(resultExchange.getIn().getBody().toString(), new TypeReference<List<MedicalOrders>>() {
+                });
             } else {
                 LOGGER.log(Level.INFO, "[INFO] metodo busca Agendamento: Não existe produto para esse exame:");
             }
@@ -95,9 +96,23 @@ public class MedicalOrderService {
      * Metodo Responsável por Atualizar
      */
 
-    public void atualizaMedialOrder(List<MedicalOrders> medicalOrders) {
+    public void atualizaMedialOrder(List<MedicalOrders> listaMedicalOrders) {
+        LOGGER.log(Level.INFO, "INICIO envio MedicalOrders");
 
-        //TODO: atualiza Medical Order
+        for (MedicalOrders medicaOrder : listaMedicalOrders) {
+
+            try {
+                DefaultExchange defaultExchange = new DefaultExchange(camelContext);
+                defaultExchange.setProperty("queryParam", medicaOrder.getId());
+                producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.getRoute(), defaultExchange);
+
+
+            } catch (Exception e) {
+                LOGGER.log(Level.INFO, "[ERRO] metodo envia atualização medicaOrder: " + e.getStackTrace());
+            }
+            LOGGER.log(Level.INFO, "FIM do envio MedicalOrders");
+
+        }
     }
 
 

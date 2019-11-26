@@ -1,49 +1,53 @@
 package br.com.dasa.mirror.api.model;
 
+import br.com.dasa.mirror.api.enumeration.Status;
+import com.amazonaws.services.ecs.model.ScaleUnit;
+
 import java.util.List;
 import java.util.Objects;
 
 public class Exams {
 
-	private List<AdditionalProperties> additionalProperties;
+	private String id;
 
 	private String examCode;
-
-	private String price;
-
-	private String realizationDate;
 
 	private String sample;
 
 	private String sampleDescription;
 
-	private String status;
+	private Status status;
 
-	private String unitRealizationId;
+	private UnitRealization unitRealization;
 
-	private String uuid;
+	private String realizationDate;
+
+	private String price;
+
+	private List<AdditionalProperties> additionalProperties;
+
 
 	public Exams() {
 	}
 
-	public Exams(List<AdditionalProperties> additionalProperties, String examCode, String price, String realizationDate, String sample, String sampleDescription, String status, String unitRealizationId, String uuid) {
-		this.additionalProperties = additionalProperties;
+	public Exams(String id, String examCode, String sample, String sampleDescription, Status status, UnitRealization unitRealization, String realizationDate, String price, List<AdditionalProperties> additionalProperties) {
+		this.id = id;
 		this.examCode = examCode;
-		this.price = price;
-		this.realizationDate = realizationDate;
 		this.sample = sample;
 		this.sampleDescription = sampleDescription;
 		this.status = status;
-		this.unitRealizationId = unitRealizationId;
-		this.uuid = uuid;
-	}
-
-	public List<AdditionalProperties> getAdditionalProperties() {
-		return additionalProperties;
-	}
-
-	public void setAdditionalProperties(List<AdditionalProperties> additionalProperties) {
+		this.unitRealization = unitRealization;
+		this.realizationDate = realizationDate;
+		this.price = price;
 		this.additionalProperties = additionalProperties;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getExamCode() {
@@ -52,22 +56,6 @@ public class Exams {
 
 	public void setExamCode(String examCode) {
 		this.examCode = examCode;
-	}
-
-	public String getPrice() {
-		return price;
-	}
-
-	public void setPrice(String price) {
-		this.price = price;
-	}
-
-	public String getRealizationDate() {
-		return realizationDate;
-	}
-
-	public void setRealizationDate(String realizationDate) {
-		this.realizationDate = realizationDate;
 	}
 
 	public String getSample() {
@@ -86,64 +74,43 @@ public class Exams {
 		this.sampleDescription = sampleDescription;
 	}
 
-	public String getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 
-	public String getUnitRealizationId() {
-		return unitRealizationId;
+	public UnitRealization getUnitRealization() {
+		return unitRealization;
 	}
 
-	public void setUnitRealizationId(String unitRealizationId) {
-		this.unitRealizationId = unitRealizationId;
+	public void setUnitRealization(UnitRealization unitRealization) {
+		this.unitRealization = unitRealization;
 	}
 
-	public String getUuid() {
-		return uuid;
+	public String getRealizationDate() {
+		return realizationDate;
 	}
 
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
+	public void setRealizationDate(String realizationDate) {
+		this.realizationDate = realizationDate;
 	}
 
-
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (!(o instanceof Exams)) return false;
-		Exams exams = (Exams) o;
-		return Objects.equals(additionalProperties, exams.additionalProperties) &&
-				Objects.equals(examCode, exams.examCode) &&
-				Objects.equals(price, exams.price) &&
-				Objects.equals(realizationDate, exams.realizationDate) &&
-				Objects.equals(sample, exams.sample) &&
-				Objects.equals(sampleDescription, exams.sampleDescription) &&
-				Objects.equals(status, exams.status) &&
-				Objects.equals(unitRealizationId, exams.unitRealizationId) &&
-				Objects.equals(uuid, exams.uuid);
+	public String getPrice() {
+		return price;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(additionalProperties, examCode, price, realizationDate, sample, sampleDescription, status, unitRealizationId, uuid);
+	public void setPrice(String price) {
+		this.price = price;
 	}
 
-	@Override
-	public String toString() {
-		return "Exams{" +
-				"additionalProperties=" + additionalProperties +
-				", examCode='" + examCode + '\'' +
-				", price='" + price + '\'' +
-				", realizationDate='" + realizationDate + '\'' +
-				", sample='" + sample + '\'' +
-				", sampleDescription='" + sampleDescription + '\'' +
-				", status='" + status + '\'' +
-				", unitRealizationId='" + unitRealizationId + '\'' +
-				", uuid='" + uuid + '\'' +
-				'}';
+	public List<AdditionalProperties> getAdditionalProperties() {
+		return additionalProperties;
+	}
+
+	public void setAdditionalProperties(List<AdditionalProperties> additionalProperties) {
+		this.additionalProperties = additionalProperties;
 	}
 }

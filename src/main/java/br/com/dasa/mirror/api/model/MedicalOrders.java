@@ -4,50 +4,35 @@ import java.util.List;
 
 public class MedicalOrders {
 
-	private String doctorIdentifierKind;
-	private String doctorIdentifierValue;
-	private String doctorState;
-	private String uuid;
+    private String id;
+    private String doctorId;
 	private List<Exams> exams;
 
-    public MedicalOrders(String doctorIdentifierKind, String doctorIdentifierValue, String doctorState, String uuid, List<Exams> exams) {
-        this.doctorIdentifierKind = doctorIdentifierKind;
-        this.doctorIdentifierValue = doctorIdentifierValue;
-        this.doctorState = doctorState;
-        this.uuid = uuid;
+    public MedicalOrders() {
+
+    }
+
+    public MedicalOrders(String id, String doctorId, List<Exams> exams) {
+        this.id = id;
+        this.doctorId = doctorId;
         this.exams = exams;
     }
 
-    public String getDoctorIdentifierKind() {
-        return doctorIdentifierKind;
+
+    public String getId() {
+        return id;
     }
 
-    public void setDoctorIdentifierKind(String doctorIdentifierKind) {
-        this.doctorIdentifierKind = doctorIdentifierKind;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getDoctorIdentifierValue() {
-        return doctorIdentifierValue;
+    public String getDoctorId() {
+        return doctorId;
     }
 
-    public void setDoctorIdentifierValue(String doctorIdentifierValue) {
-        this.doctorIdentifierValue = doctorIdentifierValue;
-    }
-
-    public String getDoctorState() {
-        return doctorState;
-    }
-
-    public void setDoctorState(String doctorState) {
-        this.doctorState = doctorState;
-    }
-
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setDoctorId(String doctorId) {
+        this.doctorId = doctorId;
     }
 
     public List<Exams> getExams() {
@@ -56,5 +41,14 @@ public class MedicalOrders {
 
     public void setExams(List<Exams> exams) {
         this.exams = exams;
+    }
+
+    @Override
+    public String toString() {
+        return "MedicalOrders{" +
+                "id='" + id + '\'' +
+                ", doctorId='" + doctorId + '\'' +
+                ", exams=" + exams +
+                '}';
     }
 }

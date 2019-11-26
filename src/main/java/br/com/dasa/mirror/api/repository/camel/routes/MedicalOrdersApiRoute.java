@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
-import static br.com.dasa.mirror.api.enumeration.CamelRoutesEnum.ROUTE_LOAD_MEDICAL_ORDER;
+import static br.com.dasa.mirror.api.enumeration.CamelRoutesEnum.*;
 
 @Component
 public class MedicalOrdersApiRoute extends SpringRouteBuilder {
@@ -22,18 +22,30 @@ public class MedicalOrdersApiRoute extends SpringRouteBuilder {
 
     @Override
     public void configure() {
-        CamelHttpRequestFactory.CamelHttpRequest findRequest = camelHttpRequestFactory.getRequest(ROUTE_LOAD_MEDICAL_ORDER.name());
-
-        from(ROUTE_LOAD_MEDICAL_ORDER.getRoute()).routeId(ROUTE_LOAD_MEDICAL_ORDER.getRoute())
-            .doTry()
+        CamelHttpRequestFactory.CamelHttpRequest findRequest = camelHttpRequestFactory.getRequest(ROUTE_LOAD_MEDICAL_ORDER_FIND.name());
+        CamelHttpRequestFactory.CamelHttpRequest registryRequest = camelHttpRequestFactory.getRequest(ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.name());
+        from(ROUTE_LOAD_MEDICAL_ORDER_FIND.getRoute()).routeId(ROUTE_LOAD_MEDICAL_ORDER_FIND.getRoute())
+                .doTry()
                 .toD(urlGlieseAdmissao + findRequest.getUri()+"${exchangeProperty.queryParam}"+"/medicalorders")
-                 .process(exchange -> {                        
-                     String body = exchange.getIn().getBody(String.class);
-                     exchange.getIn().setBody(body);
-                 })
-            .endDoTry()
-            .doCatch(HttpOperationFailedException.class)
+                .process(exchange -> {
+                    String body = exchange.getIn().getBody(String.class);
+                    exchange.getIn().setBody(body);
+                })
+                .endDoTry()
+                .doCatch(HttpOperationFailedException.class)
                 .process(exchange -> exchange.getIn().setBody(Optional.empty()))
-            .end();
+                .end();
+
+        from(ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.getRoute()).routeId(ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.getRoute())
+                .doTry()
+                .toD(urlGlieseAdmissao + registryRequest.getUri()+"${exchangeProperty.queryParam}"+"/medicalorders")
+                .process(exchange -> {
+                    String body = exchange.getIn().getBody(String.class);
+                    exchange.getIn().setBody(body);
+                })
+                .endDoTry()
+                .doCatch(HttpOperationFailedException.class)
+                .process(exchange -> exchange.getIn().setBody(Optional.empty()))
+                .end();
     }
 }
