@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 
+import br.com.dasa.mirror.api.repository.camel.integrations.CamelHelper;
 import br.com.dasa.mirror.api.repository.camel.integrations.CamelHttpRequestFactory;
 
 @Component
@@ -42,14 +43,11 @@ public class MedicalOrdersApiRoute extends SpringRouteBuilder {
                 .end();
 
         from(ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.getRoute()).routeId(ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.getRoute())
-	        .setHeader(Exchange.HTTP_METHOD, constant(HttpMethod.PUT.name()))
+        	.setHeader(Exchange.HTTP_METHOD, constant(HttpMethod.PUT.name()))
 	        .setHeader(Exchange.CONTENT_TYPE, constant(request.getContentType()))
                 .doTry()
                 .toD(urlGlieseAdmissao + request.getUri()+"${exchangeProperty.queryParam}"+"/medicalorders")
-                .process(exchange -> {
-                    String body = exchange.getIn().getBody(String.class);
-                    exchange.getIn().setBody(body);
-                })
+                .process(exchange -> exchange.getIn().setBody(CamelHelper.getBody(exchange)))
                 .endDoTry()
                 .doCatch(HttpOperationFailedException.class)
                 .process(exchange -> exchange.getIn().setBody(Optional.empty()))
