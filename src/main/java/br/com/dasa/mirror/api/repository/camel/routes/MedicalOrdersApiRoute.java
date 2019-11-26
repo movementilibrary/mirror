@@ -26,8 +26,8 @@ public class MedicalOrdersApiRoute extends SpringRouteBuilder {
 
         from(ROUTE_LOAD_MEDICAL_ORDER.getRoute()).routeId(ROUTE_LOAD_MEDICAL_ORDER.getRoute())
             .doTry()
-                .toD(urlGlieseAdmissao + findRequest.getUri()+"${exchangeProperty.queryParam}/medicalorders")
-                 .process(exchange -> {
+                .toD(urlGlieseAdmissao + findRequest.getUri()+"${exchangeProperty.queryParam}"+"/medicalorders")
+                 .process(exchange -> {                        
                      String body = exchange.getIn().getBody(String.class);
                      exchange.getIn().setBody(body);
                  })

@@ -17,7 +17,7 @@ public class CamelHttpRequestFactory {
     private static final String PRODUTOS_TRADUCAO = "/api/exams/getTranslate?";
     private static final String PRODUTO_PRECO = "/api/exams/unitDisponibility?";
     private static final String MEDICAL_ORDERS = "/api/admissions/";
-
+    
     private static Map<String, CamelHttpRequest> camelHttpRequestMap;
 
     static {

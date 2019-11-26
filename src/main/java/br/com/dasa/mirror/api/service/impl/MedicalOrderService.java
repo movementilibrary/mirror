@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -50,13 +51,12 @@ public class MedicalOrderService {
         List<MedicalOrders> listaMedicalOrders = null;
         try {
             DefaultExchange defaultExchange = new DefaultExchange(camelContext);
-            defaultExchange.setProperty("queryParam", queryBuilder.getQueryUuid(uuid));
+            defaultExchange.setProperty("queryParam", uuid);
             Exchange resultExchange = producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_MEDICAL_ORDER.getRoute(),
                     defaultExchange);
             ObjectMapper mapper = new ObjectMapper();
             if (resultExchange.getIn().getBody() != null) {
               listaMedicalOrders = mapper.readValue(resultExchange.getIn().getBody().toString(), new TypeReference<List<MedicalOrders>>(){});
-
             } else {
                 LOGGER.log(Level.INFO, "[INFO] metodo busca Agendamento: Não existe produto para esse exame:");
             }

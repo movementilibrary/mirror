@@ -16,19 +16,15 @@ public class QueryTranslate {
 
 	private static final String TEMPLATE = "idSistema=#sistema&idMarca=#marca&idsOrigem=#exams";
 	private static final String PRODUCT_PRICE_TEMPLATE = "idBrand=#brand&idExams=#exams";
-	private static final String AGENDAMETO_TEMPLATE = "uuid=#uuid";
 
 	private String query = null;
 	private String queryProduto = null;
-	private String queryUuid = null;
 
 	public QueryTranslate() {
 		String jsonString = String.format(TEMPLATE);
 		String jsonPreco = String.format(PRODUCT_PRICE_TEMPLATE);
-		String jsonUuid = String.format(AGENDAMETO_TEMPLATE);
 		query = jsonString;
 		queryProduto = jsonPreco;
-		queryUuid = jsonUuid;
 	}
 
 	public String getQuery(Exams exams) {
@@ -37,10 +33,5 @@ public class QueryTranslate {
 
 	public String getQueryProduto(String idBrand, String idExame) {
 		return queryProduto.replace("#brand", idBrand).replace("#exams", idExame);
-	}
-
-
-	public String getQueryUuid(String uuid) {
-		return queryUuid.replace("#uuid", uuid);
 	}
 }
