@@ -55,7 +55,7 @@
       "method": "CREDIT_CARD",
       "transactionId": "8ead6445-ed38-4aac-b91d-35a63d9eedcb",
       "type": "PRIVATE",
-      "uuid": "string",
+      "uuid": "",
       "value": "30.2"
     }
   ],

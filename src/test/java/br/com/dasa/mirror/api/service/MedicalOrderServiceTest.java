@@ -1,13 +1,15 @@
 //package br.com.dasa.mirror.api.service;
 //
 //
+//import br.com.dasa.mirror.api.enumeration.AdmissionStatus;
+//import br.com.dasa.mirror.api.enumeration.PaymentMethod;
+//import br.com.dasa.mirror.api.enumeration.PaymentType;
 //import br.com.dasa.mirror.api.model.*;
 //import br.com.dasa.mirror.api.service.impl.MedicalOrderService;
 //import io.restassured.RestAssured;
-//import org.junit.Assert;
+//
 //import org.junit.Before;
 //import org.junit.FixMethodOrder;
-//import org.junit.Test;
 //import org.junit.runner.RunWith;
 //import org.junit.runners.MethodSorters;
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -70,32 +72,44 @@
 //
 //        paciente = new Patient("123456689", "888", "");
 //        doctor = new Doctor("SP-CRM-111110", "SP-CRM-11111", "SP-CRM-111110");
-//        scheduling = new Scheduling("","");
+//        scheduling = new Scheduling("2019-12-01", listAdditionalProperties, "");
 //
-//        exams = new Exams("12092019", "H1 EDTA 4 ML", "", "DEL",  "DA-KSA",  listAdditionalProperties, "825646627301", "0", "123456789" );
+//        exams = new Exams(listAdditionalProperties,
+//                "H1 EDTA 4 ML",
+//                "",
+//                "DEL",
+//                "DA-KSA",
+//                "Medicamento",
+//                "825646627301",
+//                "0",
+//                "123456789");
 //        listExams.add(exams);
 //
-//        question = new Questions("","",listAdditionalProperties);
+//        question = new Questions("Está de Jejum", "1", listAdditionalProperties, "");
 //        listQuestions.add(question);
 //
-//        payment = new Payments("9", listAdditionalProperties,"Balcao","200.00","");
+//        payment = new Payments(PaymentMethod.CREDIT_CARD, listAdditionalProperties, PaymentType.PRIVATE, "200.00", "8ead6445-ed38-4aac-b91d-35a63d9eedcb", "");
 //        listPaymets.add(payment);
 //
 //
-//     //   admmissao = new Admission("51","", paciente, listPaymets,listQuestions,"JAM", listOrders, scheduling);
-//
-//
-//        examsMedicalOrders = new Exams("12092019", "H2 EDTA 4 ML", "", "LED",  "DA",  listAdditionalProperties, "825646627301", "0", "123456789");
-//        listExamsMedicalOrders.add(examsMedicalOrders);
+//        admmissao = new Admission("DDIG",
+//                "DPI",
+//                "13",
+//                "",
+//                "8a2f05d0-104a-48a7-94d9-6d2d06516fe4",
+//                AdmissionStatus.ADMISSION,
+//                "32",
+//                listPaymets,
+//                listQuestions,
+//                scheduling,
+//                listMedicalOrders);
+//    }
+//        examsMedicalOrders ;
+//    listExamsMedicalOrders.
 //
 //        medicalOrders = new MedicalOrders("CRM", "123", "SP", "f7ac9c4e-d0f5-406a-adc7-b0543fe0aa9c",listExamsMedicalOrders);
 //        listMedicalOrders.add(medicalOrders);
 //    }
 //
-//    @Test
-//    public void deveLimparListaMedicarOrders(){
-//        List<MedicalOrders> medicalOrders = medicalOrderService.sobrescreveExamesMedicalOrders(admmissao, listMedicalOrders);
-//        Assert.assertEquals("DA-KSA", medicalOrders.get(0).getExams().get(0).getExameCode());
 //
-//    }
 //}

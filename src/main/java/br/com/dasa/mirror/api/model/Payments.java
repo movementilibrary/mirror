@@ -1,14 +1,18 @@
 package br.com.dasa.mirror.api.model;
 
+import br.com.dasa.mirror.api.enumeration.PaymentMethod;
+import br.com.dasa.mirror.api.enumeration.PaymentType;
+
 import java.util.List;
 import java.util.Objects;
 
 public class Payments {
-	private String method;
+
+	private PaymentMethod method;
 
 	private List<AdditionalProperties> additionalProperties;
 
-	private String type;
+	private PaymentType type;
 
 	private String value;
 
@@ -20,7 +24,7 @@ public class Payments {
 	public Payments() {
 	}
 
-	public Payments(String method, List<AdditionalProperties> additionalProperties, String type, String value, String transactionId, String uuid) {
+	public Payments(PaymentMethod method, List<AdditionalProperties> additionalProperties, PaymentType type, String value, String transactionId, String uuid) {
 		this.method = method;
 		this.additionalProperties = additionalProperties;
 		this.type = type;
@@ -29,11 +33,11 @@ public class Payments {
 		this.uuid = uuid;
 	}
 
-	public String getMethod() {
+	public PaymentMethod getMethod() {
 		return method;
 	}
 
-	public void setMethod(String method) {
+	public void setMethod(PaymentMethod method) {
 		this.method = method;
 	}
 
@@ -45,11 +49,11 @@ public class Payments {
 		this.additionalProperties = additionalProperties;
 	}
 
-	public String getType() {
+	public PaymentType getType() {
 		return type;
 	}
 
-	public void setType(String type) {
+	public void setType(PaymentType type) {
 		this.type = type;
 	}
 

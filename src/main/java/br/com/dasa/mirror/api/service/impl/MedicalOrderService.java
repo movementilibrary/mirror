@@ -3,6 +3,7 @@ package br.com.dasa.mirror.api.service.impl;
 import br.com.dasa.mirror.api.enumeration.CamelRoutesEnum;
 import br.com.dasa.mirror.api.model.*;
 import br.com.dasa.mirror.api.repository.translator.QueryTranslate;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
@@ -31,9 +32,9 @@ public class MedicalOrderService {
     QueryTranslate queryBuilder;
 
 
-    public void gerenciaMedicalOrder(Admission admission){
+    public void gerenciaMedicalOrder(Admission admission) {
         List<MedicalOrders> listaMedicalOrders =
-                atualizaListaExamesMedicalOrders(admission, buscaMedicalOrdersPeloUuid(admission.getUuid()));
+                atualizaExamesMedicalOrders(admission, buscaMedicalOrdersPeloUuid(admission.getUuid()));
         atualizaMedialOrder(listaMedicalOrders);
     }
 
@@ -54,9 +55,8 @@ public class MedicalOrderService {
                     defaultExchange);
             ObjectMapper mapper = new ObjectMapper();
             if (resultExchange.getIn().getBody() != null) {
-                MedicalOrders medicalOrders = mapper.readValue(resultExchange.getIn().getBody().toString(), MedicalOrders.class);
+              listaMedicalOrders = mapper.readValue(resultExchange.getIn().getBody().toString(), new TypeReference<List<MedicalOrders>>(){});
 
-                listaMedicalOrders.add(medicalOrders);
             } else {
                 LOGGER.log(Level.INFO, "[INFO] metodo busca Agendamento: Não existe produto para esse exame:");
             }
@@ -73,7 +73,7 @@ public class MedicalOrderService {
      * @param admission
      * @param medicalOrders
      */
-    public List<MedicalOrders> atualizaListaExamesMedicalOrders(Admission admission, List<MedicalOrders> medicalOrders) {
+    public List<MedicalOrders> atualizaExamesMedicalOrders(Admission admission, List<MedicalOrders> medicalOrders) {
 
         List<MedicalOrders> listaMedicalOrders = medicalOrders.stream()
                 .filter(e -> e.getExams().removeAll(e.getExams()))
