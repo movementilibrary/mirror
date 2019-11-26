@@ -30,8 +30,6 @@ public class MedicalOrdersApiRoute extends SpringRouteBuilder {
         CamelHttpRequestFactory.CamelHttpRequest request = camelHttpRequestFactory.getRequest(ROUTE_LOAD_MEDICAL_ORDER_FIND.name());
         
         from(ROUTE_LOAD_MEDICAL_ORDER_FIND.getRoute()).routeId(ROUTE_LOAD_MEDICAL_ORDER_FIND.getRoute())
-	        .setHeader(Exchange.HTTP_METHOD, constant(HttpMethod.PUT.name()))
-	        .setHeader(Exchange.CONTENT_TYPE, constant(request.getContentType()))
                 .doTry()
                 .toD(urlGlieseAdmissao + request.getUri()+"${exchangeProperty.queryParam}"+"/medicalorders")
                 .process(exchange -> {
@@ -44,6 +42,8 @@ public class MedicalOrdersApiRoute extends SpringRouteBuilder {
                 .end();
 
         from(ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.getRoute()).routeId(ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.getRoute())
+	        .setHeader(Exchange.HTTP_METHOD, constant(HttpMethod.PUT.name()))
+	        .setHeader(Exchange.CONTENT_TYPE, constant(request.getContentType()))
                 .doTry()
                 .toD(urlGlieseAdmissao + request.getUri()+"${exchangeProperty.queryParam}"+"/medicalorders")
                 .process(exchange -> {
