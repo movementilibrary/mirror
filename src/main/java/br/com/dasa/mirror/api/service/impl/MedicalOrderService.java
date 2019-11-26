@@ -5,6 +5,7 @@ import br.com.dasa.mirror.api.model.*;
 import br.com.dasa.mirror.api.repository.translator.QueryTranslate;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
@@ -36,7 +37,7 @@ public class MedicalOrderService {
     public void gerenciaMedicalOrder(Admission admission) {
         List<MedicalOrders> listaMedicalOrders =
                 atualizaExamesMedicalOrders(admission, buscaMedicalOrdersPeloUuid(admission.getUuid()));
-        atualizaMedialOrder(listaMedicalOrders);
+        atualizaMedialOrder(admission.getUuid(), listaMedicalOrders);
     }
 
 
@@ -96,22 +97,21 @@ public class MedicalOrderService {
      * Metodo Responsável por Atualizar
      */
 
-    public void atualizaMedialOrder(List<MedicalOrders> listaMedicalOrders) {
+    public void atualizaMedialOrder(String uuid, List<MedicalOrders> listaMedicalOrders) {
         LOGGER.log(Level.INFO, "INICIO envio MedicalOrders");
+        Gson gson = new Gson();
 
         for (MedicalOrders medicaOrder : listaMedicalOrders) {
-
             try {
                 DefaultExchange defaultExchange = new DefaultExchange(camelContext);
-                defaultExchange.setProperty("queryParam", medicaOrder.getId());
-                producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.getRoute(), defaultExchange);
-
-
+                defaultExchange.setProperty("queryParam", uuid);
+                defaultExchange.getIn().setBody(gson.toJson(listaMedicalOrders));
+                producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.getRoute(),
+                        defaultExchange);
             } catch (Exception e) {
                 LOGGER.log(Level.INFO, "[ERRO] metodo envia atualização medicaOrder: " + e.getStackTrace());
             }
             LOGGER.log(Level.INFO, "FIM do envio MedicalOrders");
-
         }
     }
 
