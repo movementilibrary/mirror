@@ -1,11 +1,9 @@
 package br.com.dasa.mirror.api.service.impl;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import br.com.dasa.mirror.api.model.MedicalOrders;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
@@ -18,6 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import br.com.dasa.mirror.api.enumeration.CamelRoutesEnum;
 import br.com.dasa.mirror.api.model.Admission;
 import br.com.dasa.mirror.api.model.Exams;
+import br.com.dasa.mirror.api.model.MedicalOrders;
 import br.com.dasa.mirror.api.model.ProductTraslate;
 import br.com.dasa.mirror.api.repository.AdmissaoRepository;
 import br.com.dasa.mirror.api.repository.translator.QueryTranslate;

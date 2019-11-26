@@ -1,15 +1,19 @@
 package br.com.dasa.mirror.api.repository.camel.routes;
 
-import br.com.dasa.mirror.api.repository.camel.integrations.CamelHttpRequestFactory;
+import static br.com.dasa.mirror.api.enumeration.CamelRoutesEnum.ROUTE_LOAD_MEDICAL_ORDER_FIND;
+import static br.com.dasa.mirror.api.enumeration.CamelRoutesEnum.ROUTE_LOAD_MEDICAL_ORDER_REGISTRY;
+
+import java.util.Optional;
+
+import org.apache.camel.Exchange;
 import org.apache.camel.http.common.HttpOperationFailedException;
 import org.apache.camel.spring.SpringRouteBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 
-import java.util.Optional;
-
-import static br.com.dasa.mirror.api.enumeration.CamelRoutesEnum.*;
+import br.com.dasa.mirror.api.repository.camel.integrations.CamelHttpRequestFactory;
 
 @Component
 public class MedicalOrdersApiRoute extends SpringRouteBuilder {
@@ -22,11 +26,14 @@ public class MedicalOrdersApiRoute extends SpringRouteBuilder {
 
     @Override
     public void configure() {
-        CamelHttpRequestFactory.CamelHttpRequest findRequest = camelHttpRequestFactory.getRequest(ROUTE_LOAD_MEDICAL_ORDER_FIND.name());
-        CamelHttpRequestFactory.CamelHttpRequest registryRequest = camelHttpRequestFactory.getRequest(ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.name());
+    	
+        CamelHttpRequestFactory.CamelHttpRequest request = camelHttpRequestFactory.getRequest(ROUTE_LOAD_MEDICAL_ORDER_FIND.name());
+        
         from(ROUTE_LOAD_MEDICAL_ORDER_FIND.getRoute()).routeId(ROUTE_LOAD_MEDICAL_ORDER_FIND.getRoute())
+	        .setHeader(Exchange.HTTP_METHOD, constant(HttpMethod.PUT.name()))
+	        .setHeader(Exchange.CONTENT_TYPE, constant(request.getContentType()))
                 .doTry()
-                .toD(urlGlieseAdmissao + findRequest.getUri()+"${exchangeProperty.queryParam}"+"/medicalorders")
+                .toD(urlGlieseAdmissao + request.getUri()+"${exchangeProperty.queryParam}"+"/medicalorders")
                 .process(exchange -> {
                     String body = exchange.getIn().getBody(String.class);
                     exchange.getIn().setBody(body);
@@ -38,7 +45,7 @@ public class MedicalOrdersApiRoute extends SpringRouteBuilder {
 
         from(ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.getRoute()).routeId(ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.getRoute())
                 .doTry()
-                .toD(urlGlieseAdmissao + registryRequest.getUri()+"${exchangeProperty.queryParam}"+"/medicalorders")
+                .toD(urlGlieseAdmissao + request.getUri()+"${exchangeProperty.queryParam}"+"/medicalorders")
                 .process(exchange -> {
                     String body = exchange.getIn().getBody(String.class);
                     exchange.getIn().setBody(body);
