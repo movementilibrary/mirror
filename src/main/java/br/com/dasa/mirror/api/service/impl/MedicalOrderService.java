@@ -32,34 +32,9 @@ public class MedicalOrderService {
 
 
     public void gerenciaMedicalOrder(Admission admission){
-        List<MedicalOrders> listaMmedicalOrders = buscaMedicalOrdersPeloUuid(admission);
-        List<MedicalOrders> medicalOrders = atualizaListaExamesMedicalOrders(admission, listaMmedicalOrders);
-        atualizaMedialOrder(medicalOrders);
-    }
-
-    /**
-     * Metodo responsável por sobrescrever exames da admissao do gliese com os exames do agendamento
-     *
-     * @param admission
-     * @param medicalOrders
-     */
-    public List<MedicalOrders> atualizaListaExamesMedicalOrders(Admission admission, List<MedicalOrders> medicalOrders) {
-        buscaMedicalOrdersPeloUuid(admission);
-
-        List<MedicalOrders> listaMedicalOrders = medicalOrders.stream()
-                .filter(e -> e.getExams().removeAll(e.getExams()))
-                .collect(Collectors.toList());
-
-        for (MedicalOrders medicalOrder : admission.getMedicalOrders()) {
-            for (Exams exame : medicalOrder.getExams()) {
-
-                listaMedicalOrders.stream()
-                        .filter(s -> s.getExams().add(exame))
-                        .collect(Collectors.toList());
-            }
-
-        }
-        return listaMedicalOrders;
+        List<MedicalOrders> listaMedicalOrders =
+                atualizaListaExamesMedicalOrders(admission, buscaMedicalOrdersPeloUuid(admission.getUuid()));
+        atualizaMedialOrder(listaMedicalOrders);
     }
 
 
@@ -67,14 +42,14 @@ public class MedicalOrderService {
      * Metodo para buscar o idProduto do gliese-data e data provider.
      *
      * @param
-     * @return ProductTraslate[]
+     * @return listaMedicalOrders
      */
-    public List<MedicalOrders> buscaMedicalOrdersPeloUuid(Admission admission) {
+    public List<MedicalOrders> buscaMedicalOrdersPeloUuid(String uuid) {
         LOGGER.log(Level.INFO, "INICIO busca Agendamento");
         List<MedicalOrders> listaMedicalOrders = null;
         try {
             DefaultExchange defaultExchange = new DefaultExchange(camelContext);
-            defaultExchange.setProperty("queryParam", queryBuilder.getQueryUuid(admission.getUuid()));
+            defaultExchange.setProperty("queryParam", queryBuilder.getQueryUuid(uuid));
             Exchange resultExchange = producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_MEDICAL_ORDER.getRoute(),
                     defaultExchange);
             ObjectMapper mapper = new ObjectMapper();
@@ -93,10 +68,34 @@ public class MedicalOrderService {
     }
 
     /**
+     * Metodo responsável por sobrescrever exames da admissao do gliese com os exames do agendamento
+     *
+     * @param admission
+     * @param medicalOrders
+     */
+    public List<MedicalOrders> atualizaListaExamesMedicalOrders(Admission admission, List<MedicalOrders> medicalOrders) {
+
+        List<MedicalOrders> listaMedicalOrders = medicalOrders.stream()
+                .filter(e -> e.getExams().removeAll(e.getExams()))
+                .collect(Collectors.toList());
+
+        for (MedicalOrders medicalOrder : admission.getMedicalOrders()) {
+            for (Exams exame : medicalOrder.getExams()) {
+
+                listaMedicalOrders.stream()
+                        .filter(s -> s.getExams().add(exame))
+                        .collect(Collectors.toList());
+            }
+
+        }
+        return listaMedicalOrders;
+    }
+
+    /**
      * Metodo Responsável por Atualizar
      */
 
-    public void atualizaMedialOrder(MedicalOrders medicalOrders) {
+    public void atualizaMedialOrder(List<MedicalOrders> medicalOrders) {
 
         //TODO: atualiza Medical Order
     }
