@@ -1,5 +1,6 @@
 package br.com.dasa.mirror.api.service.impl;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -54,7 +55,7 @@ public class AdmissaoRepositoryImpl implements AdmissaoRepository {
 	public Optional<Admission> fromToGlieseToV2(Admission admission) {
 		convertIdGlieseToIdDataProvider(admission);
 		convertExamsToIdProduct(admission);
-		medicalOrderService.buscaMedicalOrdersPeloUuid(admission);
+		medicalOrderService.gerenciaMedicalOrder(admission);
 		return Optional.ofNullable(admission);
 	}
 

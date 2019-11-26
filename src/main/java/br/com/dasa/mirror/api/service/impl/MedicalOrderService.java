@@ -31,13 +31,19 @@ public class MedicalOrderService {
     QueryTranslate queryBuilder;
 
 
+    public void gerenciaMedicalOrder(Admission admission){
+        List<MedicalOrders> listaMmedicalOrders = buscaMedicalOrdersPeloUuid(admission);
+        List<MedicalOrders> medicalOrders = atualizaListaExamesMedicalOrders(admission, listaMmedicalOrders);
+        atualizaMedialOrder(medicalOrders);
+    }
+
     /**
      * Metodo responsável por sobrescrever exames da admissao do gliese com os exames do agendamento
      *
      * @param admission
      * @param medicalOrders
      */
-    public List<MedicalOrders> sobrescreveExamesMedicalOrders(Admission admission, List<MedicalOrders> medicalOrders) {
+    public List<MedicalOrders> atualizaListaExamesMedicalOrders(Admission admission, List<MedicalOrders> medicalOrders) {
         buscaMedicalOrdersPeloUuid(admission);
 
         List<MedicalOrders> listaMedicalOrders = medicalOrders.stream()
@@ -59,12 +65,13 @@ public class MedicalOrderService {
 
     /**
      * Metodo para buscar o idProduto do gliese-data e data provider.
+     *
      * @param
      * @return ProductTraslate[]
      */
-    public ProductTraslate[] buscaMedicalOrdersPeloUuid(Admission admission) {
+    public List<MedicalOrders> buscaMedicalOrdersPeloUuid(Admission admission) {
         LOGGER.log(Level.INFO, "INICIO busca Agendamento");
-        ProductTraslate[] productTraslates = {};
+        List<MedicalOrders> listaMedicalOrders = null;
         try {
             DefaultExchange defaultExchange = new DefaultExchange(camelContext);
             defaultExchange.setProperty("queryParam", queryBuilder.getQueryUuid(admission.getUuid()));
@@ -72,8 +79,9 @@ public class MedicalOrderService {
                     defaultExchange);
             ObjectMapper mapper = new ObjectMapper();
             if (resultExchange.getIn().getBody() != null) {
-                productTraslates = mapper.readValue(resultExchange.getIn().getBody().toString(),
-                        ProductTraslate[].class);
+                MedicalOrders medicalOrders = mapper.readValue(resultExchange.getIn().getBody().toString(), MedicalOrders.class);
+
+                listaMedicalOrders.add(medicalOrders);
             } else {
                 LOGGER.log(Level.INFO, "[INFO] metodo busca Agendamento: Não existe produto para esse exame:");
             }
@@ -81,7 +89,17 @@ public class MedicalOrderService {
             LOGGER.log(Level.INFO, "[ERRO] metodo busca agendamento: " + e.getStackTrace());
         }
         LOGGER.log(Level.INFO, "FIM do busca Agendamento");
-        return productTraslates;
+        return listaMedicalOrders;
     }
+
+    /**
+     * Metodo Responsável por Atualizar
+     */
+
+    public void atualizaMedialOrder(MedicalOrders medicalOrders) {
+
+        //TODO: atualiza Medical Order
+    }
+
 
 }
