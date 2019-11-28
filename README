@@ -5,7 +5,7 @@
 ## Building
  Building is as simple as running this single command, from the project root:
 
-    $ mvn clean install
+  $ mvn clean install
 
 ## Deploying
 
@@ -85,3 +85,4 @@
   "unitId": "DPI",
   "uuid": "8a2f05d0-104a-48a7-94d9-6d2d06516fe4"
 }
+
