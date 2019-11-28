@@ -17,7 +17,7 @@
   "brandId": "32",
   "cip": "13",
   "mdmId": "",
-  "medicalOrders": [
+  "responseMedicalOrders": [
     {
       "doctorIdentifierKind": "CRM",
       "doctorIdentifierValue": "123",
@@ -30,11 +30,11 @@
               "value": ""
             }
           ],
-          "examCode": "DB-SMI",
-          "price": "322.33",
-          "realizationDate": "2019-11-25T16:57:42.396Z",
+          "examCode": "CODEMIRROR",
+          "price": "13.00",
+          "realizationDate": "2019-11-26T16:57:42.396Z",
           "sample": "Gel",
-          "sampleDescription": "GEL 4ML AMBAR/REFRI (o tubo onde vai a amostra)",
+          "sampleDescription": "MIRROR GEL",
           "status": "PENDENTE",
           "unitRealizationId": "312321",
           "uuid": ""

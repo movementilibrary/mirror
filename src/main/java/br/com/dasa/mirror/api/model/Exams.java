@@ -8,9 +8,16 @@ import java.util.Objects;
 
 public class Exams {
 
-	private String id;
+
+    private String uuid;
+
+	private List<AdditionalProperties> additionalProperties;
 
 	private String examCode;
+
+	private String price;
+
+	private String realizationDate;
 
 	private String sample;
 
@@ -18,99 +25,94 @@ public class Exams {
 
 	private Status status;
 
-	private UnitRealization unitRealization;
-
-	private String realizationDate;
-
-	private String price;
-
-	private List<AdditionalProperties> additionalProperties;
+	private String unitRealization;
 
 
 	public Exams() {
 	}
 
-	public Exams(String id, String examCode, String sample, String sampleDescription, Status status, UnitRealization unitRealization, String realizationDate, String price, List<AdditionalProperties> additionalProperties) {
-		this.id = id;
-		this.examCode = examCode;
-		this.sample = sample;
-		this.sampleDescription = sampleDescription;
-		this.status = status;
-		this.unitRealization = unitRealization;
-		this.realizationDate = realizationDate;
-		this.price = price;
-		this.additionalProperties = additionalProperties;
-	}
 
-	public String getId() {
-		return id;
-	}
+    public Exams(String uuid, List<AdditionalProperties> additionalProperties, String examCode, String price, String realizationDate, String sample, String sampleDescription, Status status, String unitRealization) {
+        this.uuid = uuid;
+        this.additionalProperties = additionalProperties;
+        this.examCode = examCode;
+        this.price = price;
+        this.realizationDate = realizationDate;
+        this.sample = sample;
+        this.sampleDescription = sampleDescription;
+        this.status = status;
+        this.unitRealization = unitRealization;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public String getUUid() {
+        return uuid;
+    }
 
-	public String getExamCode() {
-		return examCode;
-	}
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
-	public void setExamCode(String examCode) {
-		this.examCode = examCode;
-	}
+    public List<AdditionalProperties> getAdditionalProperties() {
+        return additionalProperties;
+    }
 
-	public String getSample() {
-		return sample;
-	}
+    public void setAdditionalProperties(List<AdditionalProperties> additionalProperties) {
+        this.additionalProperties = additionalProperties;
+    }
 
-	public void setSample(String sample) {
-		this.sample = sample;
-	}
+    public String getExamCode() {
+        return examCode;
+    }
 
-	public String getSampleDescription() {
-		return sampleDescription;
-	}
+    public void setExamCode(String examCode) {
+        this.examCode = examCode;
+    }
 
-	public void setSampleDescription(String sampleDescription) {
-		this.sampleDescription = sampleDescription;
-	}
+    public String getPrice() {
+        return price;
+    }
 
-	public Status getStatus() {
-		return status;
-	}
+    public void setPrice(String price) {
+        this.price = price;
+    }
 
-	public void setStatus(Status status) {
-		this.status = status;
-	}
+    public String getRealizationDate() {
+        return realizationDate;
+    }
 
-	public UnitRealization getUnitRealization() {
-		return unitRealization;
-	}
+    public void setRealizationDate(String realizationDate) {
+        this.realizationDate = realizationDate;
+    }
 
-	public void setUnitRealization(UnitRealization unitRealization) {
-		this.unitRealization = unitRealization;
-	}
+    public String getSample() {
+        return sample;
+    }
 
-	public String getRealizationDate() {
-		return realizationDate;
-	}
+    public void setSample(String sample) {
+        this.sample = sample;
+    }
 
-	public void setRealizationDate(String realizationDate) {
-		this.realizationDate = realizationDate;
-	}
+    public String getSampleDescription() {
+        return sampleDescription;
+    }
 
-	public String getPrice() {
-		return price;
-	}
+    public void setSampleDescription(String sampleDescription) {
+        this.sampleDescription = sampleDescription;
+    }
 
-	public void setPrice(String price) {
-		this.price = price;
-	}
+    public Status getStatus() {
+        return status;
+    }
 
-	public List<AdditionalProperties> getAdditionalProperties() {
-		return additionalProperties;
-	}
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 
-	public void setAdditionalProperties(List<AdditionalProperties> additionalProperties) {
-		this.additionalProperties = additionalProperties;
-	}
+    public String getUnitRealization() {
+        return unitRealization;
+    }
+
+    public void setUnitRealization(String unitRealization) {
+        this.unitRealization = unitRealization;
+    }
 }

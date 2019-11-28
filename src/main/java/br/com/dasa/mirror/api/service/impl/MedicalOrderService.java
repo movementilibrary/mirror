@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -35,9 +34,9 @@ public class MedicalOrderService {
 
 
     public void gerenciaMedicalOrder(Admission admission) {
-        List<MedicalOrders> listaMedicalOrders =
-                atualizaExamesMedicalOrders(admission, buscaMedicalOrdersPeloUuid(admission.getUuid()));
-        atualizaMedialOrder(admission.getUuid(), listaMedicalOrders);
+        List<ResponseMedicalOrders> listaResponseMedicalOrders =
+                atualizaListaDeExamesMedicalOrders(admission, buscaMedicalOrdersPeloUuid(admission.getUuid()));
+        atualizaMedialOrder(admission.getUuid(), listaResponseMedicalOrders);
     }
 
 
@@ -47,9 +46,9 @@ public class MedicalOrderService {
      * @param
      * @return listaMedicalOrders
      */
-    public List<MedicalOrders> buscaMedicalOrdersPeloUuid(String uuid) {
+    public List<ResponseMedicalOrders> buscaMedicalOrdersPeloUuid(String uuid) {
         LOGGER.log(Level.INFO, "INICIO busca Agendamento");
-        List<MedicalOrders> listaMedicalOrders = null;
+        List<ResponseMedicalOrders> listaResponseMedicalOrders = null;
         try {
             DefaultExchange defaultExchange = new DefaultExchange(camelContext);
             defaultExchange.setProperty("queryParam", uuid);
@@ -57,7 +56,7 @@ public class MedicalOrderService {
                     defaultExchange);
             ObjectMapper mapper = new ObjectMapper();
             if (resultExchange.getIn().getBody() != null) {
-                listaMedicalOrders = mapper.readValue(resultExchange.getIn().getBody().toString(), new TypeReference<List<MedicalOrders>>() {
+                listaResponseMedicalOrders = mapper.readValue(resultExchange.getIn().getBody().toString(), new TypeReference<List<ResponseMedicalOrders>>() {
                 });
             } else {
                 LOGGER.log(Level.INFO, "[INFO] metodo busca Agendamento: Não existe produto para esse exame:");
@@ -66,52 +65,52 @@ public class MedicalOrderService {
             LOGGER.log(Level.INFO, "[ERRO] metodo busca agendamento: " + e.getStackTrace());
         }
         LOGGER.log(Level.INFO, "FIM do busca Agendamento");
-        return listaMedicalOrders;
+        return listaResponseMedicalOrders;
     }
 
     /**
      * Metodo responsável por sobrescrever exames da admissao do gliese com os exames do agendamento
      *
      * @param admission
-     * @param medicalOrders
+     * @param responseMedicalOrders
      */
-    public List<MedicalOrders> atualizaExamesMedicalOrders(Admission admission, List<MedicalOrders> medicalOrders) {
+    public List<ResponseMedicalOrders> atualizaListaDeExamesMedicalOrders(Admission admission, List<ResponseMedicalOrders> responseMedicalOrders) {
 
-        List<MedicalOrders> listaMedicalOrders = medicalOrders.stream()
+        List<ResponseMedicalOrders> listaResponseMedicalOrders = responseMedicalOrders.stream()
                 .filter(e -> e.getExams().removeAll(e.getExams()))
                 .collect(Collectors.toList());
 
         for (MedicalOrders medicalOrder : admission.getMedicalOrders()) {
             for (Exams exame : medicalOrder.getExams()) {
 
-                listaMedicalOrders.stream()
+                listaResponseMedicalOrders.stream()
                         .filter(s -> s.getExams().add(exame))
                         .collect(Collectors.toList());
             }
 
         }
-        return listaMedicalOrders;
+        return listaResponseMedicalOrders;
     }
 
     /**
      * Metodo Responsável por Atualizar
      */
 
-    public void atualizaMedialOrder(String uuid, List<MedicalOrders> listaMedicalOrders) {
-        LOGGER.log(Level.INFO, "INICIO envio MedicalOrders");
+    public void atualizaMedialOrder(String uuid, List<ResponseMedicalOrders> listaResponseMedicalOrders) {
+        LOGGER.log(Level.INFO, "INICIO envio ResponseMedicalOrders");
         Gson gson = new Gson();
 
-        for (MedicalOrders medicaOrder : listaMedicalOrders) {
+        for (ResponseMedicalOrders medicaOrder : listaResponseMedicalOrders) {
             try {
                 DefaultExchange defaultExchange = new DefaultExchange(camelContext);
                 defaultExchange.setProperty("queryParam", uuid);
-                defaultExchange.getIn().setBody(gson.toJson(listaMedicalOrders));
+                defaultExchange.getIn().setBody(gson.toJson(listaResponseMedicalOrders));
                 producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.getRoute(),
                         defaultExchange);
             } catch (Exception e) {
                 LOGGER.log(Level.INFO, "[ERRO] metodo envia atualização medicaOrder: " + e.getStackTrace());
             }
-            LOGGER.log(Level.INFO, "FIM do envio MedicalOrders");
+            LOGGER.log(Level.INFO, "FIM do envio ResponseMedicalOrders");
         }
     }
 
