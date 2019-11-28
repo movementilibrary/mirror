@@ -1,24 +1,43 @@
 package br.com.dasa.mirror.api.model;
 
+import br.com.dasa.mirror.api.enumeration.PaymentMethod;
+import br.com.dasa.mirror.api.enumeration.PaymentType;
+
 import java.util.List;
 import java.util.Objects;
 
 public class Payments {
-	private String method;
+
+	private PaymentMethod method;
 
 	private List<AdditionalProperties> additionalProperties;
 
-	private String type;
+	private PaymentType type;
 
 	private String value;
 
 	private String transactionId;
 
-	public String getMethod() {
+	private String uuid;
+
+
+	public Payments() {
+	}
+
+	public Payments(PaymentMethod method, List<AdditionalProperties> additionalProperties, PaymentType type, String value, String transactionId, String uuid) {
+		this.method = method;
+		this.additionalProperties = additionalProperties;
+		this.type = type;
+		this.value = value;
+		this.transactionId = transactionId;
+		this.uuid = uuid;
+	}
+
+	public PaymentMethod getMethod() {
 		return method;
 	}
 
-	public void setMethod(String method) {
+	public void setMethod(PaymentMethod method) {
 		this.method = method;
 	}
 
@@ -30,11 +49,11 @@ public class Payments {
 		this.additionalProperties = additionalProperties;
 	}
 
-	public String getType() {
+	public PaymentType getType() {
 		return type;
 	}
 
-	public void setType(String type) {
+	public void setType(PaymentType type) {
 		this.type = type;
 	}
 
@@ -54,15 +73,12 @@ public class Payments {
 		this.transactionId = transactionId;
 	}
 
-	public Payments() {
+	public String getUuid() {
+		return uuid;
 	}
 
-	public Payments(String method, List<AdditionalProperties> additionalProperties, String type, String value, String transactionId) {
-		this.method = method;
-		this.additionalProperties = additionalProperties;
-		this.type = type;
-		this.value = value;
-		this.transactionId = transactionId;
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
 	}
 
 
@@ -75,14 +91,14 @@ public class Payments {
 				Objects.equals(additionalProperties, payments.additionalProperties) &&
 				Objects.equals(type, payments.type) &&
 				Objects.equals(value, payments.value) &&
-				Objects.equals(transactionId, payments.transactionId);
+				Objects.equals(transactionId, payments.transactionId) &&
+				Objects.equals(uuid, payments.uuid);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(method, additionalProperties, type, value, transactionId);
+		return Objects.hash(method, additionalProperties, type, value, transactionId, uuid);
 	}
-
 
 	@Override
 	public String toString() {
@@ -92,6 +108,7 @@ public class Payments {
 				", type='" + type + '\'' +
 				", value='" + value + '\'' +
 				", transactionId='" + transactionId + '\'' +
+				", uuid='" + uuid + '\'' +
 				'}';
 	}
 }

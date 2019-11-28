@@ -1,22 +1,30 @@
 package br.com.dasa.mirror.api.model;
 
+import br.com.dasa.mirror.api.enumeration.State;
+
 import java.util.List;
+import java.util.Objects;
 
 public class MedicalOrders {
 
-	private String doctorIdentifierKind;
-	private String doctorIdentifierValue;
-	private String doctorState;
-	private String uuid;
-	private List<Exams> exams;
+    private String doctorIdentifierKind;
+    private String doctorIdentifierValue;
+    private State state;
+    private List<Exams> exams;
+    private  String uuid;
 
-    public MedicalOrders(String doctorIdentifierKind, String doctorIdentifierValue, String doctorState, String uuid, List<Exams> exams) {
+
+    public MedicalOrders() {
+    }
+
+    public MedicalOrders(String doctorIdentifierKind, String doctorIdentifierValue, State state, List<Exams> exams, String uuid) {
         this.doctorIdentifierKind = doctorIdentifierKind;
         this.doctorIdentifierValue = doctorIdentifierValue;
-        this.doctorState = doctorState;
-        this.uuid = uuid;
+        this.state = state;
         this.exams = exams;
+        this.uuid = uuid;
     }
+
 
     public String getDoctorIdentifierKind() {
         return doctorIdentifierKind;
@@ -34,12 +42,20 @@ public class MedicalOrders {
         this.doctorIdentifierValue = doctorIdentifierValue;
     }
 
-    public String getDoctorState() {
-        return doctorState;
+    public State getState() {
+        return state;
     }
 
-    public void setDoctorState(String doctorState) {
-        this.doctorState = doctorState;
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public List<Exams> getExams() {
+        return exams;
+    }
+
+    public void setExams(List<Exams> exams) {
+        this.exams = exams;
     }
 
     public String getUuid() {
@@ -50,11 +66,31 @@ public class MedicalOrders {
         this.uuid = uuid;
     }
 
-    public List<Exams> getExams() {
-        return exams;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MedicalOrders)) return false;
+        MedicalOrders that = (MedicalOrders) o;
+        return Objects.equals(doctorIdentifierKind, that.doctorIdentifierKind) &&
+                Objects.equals(doctorIdentifierValue, that.doctorIdentifierValue) &&
+                state == that.state &&
+                Objects.equals(exams, that.exams) &&
+                Objects.equals(uuid, that.uuid);
     }
 
-    public void setExams(List<Exams> exams) {
-        this.exams = exams;
+    @Override
+    public int hashCode() {
+        return Objects.hash(doctorIdentifierKind, doctorIdentifierValue, state, exams, uuid);
+    }
+
+    @Override
+    public String toString() {
+        return "MedicalOrders{" +
+                "doctorIdentifierKind='" + doctorIdentifierKind + '\'' +
+                ", doctorIdentifierValue='" + doctorIdentifierValue + '\'' +
+                ", state=" + state +
+                ", exams=" + exams +
+                ", uuid='" + uuid + '\'' +
+                '}';
     }
 }

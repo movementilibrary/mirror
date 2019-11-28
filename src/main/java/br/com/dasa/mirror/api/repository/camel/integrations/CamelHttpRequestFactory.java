@@ -1,9 +1,9 @@
 package br.com.dasa.mirror.api.repository.camel.integrations;
 
 
-import static br.com.dasa.mirror.api.enumeration.CamelRoutesEnum.ROUTE_LOAD_PRODUTO_PRECO;
-import static br.com.dasa.mirror.api.enumeration.CamelRoutesEnum.ROUTE_LOAD_PRODUTO_TRADUCAO;
+import static br.com.dasa.mirror.api.enumeration.CamelRoutesEnum.*;
 import static org.springframework.http.HttpMethod.GET;
+import static org.springframework.http.HttpMethod.PUT;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +17,7 @@ public class CamelHttpRequestFactory {
     
     private static final String PRODUTOS_TRADUCAO = "/api/exams/getTranslate?";
     private static final String PRODUTO_PRECO = "/api/exams/unitDisponibility?";
+    private static final String MEDICAL_ORDERS = "/api/admissions/";
 
     private static Map<String, CamelHttpRequest> camelHttpRequestMap;
 
@@ -25,6 +26,8 @@ public class CamelHttpRequestFactory {
 
         putRequest(ROUTE_LOAD_PRODUTO_TRADUCAO.name(), PRODUTOS_TRADUCAO, GET.name(), APPLICATION_JSON, APPLICATION_JSON);
         putRequest(ROUTE_LOAD_PRODUTO_PRECO.name(), PRODUTO_PRECO, GET.name(), APPLICATION_JSON, APPLICATION_JSON);
+        putRequest(ROUTE_LOAD_MEDICAL_ORDER_FIND.name(), MEDICAL_ORDERS, GET.name(), APPLICATION_JSON, APPLICATION_JSON);
+        putRequest(ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.name(), MEDICAL_ORDERS, PUT.name(), APPLICATION_JSON, APPLICATION_JSON);
     }
 
     public CamelHttpRequest getRequest(String requestKey) {

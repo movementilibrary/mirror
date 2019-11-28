@@ -28,7 +28,7 @@ public class QueryTranslate {
 	}
 
 	public String getQuery(Exams exams) {
-		return query.replace("#exams", exams.getExameCode()).replace("#marca", marca).replace("#sistema", sistema);
+		return query.replace("#exams", exams.getExamCode()).replace("#marca", marca).replace("#sistema", sistema);
 	}
 
 	public String getQueryProduto(String idBrand, String idExame) {

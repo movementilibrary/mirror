@@ -1,113 +1,116 @@
 package br.com.dasa.mirror.api.model;
 
+import br.com.dasa.mirror.api.enumeration.Status;
+
 import java.util.List;
 
 public class Exams {
 
-	private String realizationDate;
 
-	private String sampleDescription;
-
-	private String price;
-
-	private String unitRealizationId;
-
-	private String exameCode;
+    private String uuid;
 
 	private List<AdditionalProperties> additionalProperties;
 
+	private String examCode;
+
+	private String price;
+
+	private String realizationDate;
+
 	private String sample;
 
-	private String status;
+	private String sampleDescription;
 
-	private String uuid;
+	private Status status;
+
+	private String unitRealization;
+
 
 	public Exams() {
 	}
 
-	public Exams(String realizationDate, String sampleDescription, String price, String unitRealizationId,
-			String exameCode, List<AdditionalProperties> additionalProperties,
-			String sample, String status, String uuid) {
-		this.realizationDate = realizationDate;
-		this.sampleDescription = sampleDescription;
-		this.price = price;
-		this.unitRealizationId = unitRealizationId;
-		this.exameCode = exameCode;
-		this.additionalProperties = additionalProperties;
-		this.sample = sample;
-		this.status = status;
-		this.uuid = uuid;
-	}
 
-	public String getRealizationDate() {
-		return realizationDate;
-	}
+    public Exams(String uuid, List<AdditionalProperties> additionalProperties, String examCode, String price, String realizationDate, String sample, String sampleDescription, Status status, String unitRealization) {
+        this.uuid = uuid;
+        this.additionalProperties = additionalProperties;
+        this.examCode = examCode;
+        this.price = price;
+        this.realizationDate = realizationDate;
+        this.sample = sample;
+        this.sampleDescription = sampleDescription;
+        this.status = status;
+        this.unitRealization = unitRealization;
+    }
 
-	public void setRealizationDate(String realizationDate) {
-		this.realizationDate = realizationDate;
-	}
+    public String getUUid() {
+        return uuid;
+    }
 
-	public String getSampleDescription() {
-		return sampleDescription;
-	}
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
-	public void setSampleDescription(String sampleDescription) {
-		this.sampleDescription = sampleDescription;
-	}
+    public List<AdditionalProperties> getAdditionalProperties() {
+        return additionalProperties;
+    }
 
-	public String getPrice() {
-		return price;
-	}
+    public void setAdditionalProperties(List<AdditionalProperties> additionalProperties) {
+        this.additionalProperties = additionalProperties;
+    }
 
-	public void setPrice(String price) {
-		this.price = price;
-	}
+    public String getExamCode() {
+        return examCode;
+    }
 
-	public String getUnitRealizationId() {
-		return unitRealizationId;
-	}
+    public void setExamCode(String examCode) {
+        this.examCode = examCode;
+    }
 
-	public void setUnitRealizationId(String unitRealizationId) {
-		this.unitRealizationId = unitRealizationId;
-	}
+    public String getPrice() {
+        return price;
+    }
 
-	public String getExameCode() {
-		return exameCode;
-	}
+    public void setPrice(String price) {
+        this.price = price;
+    }
 
-	public void setExameCode(String exameCode) {
-		this.exameCode = exameCode;
-	}
+    public String getRealizationDate() {
+        return realizationDate;
+    }
 
-	public List<AdditionalProperties> getAdditionalProperties() {
-		return additionalProperties;
-	}
+    public void setRealizationDate(String realizationDate) {
+        this.realizationDate = realizationDate;
+    }
 
-	public void setAdditionalProperties(List<AdditionalProperties> additionalProperties) {
-		this.additionalProperties = additionalProperties;
-	}
+    public String getSample() {
+        return sample;
+    }
 
-	public String getSample() {
-		return sample;
-	}
+    public void setSample(String sample) {
+        this.sample = sample;
+    }
 
-	public void setSample(String sample) {
-		this.sample = sample;
-	}
+    public String getSampleDescription() {
+        return sampleDescription;
+    }
 
-	public String getStatus() {
-		return status;
-	}
+    public void setSampleDescription(String sampleDescription) {
+        this.sampleDescription = sampleDescription;
+    }
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
+    public Status getStatus() {
+        return status;
+    }
 
-	public String getUuid() {
-		return uuid;
-	}
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-	}
+    public String getUnitRealization() {
+        return unitRealization;
+    }
+
+    public void setUnitRealization(String unitRealization) {
+        this.unitRealization = unitRealization;
+    }
 }

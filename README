@@ -7,4 +7,82 @@
 
   $ mvn clean install
 
-## Check the reference documentation 
+## Deploying
+
+
+#Payload
+
+{
+  "admissionStatus": "PRE_ADMISSION",
+  "brandId": "32",
+  "cip": "13",
+  "mdmId": "",
+  "responseMedicalOrders": [
+    {
+      "doctorIdentifierKind": "CRM",
+      "doctorIdentifierValue": "123",
+      "doctorState": "",
+      "exams": [
+        {
+          "additionalProperties": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "examCode": "CODEMIRROR",
+          "price": "13.00",
+          "realizationDate": "2019-11-26T16:57:42.396Z",
+          "sample": "Gel",
+          "sampleDescription": "MIRROR GEL",
+          "status": "PENDENTE",
+          "unitRealizationId": "312321",
+          "uuid": ""
+        }
+      ],
+      "uuid": ""
+    }
+  ],
+  "originId": "DDIG",
+  "payments": [
+    {
+      "additionalProperties": [
+        {
+          "key": "",
+          "value": ""
+        }
+      ],
+      "method": "CREDIT_CARD",
+      "transactionId": "8ead6445-ed38-4aac-b91d-35a63d9eedcb",
+      "type": "PRIVATE",
+      "uuid": "",
+      "value": "30.2"
+    }
+  ],
+  "questions": [
+    {
+      "additionalProperties": [
+        {
+          "key": "",
+          "value": ""
+        }
+      ],
+      "answer": "2",
+      "question": "Qual é seu peso?",
+      "uuid": ""
+    }
+  ],
+  "scheduling": {
+    "additionalProperties": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "date": "2019-11-25T16:57:42.396Z",
+    "schedulingId": "beae509e-e4c2-4c78-bc9b-2f5256c57093"
+  },
+  "unitId": "DPI",
+  "uuid": "8a2f05d0-104a-48a7-94d9-6d2d06516fe4"
+}
+
