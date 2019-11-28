@@ -1,6 +1,6 @@
 package br.com.dasa.mirror.api.controller;
 
-import br.com.dasa.mirror.api.service.impl.UnitService;
+import br.com.dasa.mirror.api.service.UnitService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/unit")
 public class UnitContoller {
-
 
     @Autowired
     private UnitService unitService;

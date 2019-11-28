@@ -8,8 +8,8 @@ import java.util.List;
 
 import br.com.dasa.mirror.api.enumeration.*;
 import br.com.dasa.mirror.api.model.*;
-import br.com.dasa.mirror.api.service.impl.BrandService;
-import br.com.dasa.mirror.api.service.impl.UnitService;
+import br.com.dasa.mirror.api.service.impl.BrandServiceImpl;
+import br.com.dasa.mirror.api.service.impl.UnitServiceImpl;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -30,10 +30,10 @@ import io.restassured.RestAssured;
 public class AdmissionControllerTest {
 
     @Autowired
-    private UnitService unitService;
+    private UnitServiceImpl unitService;
 
     @Autowired
-    private BrandService brandService;
+    private BrandServiceImpl brandService;
 
     @LocalServerPort
     int port;

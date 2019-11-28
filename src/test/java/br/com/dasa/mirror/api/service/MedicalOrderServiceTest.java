@@ -3,7 +3,7 @@ package br.com.dasa.mirror.api.service;
 
 import br.com.dasa.mirror.api.enumeration.*;
 import br.com.dasa.mirror.api.model.*;
-import br.com.dasa.mirror.api.service.impl.MedicalOrderService;
+import br.com.dasa.mirror.api.service.impl.MedicalOrderServiceImpl;
 import io.restassured.RestAssured;
 
 import org.junit.Before;
@@ -54,7 +54,7 @@ public class MedicalOrderServiceTest {
     private List<Exams> listExamsMedicalOrders = new ArrayList<>();
 
     @Autowired
-    private MedicalOrderService medicalOrderService;
+    private MedicalOrderServiceImpl medicalOrderService;
 
 
     @Before
