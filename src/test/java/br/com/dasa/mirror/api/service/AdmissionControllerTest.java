@@ -1,7 +1,6 @@
 package br.com.dasa.mirror.api.service;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.equalTo;
+
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
@@ -11,7 +10,6 @@ import br.com.dasa.mirror.api.enumeration.*;
 import br.com.dasa.mirror.api.model.*;
 import br.com.dasa.mirror.api.service.impl.BrandService;
 import br.com.dasa.mirror.api.service.impl.UnitService;
-import org.assertj.core.api.AssertFactory;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
