@@ -20,9 +20,10 @@ import br.com.dasa.mirror.api.model.Exame;
 import br.com.dasa.mirror.api.model.Exams;
 import br.com.dasa.mirror.api.model.ProductPrice;
 import br.com.dasa.mirror.api.repository.translator.QueryTranslate;
+import br.com.dasa.mirror.api.service.FindPriceExamsService;
 
 @Service
-public class FindPriceExamsService {
+public class FindPriceExamsServiceImpl implements FindPriceExamsService {
 
 	@Autowired
 	private ProducerTemplate producerTemplate;
@@ -33,7 +34,7 @@ public class FindPriceExamsService {
 	@Autowired
 	QueryTranslate queryBuilder;
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(FindPriceExamsService.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(FindPriceExamsServiceImpl.class);
 
 	public String findPriceToGlieseData(Admission admission, Exams exams) {
 		return findProdutoPreco(admission.getBrandId(), exams.getExamCode());

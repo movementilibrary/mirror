@@ -1,11 +1,10 @@
 package br.com.dasa.mirror.api.service.impl;
 
-import br.com.dasa.mirror.api.enumeration.CamelRoutesEnum;
-import br.com.dasa.mirror.api.model.*;
-import br.com.dasa.mirror.api.repository.translator.QueryTranslate;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
+
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
@@ -13,15 +12,22 @@ import org.apache.camel.impl.DefaultExchange;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.stream.Collectors;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+
+import br.com.dasa.mirror.api.enumeration.CamelRoutesEnum;
+import br.com.dasa.mirror.api.model.Admission;
+import br.com.dasa.mirror.api.model.Exams;
+import br.com.dasa.mirror.api.model.MedicalOrders;
+import br.com.dasa.mirror.api.model.ResponseMedicalOrders;
+import br.com.dasa.mirror.api.repository.translator.QueryTranslate;
+import br.com.dasa.mirror.api.service.MedicalOrderService;
 
 @Service
-public class MedicalOrderService {
+public class MedicalOrderServiceImpl implements MedicalOrderService {
 
-    private static final Logger LOGGER = Logger.getLogger(MedicalOrderService.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(MedicalOrderServiceImpl.class.getName());
 
     @Autowired
     private ProducerTemplate producerTemplate;
@@ -32,13 +38,11 @@ public class MedicalOrderService {
     @Autowired
     QueryTranslate queryBuilder;
 
-
     public void gerenciaMedicalOrder(Admission admission) {
         List<ResponseMedicalOrders> listaResponseMedicalOrders =
                 atualizaListaDeExamesMedicalOrders(admission, buscaMedicalOrdersPeloUuid(admission.getUuid()));
         atualizaMedialOrder(admission.getUuid(), listaResponseMedicalOrders);
     }
-
 
     /**
      * Metodo para buscar o idProduto do gliese-data e data provider.
@@ -75,19 +79,16 @@ public class MedicalOrderService {
      * @param responseMedicalOrders
      */
     public List<ResponseMedicalOrders> atualizaListaDeExamesMedicalOrders(Admission admission, List<ResponseMedicalOrders> responseMedicalOrders) {
-
         List<ResponseMedicalOrders> listaResponseMedicalOrders = responseMedicalOrders.stream()
                 .filter(e -> e.getExams().removeAll(e.getExams()))
                 .collect(Collectors.toList());
 
         for (MedicalOrders medicalOrder : admission.getMedicalOrders()) {
             for (Exams exame : medicalOrder.getExams()) {
-
                 listaResponseMedicalOrders.stream()
                         .filter(s -> s.getExams().add(exame))
                         .collect(Collectors.toList());
             }
-
         }
         return listaResponseMedicalOrders;
     }
@@ -95,7 +96,6 @@ public class MedicalOrderService {
     /**
      * Metodo Responsável por Atualizar
      */
-
     public void atualizaMedialOrder(String uuid, List<ResponseMedicalOrders> listaResponseMedicalOrders) {
         LOGGER.log(Level.INFO, "INICIO envio ResponseMedicalOrders");
         Gson gson = new Gson();
@@ -113,6 +113,4 @@ public class MedicalOrderService {
             LOGGER.log(Level.INFO, "FIM do envio ResponseMedicalOrders");
         }
     }
-
-
 }
