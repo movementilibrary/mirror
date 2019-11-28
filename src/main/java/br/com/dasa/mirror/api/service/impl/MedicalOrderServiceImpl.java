@@ -111,8 +111,5 @@ public class MedicalOrderServiceImpl implements MedicalOrderService {
         }
         LOGGER.log(Level.INFO, "FIM do envio ResponseMedicalOrders");
     }
-<<<<<<< HEAD:src/main/java/br/com/dasa/mirror/api/service/impl/MedicalOrderService.java
 
-=======
->>>>>>> 90466e03ca0e92ac12813b5d569e08326add9862:src/main/java/br/com/dasa/mirror/api/service/impl/MedicalOrderServiceImpl.java
 }
