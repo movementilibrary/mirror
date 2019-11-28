@@ -100,19 +100,16 @@ public class MedicalOrderService {
         LOGGER.log(Level.INFO, "INICIO envio ResponseMedicalOrders");
         Gson gson = new Gson();
 
-        for (ResponseMedicalOrders medicaOrder : listaResponseMedicalOrders) {
-            try {
-                DefaultExchange defaultExchange = new DefaultExchange(camelContext);
-                defaultExchange.setProperty("queryParam", uuid);
-                defaultExchange.getIn().setBody(gson.toJson(listaResponseMedicalOrders));
-                producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.getRoute(),
-                        defaultExchange);
-            } catch (Exception e) {
-                LOGGER.log(Level.INFO, "[ERRO] metodo envia atualização medicaOrder: " + e.getStackTrace());
-            }
-            LOGGER.log(Level.INFO, "FIM do envio ResponseMedicalOrders");
+        try {
+            DefaultExchange defaultExchange = new DefaultExchange(camelContext);
+            defaultExchange.setProperty("queryParam", uuid);
+            defaultExchange.getIn().setBody(gson.toJson(listaResponseMedicalOrders));
+            producerTemplate.send(CamelRoutesEnum.ROUTE_LOAD_MEDICAL_ORDER_REGISTRY.getRoute(),
+                    defaultExchange);
+        } catch (Exception e) {
+            LOGGER.log(Level.INFO, "[ERRO] metodo envia atualização medicaOrder: " + e.getStackTrace());
         }
+        LOGGER.log(Level.INFO, "FIM do envio ResponseMedicalOrders");
     }
-
 
 }

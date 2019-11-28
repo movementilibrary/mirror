@@ -28,7 +28,6 @@ public class Admission {
 
 	private List<Payments> payments;
 
-	//TODO adicionar uuid
 	private List<Questions> questions;
 
 	private Scheduling scheduling;

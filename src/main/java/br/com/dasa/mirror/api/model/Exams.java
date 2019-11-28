@@ -1,10 +1,8 @@
 package br.com.dasa.mirror.api.model;
 
 import br.com.dasa.mirror.api.enumeration.Status;
-import com.amazonaws.services.ecs.model.ScaleUnit;
 
 import java.util.List;
-import java.util.Objects;
 
 public class Exams {
 
