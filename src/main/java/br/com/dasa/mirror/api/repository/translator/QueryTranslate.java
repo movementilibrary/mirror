@@ -8,10 +8,10 @@ import br.com.dasa.mirror.api.model.Exams;
 @Component
 public class QueryTranslate {
 
-	@Value("${url.api.dasa.marca}")
+	@Value("${url.marca}")
 	private String marca;
 
-	@Value("${url.api.dasa.sistema}")
+	@Value("${url.sistema}")
 	private String sistema;
 
 	private static final String TEMPLATE = "idSistema=#sistema&idMarca=#marca&idsOrigem=#exams";
