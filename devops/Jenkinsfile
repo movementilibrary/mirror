@@ -106,6 +106,15 @@ pipeline {
         }
 
 
+        stage('Deploy Prd') {
+            steps {
+                sh 'bash -x devops-tools/pipeline-shared-librares/deploy.sh -a mirror-api-prd -r RSG_GLIESE_PRE_ANALYTICS_PRD -e prd -i deploy -d cloud'
+                sh 'bash -x devops-tools/pipeline-shared-librares/check_upstart_app.sh -u $URL_APP/actuator/health -s 200 -t 200 -c 5 -e prd'
+                sh 'bash -x devops-tools/pipeline-shared-librares/sync_subdomains.sh -e prd'
+            }
+        }
+
+
 
         //stage('Accept Test Dev') {
           //  steps {
