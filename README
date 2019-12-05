@@ -17,7 +17,7 @@
   "brandId": "32",
   "cip": "13",
   "mdmId": "",
-  "responseMedicalOrders": [
+  "medicalOrders": [
     {
       "doctorIdentifierKind": "CRM",
       "doctorIdentifierValue": "123",

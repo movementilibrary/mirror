@@ -7,24 +7,31 @@ import java.util.Objects;
 
 public class MedicalOrders {
 
+    private  String uuid;
     private String doctorIdentifierKind;
     private String doctorIdentifierValue;
-    private State state;
+    private String doctorState;
     private List<Exams> exams;
-    private  String uuid;
 
 
     public MedicalOrders() {
     }
 
-    public MedicalOrders(String doctorIdentifierKind, String doctorIdentifierValue, State state, List<Exams> exams, String uuid) {
+    public MedicalOrders(String uuid, String doctorIdentifierKind, String doctorIdentifierValue, String doctorState, List<Exams> exams) {
+        this.uuid = uuid;
         this.doctorIdentifierKind = doctorIdentifierKind;
         this.doctorIdentifierValue = doctorIdentifierValue;
-        this.state = state;
+        this.doctorState = doctorState;
         this.exams = exams;
-        this.uuid = uuid;
     }
 
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
     public String getDoctorIdentifierKind() {
         return doctorIdentifierKind;
@@ -42,12 +49,12 @@ public class MedicalOrders {
         this.doctorIdentifierValue = doctorIdentifierValue;
     }
 
-    public State getState() {
-        return state;
+    public String getDoctorState() {
+        return doctorState;
     }
 
-    public void setState(State state) {
-        this.state = state;
+    public void setDoctorState(String doctorState) {
+        this.doctorState = doctorState;
     }
 
     public List<Exams> getExams() {
@@ -58,39 +65,32 @@ public class MedicalOrders {
         this.exams = exams;
     }
 
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof MedicalOrders)) return false;
         MedicalOrders that = (MedicalOrders) o;
-        return Objects.equals(doctorIdentifierKind, that.doctorIdentifierKind) &&
+        return Objects.equals(uuid, that.uuid) &&
+                Objects.equals(doctorIdentifierKind, that.doctorIdentifierKind) &&
                 Objects.equals(doctorIdentifierValue, that.doctorIdentifierValue) &&
-                state == that.state &&
-                Objects.equals(exams, that.exams) &&
-                Objects.equals(uuid, that.uuid);
+                doctorState == that.doctorState &&
+                Objects.equals(exams, that.exams);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(doctorIdentifierKind, doctorIdentifierValue, state, exams, uuid);
+        return Objects.hash(uuid, doctorIdentifierKind, doctorIdentifierValue, doctorState, exams);
     }
 
     @Override
     public String toString() {
         return "MedicalOrders{" +
-                "doctorIdentifierKind='" + doctorIdentifierKind + '\'' +
+                "uuid='" + uuid + '\'' +
+                ", doctorIdentifierKind='" + doctorIdentifierKind + '\'' +
                 ", doctorIdentifierValue='" + doctorIdentifierValue + '\'' +
-                ", state=" + state +
+                ", doctorState=" + doctorState +
                 ", exams=" + exams +
-                ", uuid='" + uuid + '\'' +
                 '}';
     }
 }

@@ -137,7 +137,7 @@ public class Admission {
 		return medicalOrders;
 	}
 
-	public void setResponseMedicalOrders(List<MedicalOrders> medicalOrders) {
+	public void setMedicalOrders(List<MedicalOrders> medicalOrders) {
 		this.medicalOrders = medicalOrders;
 	}
 
