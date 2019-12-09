@@ -1,13 +1,10 @@
 package br.com.dasa.mirror.api.service.impl;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-import com.amazonaws.ResetException;
-import com.amazonaws.services.logs.model.ResourceNotFoundException;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
@@ -25,8 +22,6 @@ import br.com.dasa.mirror.api.model.Exams;
 import br.com.dasa.mirror.api.model.MedicalOrders;
 import br.com.dasa.mirror.api.repository.translator.QueryTranslate;
 import br.com.dasa.mirror.api.service.MedicalOrderService;
-
-import javax.swing.text.html.Option;
 
 @Service
 public class MedicalOrderServiceImpl implements MedicalOrderService {

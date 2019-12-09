@@ -4,6 +4,7 @@ import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import br.com.dasa.mirror.api.model.*;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
@@ -14,10 +15,6 @@ import org.springframework.stereotype.Repository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.dasa.mirror.api.enumeration.CamelRoutesEnum;
-import br.com.dasa.mirror.api.model.Admission;
-import br.com.dasa.mirror.api.model.Exams;
-import br.com.dasa.mirror.api.model.MedicalOrders;
-import br.com.dasa.mirror.api.model.ProductTraslate;
 import br.com.dasa.mirror.api.repository.translator.QueryTranslate;
 import br.com.dasa.mirror.api.service.AdmissaoService;
 import br.com.dasa.mirror.api.service.BrandService;
@@ -112,8 +109,10 @@ public class AdmissaoServiceImpl implements AdmissaoService {
 	 * @return Admission
 	 */
 	public Admission convertIdGlieseToIdDataProvider(Admission admission) {
-		admission.setBrandId(brandService.convertBrandGlieseToBrandDataProvider(admission.getBrandId()).toString());
-		admission.setUnitId(unitService.convertUnityGlieseToUnityDataProvider(admission.getUnitId()).toString());
+		Brand brandId = brandService.convertBrandGlieseToBrandDataProvider(admission.getBrandId());
+		Unit unitId = unitService.convertUnityGlieseToUnityDataProvider(admission.getUnitId());
+		admission.setBrandId(brandId.getIdDataProvider().toString());
+		admission.setUnitId(unitId.getIdDataProvider().toString());
 		return admission;
 	}
 }

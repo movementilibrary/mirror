@@ -1,12 +1,9 @@
 package br.com.dasa.mirror.api.model;
 
-import br.com.dasa.mirror.api.enumeration.Status;
-
 import java.util.List;
 import java.util.Objects;
 
 public class Exams {
-
 
     private String uuid;
 
