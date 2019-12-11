@@ -4,7 +4,6 @@ import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import br.com.dasa.mirror.api.model.*;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.ProducerTemplate;
@@ -15,10 +14,15 @@ import org.springframework.stereotype.Repository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.dasa.mirror.api.enumeration.CamelRoutesEnum;
+import br.com.dasa.mirror.api.model.Admission;
+import br.com.dasa.mirror.api.model.Brand;
+import br.com.dasa.mirror.api.model.Exams;
+import br.com.dasa.mirror.api.model.MedicalOrders;
+import br.com.dasa.mirror.api.model.ProductTraslate;
+import br.com.dasa.mirror.api.model.Unit;
 import br.com.dasa.mirror.api.repository.translator.QueryTranslate;
 import br.com.dasa.mirror.api.service.AdmissaoService;
 import br.com.dasa.mirror.api.service.BrandService;
-import br.com.dasa.mirror.api.service.FindPriceExamsService;
 import br.com.dasa.mirror.api.service.MedicalOrderService;
 import br.com.dasa.mirror.api.service.UnitService;
 
@@ -44,9 +48,6 @@ public class AdmissaoServiceImpl implements AdmissaoService {
 	@Autowired
 	private BrandService brandService;
 	
-	@Autowired
-	private FindPriceExamsService findPriceExamsService;
-
 	@Override
 	public Optional<Admission> admissaoValues(Admission admission) {
 		LOGGER.log(Level.INFO, "Mensagem recebida com sucesso");
@@ -66,7 +67,6 @@ public class AdmissaoServiceImpl implements AdmissaoService {
 				ProductTraslate[] productTraslates = findProdutoTraducao(exams);
 				for (ProductTraslate productTraslate : productTraslates) {
 					exams.setExamCode(String.valueOf(productTraslate.getIdProduto()));
-					exams.setPrice(findPriceExamsService.findPriceToGlieseData(admission, exams));
 				}
 			}
 		}
