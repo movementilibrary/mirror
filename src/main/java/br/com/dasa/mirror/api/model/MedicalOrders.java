@@ -23,6 +23,11 @@ public class MedicalOrders {
         this.exams = exams;
     }
 
+    public MedicalOrders(List<Exams> exams) {
+        this.exams = exams;
+    }
+
+
     public String getUuid() {
         return uuid;
     }
